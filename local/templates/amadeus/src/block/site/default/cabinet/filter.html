@@ -1,0 +1,118 @@
+<div class="{{block_prefix}}block  {{block_mod}}">
+	<a href="#" class="{{block_prefix}}btn-block">
+		<div class="container">
+			<div class="{{block_prefix}}btn">
+				<div class="{{block_prefix}}btn-hamb">
+					<div class="{{block_prefix}}btn-hamb-item  is--top"></div>
+					<div class="{{block_prefix}}btn-hamb-item  is--center"></div>
+					<div class="{{block_prefix}}btn-hamb-item  is--bottom"></div>
+				</div>
+				<div class="{{block_prefix}}btn-name">
+					Фильтры каталога
+				</div>
+			</div>		
+		</div>		
+	</a>
+	<div class="{{block_prefix}}dropdown  {{block_mod}}">
+		<ul class="{{block_prefix}}nav  {{block_mod}}">
+			<li class="{{block_prefix}}nav-item dropdown  {{block_mod}}">
+				<a href="#" class="dropdown-toggle {{block_prefix}}nav-link" data-toggle="dropdown">
+					<div class="{{block_prefix}}nav-text">
+						Цена, ₽:
+						<div class="{{block_prefix}}nav-result">
+							650 - 11 250
+						</div>
+					</div>
+					<div class="{{block_prefix}}nav-caret">
+						[[azbntple tpl="/src/block/site/default/svg-sprite/.html" icon-name="navbar-dropdown" ]]
+					</div>
+				</a>
+				<div class="{{block_prefix}}nav-dropdown dropdown-menu">
+					[[azbntple 
+						tpl="/src/block/site/default/form/elem-input2-range.html"
+						form_id="fr"
+						block_prefix="form__"
+						block_mod="  "
+						block_color="  "
+						block_label="  "
+						block_placeholder="  "
+
+						block_id1="area_from"
+						block_label1="От:"
+						block_placeholder1="От:"
+
+						block_id2="area_to"
+						block_label2="До:"
+						block_placeholder2="До:"
+
+						block_min=" 0" 
+						block_max="10000"
+						block_from="1000"
+						block_to="9000"
+						block_type="double"
+						block_step="50"						
+					]]
+					<div class="{{block_prefix}}nav-dropdown-btn">
+						[[azbntple 
+							tpl="/src/block/site/default/button/btn.html"
+							button_prefix="btn__" 
+							button_mod="is--xs"
+							button_type="button"
+							button_name="Сохранить" 
+						]]
+					</div>
+				</div>		
+			</li>
+			<li class="{{block_prefix}}nav-item dropdown  {{block_mod}}">
+				<a href="#" class="dropdown-toggle {{block_prefix}}nav-link" data-toggle="dropdown">
+					<div class="{{block_prefix}}nav-text">
+						Размер:
+						<div class="{{block_prefix}}nav-result  is--size">
+							40, 42
+						</div>
+					</div>
+					<div class="{{block_prefix}}nav-caret">
+						[[azbntple tpl="/src/block/site/default/svg-sprite/.html" icon-name="navbar-dropdown" ]]
+					</div>
+				</a>
+				<div class="{{block_prefix}}nav-dropdown dropdown-menu">
+					[[azbntple 
+						tpl="/src/block/site/default/pagination/panel-size-filter.html" 
+						block_prefix="pagination__"
+						block_mod="is--size  is--filter"
+					]]
+					<div class="{{block_prefix}}nav-dropdown-btn">
+						[[azbntple 
+							tpl="/src/block/site/default/button/btn.html"
+							button_prefix="btn__" 
+							button_mod="is--xs"
+							button_type="button"
+							button_name="Сохранить" 
+						]]
+					</div>
+				</div>		
+			</li>
+			<li class="{{block_prefix}}nav-item  is--btn  {{block_mod}}">
+				[[azbntple 
+					tpl="/src/block/site/default/button/btn-icon-name.html"
+					button_prefix="btn-icon__" 
+					button_mod="is--reset"
+					button_type="button"
+					button_icon="icon-reset"
+					button_name="Сбросить фильтры" 
+				]]		
+			</li>
+			<li class="{{block_prefix}}nav-item  is--mla {{block_mod}}">
+				<div class="{{block_prefix}}nav-link">
+					<div class="{{block_prefix}}nav-text">
+						Сортировать по:
+						<div class="{{block_prefix}}nav-result  is--btn">
+							<button type="button" class="{{block_prefix}}nav-sort  is--active">цене <div class="{{block_prefix}}nav-sort-icon">[[azbntple tpl="/src/block/site/default/svg-sprite/.html" icon-name="icon-sort" ]]</div></button>
+							<button type="button" class="{{block_prefix}}nav-sort is--desc">попурярности <div class="{{block_prefix}}nav-sort-icon">[[azbntple tpl="/src/block/site/default/svg-sprite/.html" icon-name="icon-sort" ]]</div></button>
+						</div>
+					</div>
+				</div>	
+			</li>
+		</ul>
+	</div> 
+</div> 

@@ -1,0 +1,46 @@
+<header class="{{block_prefix}}block  {{block_mod}}">
+	<div class="container {{block_prefix}}container  {{block_mod}}">
+		<div class="{{block_prefix}}panel  {{block_mod}}">
+			<div class="{{block_prefix}}inner  {{block_mod}}">
+				<h1 class="{{block_prefix}}heading  {{block_mod}}">{{block_heading}}</h1>
+				<div class="{{block_prefix}}heading-small  {{block_mod}}">{{block_heading_small}}</div>
+				<div class="{{block_prefix}}btn  {{block_mod}}">					
+					[[azbntple 
+						tpl="/src/block/site/default/button/btn-modal.html"
+						button_prefix="btn__" 
+						button_mod="  "
+						button_target="modal-catalog"
+						button_name="{{block_btn}}" 
+					]]
+				</div>
+				<div class="{{block_prefix}}soc  {{block_mod}}">
+					[[azbntple 
+						tpl="/src/block/site/default/social/panel-header.html" 
+						block_prefix="social__" 
+						block_mod="is--header  {{block_mod}} 
+					]]
+				</div>
+			</div>
+		</div>
+	</div>	
+	<div class="{{block_prefix}}slider-block  {{block_mod}}">
+		<div class="{{block_prefix}}slider  {{block_mod}}" data-slider-slick="slick-header">
+			<picture class="{{block_prefix}}slider-item  {{block_mod}}">
+				<source media="(min-width: 451px)" srcset="{{url-path-img}}/temp/header-wholesale-item1.jpg">
+				<img src="{{url-path-img}}/temp/header-wholesale-item1-xs.jpg" class="img-responsive" alt="" class="img-responsive">
+			</picture>
+			<picture class="{{block_prefix}}slider-item  {{block_mod}}">
+				<source media="(min-width: 451px)" srcset="{{url-path-img}}/temp/header-wholesale-item2.jpg">
+				<img src="{{url-path-img}}/temp/header-wholesale-item2-xs.jpg" class="img-responsive" alt="" class="img-responsive">
+			</picture>
+			<picture class="{{block_prefix}}slider-item  {{block_mod}}">
+				<source media="(min-width: 451px)" srcset="{{url-path-img}}/temp/header-wholesale-item3.jpg">
+				<img src="{{url-path-img}}/temp/header-wholesale-item3-xs.jpg" class="img-responsive" alt="" class="img-responsive">
+			</picture>
+			<picture class="{{block_prefix}}slider-item  {{block_mod}}">
+				<source media="(min-width: 451px)" srcset="{{url-path-img}}/temp/header-wholesale-item4.jpg">
+				<img src="{{url-path-img}}/temp/header-wholesale-item4-xs.jpg" class="img-responsive" alt="" class="img-responsive">
+			</picture>
+		</div>
+	</div>
+</header>

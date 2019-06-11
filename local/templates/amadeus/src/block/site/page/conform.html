@@ -1,0 +1,39 @@
+<main class="{{content_prefix}}panel  {{content_mod}}">
+	<div class="{{content_prefix}}elem  is--left  is--full-top  {{content_mod}}">
+		<div class="{{content_prefix}}container container  {{content_mod}}">
+			[[azbntple 
+				tpl="/src/block/site/default/page-header/panel-heading.html"
+				block_prefix="page-header__" 
+				block_mod="{{block_heading_mod}}"
+				block_heading_level="{{block_heading_level}}"
+				block_heading="{{block_heading}}"
+				block_bread_mod="{{block_bread_mod}}"
+			]]			
+			[[azbntple 
+				tpl="/src/block/site/default/form/form-conform.html" 
+
+				block_prefix="form__"
+				block_form_id="f_login"
+				block_mod="is--login" 
+				block_color="  "
+
+				block_heading_mod="is--h3"
+				block_heading_level="h3"
+				block_heading="Введите e-mail для восстановления пароля"
+				block_heading_small_level="div"
+				block_heading_small="text"
+
+				block_btn_name="Восстановить"
+				block_btn_mod="  " 
+			]]
+		</div>
+	</div>
+	<div class="{{content_prefix}}elem  is--right  {{content_mod}}" style="background-image: url({{block_bg}});">
+		<a href="{{page.login}}" class="btn-round__item  {{content_mod}}">
+			<div class="btn-round__name">Вход</div>
+			<div class="btn-round__icon">
+				[[azbntple tpl="/src/block/site/default/svg-sprite/.html" icon-name="arrow-enter" ]] 
+			</div>
+		</a>
+	</div>
+</main>

@@ -1,0 +1,122 @@
+.footer__{
+	&block{
+		@media print{display: none;}
+		//position: relative;
+		//z-index: 1;
+		font-family: @footer_ff;
+		font-size: @footer_fs - 2;
+		line-height: @footer_lh - 2; 
+		font-weight: 400;
+		color: @footer_color;	
+		background: @footer_bg;
+		overflow: hidden;
+		padding-top: 30px;
+		padding-bottom: 30px;
+		@media @media-point-screen {
+			padding-top: 20px;
+			padding-bottom: 20px;
+		}
+		a,
+		a[href^="tel:"],
+		a[href^="maito:"],
+		a:focus,
+		a[href^="tel:"]:focus,
+		a[href^="maito:"]:focus,
+		a:hover,
+		a[href^="tel:"]:hover,
+		a[href^="maito:"]:hover{
+			color: @footer_color;
+		}
+	}
+	&container{
+		@media @media-point-device-lg {
+			width: 100%;
+		}
+	}
+	&navbar{
+		&{
+			display: none;
+			border-bottom: 1px solid @info;
+			padding-top: 28px;
+			padding-bottom: 35px;
+			margin-bottom: 23px;
+			@media @media-point-screen-lg {
+				display: block;
+				.calcFontSize(14, 16, 1200, 1680);
+				.calcLineHeight(20, 22, 1200, 1680);
+			}
+		}
+		&-row{}
+		&-cols{
+			@media @media-point-screen {
+				.makeCols(2, 12);
+			}
+		}
+		&-nav{
+			list-style: none;
+			margin: 0; 
+			padding: 0;
+		}
+		&-item{
+			margin-bottom: 12px;
+		}
+		&-link{
+			font-weight: 700;
+			a&:hover{
+				color: @info;
+			}
+		}
+		&-heading{
+			font-weight: 700;
+			margin-bottom: 16px;
+		}
+		&-inner-cols{
+			@media @media-point-screen-lg {
+				.makeCols(6, 12);
+			}
+		}
+		&-inner-item{
+			margin-bottom: 3px;
+		}			
+		&-inner-link{			
+			a&:hover{
+				color: @info;
+			}
+		}
+	}
+	&row{
+		justify-content: space-between;
+		align-items: center;
+		margin-top: -15px;
+		@media @media-point-xxs {justify-content: center;}
+		@media @media-point-device{flex-wrap: wrap;}
+	}
+	&cols{
+		padding-top: 15px;
+		@media @media-point-xxs {
+			//.makeCols(12, 12);
+		}
+		&.is--copyright{
+			@media @media-point-xxs {
+				text-align: center;
+			}
+			@media @media-point-tablet {
+				display: none;
+			}
+		}
+		&.is--btn{
+			@media @media-point-xxs {
+				text-align: center;
+				.makeCols(12, 12);
+			}
+		}
+	}
+	&logotip{
+		display: block;
+		max-width: @footer_logo_widht;
+		height: @footer_logo_height;
+		a&, a&:focus, a&:hover{
+			color: @footer_logo_color;
+		}
+	}
+}

@@ -1,0 +1,226 @@
+.aside__{ 
+	@gutter: 0px;
+	&block{
+		@media @media-point-device-lg {			
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			background-color: @aside_bg_device;
+			height: ~"calc(100% - @{navbar_device})";
+			z-index: 95;
+			transform: translateY(~"calc(100% - @{aside_height_device})");
+			transition: @trs-site;
+			&.is--catalog{
+				display: none;
+			}
+		}	
+		@media @media-point-screen-lg {
+			position: relative;
+			width: @aside_size;
+			background-color: @aside_bg;
+			box-shadow: 4px 4px 30px fadeout(@black, 90%);
+		}
+		@media @media-point-lg {
+			width: @aside_size - 115;
+		}
+		&.open{
+			transform: translateY(0);
+		}
+		.dropdown-backdrop{display: none;}
+	}	
+	&container{
+		@media @media-point-screen-lg {
+			width: 100%;
+			padding: 0;
+		}
+	}
+	&btn-block{
+		//background-color: fadeout(@blue-light, 70%);
+		display: block;
+		&, &:focus, &:hover{color: @aside_humb_bg}
+		@media @media-point-screen-lg {
+			display: none;
+		}
+	}
+	&btn{
+		display: flex;
+		align-items: center;
+		padding: 15px 0px;
+	}
+	&btn-name{
+		text-transform: uppercase;
+		font-weight: 500;
+		letter-spacing: 1px;
+		font-size: @b-fs - 2;
+		padding-left: 15px; 
+	}
+	//hamburger
+	&btn-hamb{
+		position: relative;
+		width: 24px;
+		height: 24px;
+	}
+	&btn-hamb-item{
+		width: 24px;
+		height: 2px;
+		background-color: @aside_humb_bg;
+		position: absolute;
+		border-radius: 5px;
+		transition: @trs-site;
+		&.is--top{
+			top: 4px;
+			.aside__block.open &{
+				top: ~"calc(50% - 1px)";
+				transform: translateX(0px) rotate(45deg);
+			}
+
+		}
+		&.is--center{
+			top: ~"calc(50% - 1px)";
+			.aside__block.open &{
+				opacity: 0;
+			}
+		}
+		&.is--bottom{
+			bottom: 4px;
+			.aside__block.open &{						
+				bottom: ~"calc(50% - 1px)";
+				transform: translateX(0px) rotate(135deg);
+			}
+		}
+	} 
+	&dropdown{
+		position: relative;
+		height: ~"calc(100% - @{aside_height_device})";
+		overflow: auto;
+		padding: 5px 15px;
+		@media @media-point-screen-lg {
+			overflow: visible;
+			padding: 2.8vw 1.75vw;
+			height: auto;
+		}
+	}
+	&nav{
+		position: relative;
+		list-style: none;
+		padding: 0px;
+		margin: 0px;
+		&-item{
+			&.is--divider{
+				border-bottom: 2px solid @aside_color;
+				margin: 15px 0;
+				@media @media-point-screen {
+					margin: 30px 0;
+				}
+			}
+		}
+		&-link{
+			position: relative;
+			display: block;
+			font-weight: 700;
+			color: @aside_color;
+			transition: @trs-site;
+			.calcFontSize(17, 19, 320, 1680);
+			.calcLineHeight(19, 21, 320, 1680);
+			letter-spacing: 0.5px;
+			padding: 10px 20px;
+			@media @media-point-device-lg {display: inline-block;}
+			@media @media-point-screen {
+				padding: 15px 3.2vw 15px ~"calc(1.5vw + 11px)";
+				//color: @black-61;
+			}
+			span{
+				position: relative;
+				z-index: 2;			
+			}		
+			.aside__nav-item.is--active &,
+			&:hover{
+				color: @aside_color_active;
+			}
+			.aside__nav-item.open &,
+			.aside__nav-item.is--active &{
+				cursor: default;
+				color: @aside_color_active;
+			}
+		}
+		&-icon{ 
+			width: 11px;
+			height: 7px;
+			position: absolute!important;
+			top: 50%;
+			transform: translateY(-50%);
+			left: 0px;
+			@media @media-point-screen {
+				left: 0.9vw;
+				//&.is--sub3{left: 10px}
+			}
+			&.is--sub3{left: 10px}
+			.aside__nav-item.open > .aside__nav-link &{
+				transform: translateY(-50%) rotate(180deg);
+			}
+			svg{
+				display: block;
+				fill: currentColor;
+			}
+		}		
+		&-dropdown{
+			position: relative;
+			z-index: 1;
+			top: 0;
+			background: transparent;
+			//margin-top: 15px;
+			float: none;
+			margin-top: 0;
+			padding: 0;
+			padding-left: 20px;
+			padding-top: 4px;
+			padding-bottom: 5px;
+			width: 100%;
+			font-size: @b-fs;
+			line-height: @b-lh - 6;
+			@media @media-point-screen-lg {
+				padding-left: 17px;
+				&.is--sub3{
+					padding-left: 17px;
+				}
+			}
+		}
+		&-dropdown-item{
+			margin-bottom: 17.5px;
+		}
+		&-dropdown-link{
+			font-weight: 300;
+			display: inline-block;
+			position: relative;
+			padding-left: 23px;
+			padding-right: 23px;
+			color: @aside_color_link;
+			span{
+				font-size: @b-fs - 2;
+				color: @aside_color;
+			}
+			&::before{
+				content: '';
+				width: 8px;
+				height: 8px;
+				position: absolute;
+				top: 5px;
+				left: 0;
+				border-radius: 50%;
+				background-color: fadeout(@success, 100%);
+				transition: @trs-site;
+			}
+			&.is--sub3{
+				padding-left: 30px;
+			}
+			.aside__dropdown-item.is--active &,
+			&:hover{
+				color: @aside_color_active;
+				&::before{
+					background-color: @success;
+				}
+			}
+		}
+	}
+}

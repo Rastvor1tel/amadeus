@@ -1,0 +1,61 @@
+<main class="{{content_prefix}}panel  is--aside-cabinet">
+	[[azbntple 
+		tpl="/src/block/site/default/cabinet/navbar.html"
+		block_prefix="cabinet__navbar-" 
+		block_mod="  "
+	]]
+	<div class="{{content_prefix}}container container  is--aside-cabinet  is--full">
+		[[azbntple 
+			tpl="/src/block/site/default/page-header/panel-cabinet.html"
+			block_prefix="page-header__" 
+			block_mod="{{block_heading_mod}}"
+			block_heading_level="{{block_heading_level}}"
+			block_heading="{{block_heading}}"
+			block_bread_mod="{{block_bread_mod}}"
+		]]		
+		<div class="{{content_prefix}}elem  {{content_mod}}">
+			<div class="{{content_prefix}}row row  is--gutter  {{content_mod}}">
+				<div class="{{content_prefix}}cols cols  {{content_mod}}">	
+					[[azbntple 						
+						tpl="/src/block/site/default/cabinet/card.html"
+						block_prefix="cabinet__card-" 
+						block_mod="  "
+						block_link="{{page.basket}}"
+						block_preview="{{url-path-img}}/temp/card-cabinet-basket.jpg"
+						block_preview_2x="{{url-path-img}}/temp/card-cabinet-basket-2x.jpg"
+						block_heading="Моя<br> корзина"
+						block_heading_small="2 товара"
+						block_cost="3 150"
+					]]
+				</div>
+				<div class="{{content_prefix}}cols cols  {{content_mod}}">	
+					[[azbntple 						
+						tpl="/src/block/site/default/cabinet/card.html"
+						block_prefix="cabinet__card-" 
+						block_mod="  "
+						block_link="{{page.order}}"
+						block_preview="{{url-path-img}}/temp/card-cabinet-order.jpg"
+						block_preview_2x="{{url-path-img}}/temp/card-cabinet-order-2x.jpg"
+						block_heading="Мои<br> заказы"
+						block_heading_small="1 заказ"
+						block_cost="9 150"
+					]]
+				</div>
+				<div class="{{content_prefix}}cols cols  {{content_mod}}">	
+					[[azbntple 						
+						tpl="/src/block/site/default/cabinet/card-contacts.html"
+						block_prefix="cabinet__card-" 
+						block_mod="  "
+						block_link="{{page.profile}}"
+						block_preview="{{url-path-img}}/temp/card-cabinet-profile.jpg"
+						block_preview_2x="{{url-path-img}}/temp/card-cabinet-profile-2x.jpg"
+						block_heading="Профиль"
+						block_fio="Ирина Лаптева"
+						block_email="Irina@mail.ru"
+						block_tel="+7 (960) 855-25-55"
+					]]
+				</div>
+			</div>
+		</div>	
+	</div>
+</main>

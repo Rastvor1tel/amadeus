@@ -1,0 +1,8 @@
+[id^="bx_incl_area"] {
+    display: flex;
+    flex-wrap: wrap;
+}
+.content-block__panel.is--aside-navbar {
+    display: flex;
+    flex-wrap: wrap;
+}

@@ -1,0 +1,33 @@
+<li class="{{navbar_prefix}}nav-item dropdown  {{navbar_mod}}">
+	<a href="#" class="dropdown-toggle {{navbar_prefix}}nav-link" data-toggle="dropdown">
+		<div class="{{navbar_prefix}}nav-caret">
+			[[azbntple tpl="/src/block/site/default/svg-sprite/.html" icon-name="navbar-dropdown" ]]
+		</div>
+		{{navbar_name}}
+	</a>
+	<div class="{{navbar_prefix}}nav-dropdown dropdown-menu">			
+		<ul class="{{navbar_prefix}}nav-dropdown-menu">					
+			[[azbntple 
+				tpl="/src/block/site/default/navbar/item-drop-link.html" 
+				navbar_prefix="navbar__" 
+				navbar_mod="  "
+				navbar_name="Оптовикам" 
+				navbar_link="# "
+			]]					
+			[[azbntple 
+				tpl="/src/block/site/default/navbar/item-drop-link.html" 
+				navbar_prefix="navbar__" 
+				navbar_mod="  "
+				navbar_name="Доставка и оплата" 
+				navbar_link="# "
+			]]					
+			[[azbntple 
+				tpl="/src/block/site/default/navbar/item-drop-link.html" 
+				navbar_prefix="navbar__" 
+				navbar_mod="  "
+				navbar_name="Возврат и гарантия" 
+				navbar_link="# "
+			]]		
+		</ul>
+	</div>
+</li>

@@ -1,0 +1,474 @@
+//===== url =====//
+@url-site 					: 	'';
+@url-path 					: 	'/local/templates/amadeus';
+//@url-path 					: 	'/amadeus/';
+//@url-path 					: 	''; 
+@url-path-css 				: 	'@{url-path}/css';
+@url-path-fonts 			: 	'@{url-path}/fonts';
+@url-path-img 				: 	'@{url-path}/img';
+@url-path-js 				: 	'@{url-path}/js';
+
+//===== color =====//
+//= social
+@color-vk 					: 	#4d7198;
+@color-yb 					: 	#bb0000;
+@color-skype 				: 	#4d7198;
+@color-tg 					: 	#4cade0;
+@color-viber 				: 	#7F40BD;
+@color-wa 					: 	#7AD06D;
+@color-ok 					: 	#ee8208;
+@color-fb 					: 	#3b5998;
+@color-tw 					: 	#1faee9;
+@color-be 					: 	#4176fa;
+@color-pint 				:	#cd1f28;
+@color-inst 				: 	#f26798;
+@color-drb 					: 	#f26798;
+@color-pdf 					:	#bb0706;
+@color-doc 					:	#2186fa;
+@color-xls 					:	#23a565;
+@color-ppt 					:	#cd4b33;
+@color-jpg 					:	#208895;
+@color-zip 					:	#f2e295;
+@color-txt 					:	#6fbbcc;
+
+//= default
+@white 						:	#fff;
+@black 						: 	#000;
+
+@white-de 					:	#DEC7AC;
+@white-e8 					:	#E8D8C6;
+@gray 						:	#DCDADB;
+@gray-d0 					:	#D0CCC7;
+@black-35 					: 	#352C21;
+@red 						: 	#8F2229;
+@red-e1 					: 	#E1535C;
+@brown 						: 	#947766;
+
+@primary 					:	@red;
+@default 					:	@black-35;
+@warning 					:	@brown;
+@success 					:	@red-e1;
+@info 						:	@gray-d0;
+@danger 					:	@gray;
+@gradient 					:	linear-gradient(97deg, @red 0%, #C02932 100%);
+
+//===== fonts =====//
+@montserrat 				:	montserrat-400;
+@montserrat-500 			:	montserrat-500;
+@montserrat-700 			:	montserrat-700;
+@bodoni 					:	bodoni-cyrillic-700;
+
+//===== base =====//
+@b-color 					:	@default; 
+@b-color-a 					:	@primary; 
+@b-color-a-hover 			:	@success; 
+@b-color-h 					:	@warning; 
+@b-block-bg 				:	@info;
+
+@b-html-bg 					:	@white; 
+@b-body-bg 					:	@white; 
+@b-ff 						:	@montserrat;
+@b-ff-2 					:	@bodoni;
+@b-italic 					:	@b-ff;
+@b-bold 					:	@b-ff; 		
+@b-fs 						: 	18px;
+@b-lh 						: 	24px;
+@trs-site 					: 	all 0.35s ease; 
+@trs-option 				: 	0.35s ease; 
+@b_rad 						: 	50px; 
+
+@b-container  				:	1570px;
+@b-container-default  		:	1265px;
+
+//===== navbar =====//
+@navbar_bg_top 				:	@warning;
+@navbar_bg_screen 			:	@white;
+@navbar_bg_screen_hover 	:	@white; 
+@navbar_bg_device 			:	lighten(@warning, 15%);
+@navbar_bg_device 			:	@danger;
+@navbar_ff 					:	@b-ff;
+@navbar_fs 					:	@b-fs; 
+@navbar_lh 					:	@b-lh;  
+@navbar_color_link 			:	@primary;
+@navbar_color 				:	@default;
+@navbar_color_hover 		:	@primary;
+@navbar_active_bg 			:	@success;
+@navbar_active_color 		:	@primary;
+
+@navbar_color_device 		:	@default;
+@navbar_color_device_hover 	:	@default;
+
+@navbar_collapse_bg 		:	@white;
+@navbar_collapse_color  	:	@warning;
+@navbar_collapse_color_hover: 	@primary;
+
+@navbar_collapse_item_bg 	: 	@success;
+
+@navbar_humb_width 			:	40px;
+@navbar_humb_bg 			:	@primary;
+@navbar_humb_bg_active 		:	@primary;
+//= logotip
+@navbar_logo_color 			: 	@primary;
+@navbar_logo_widht 			: 	150px;
+@navbar_logo_height 		: 	60px;
+@navbar_logo_device_widht 	: 	100px;
+@navbar_logo_device_height 	: 	42px;
+
+//= size
+@navbar_device 				:	62px;   
+@navbar_xs 					:	@navbar_device;
+@navbar_sm 					:	@navbar_device;
+@navbar_md 					:	@navbar_device;
+@navbar_screen 				:	168px;
+@navbar_lg 					:	@navbar_screen;
+@navbar_xl 					:	@navbar_screen;
+@navbar_xxl 				:	@navbar_screen; 
+
+@navbar_bottom 				:	54px;
+@navbar_bottom_tabs 		:	64px;
+//===== end's navbar =====//
+//===== aside =====//
+@aside_fs 					: 	@b-fs;
+@aside_lh 					: 	@b-lh;
+@aside_color 				: 	@warning;
+@aside_color_link 			: 	@default;
+@aside_color_active 		: 	@primary;
+@aside_bg 					: 	fadeout(@info, 70%);
+
+@aside_color_device 		: 	@white;
+@aside_bg_device 			: 	@info ;
+
+@aside_icon_color 			: 	@primary;
+@aside_icon_color_hover 	: 	@white;
+
+@aside_humb_size			: 	42px;
+@aside_humb_bg				: 	@default;
+@aside_humb_bg_active		: 	@default;
+
+@aside_height_device 		: 	54px;
+
+@aside_size					: 	415px;
+//===== end's aside =====//
+
+//===== footer =====//
+@footer_color 				:	@white; 
+@footer_color_hover 		:	@white; 
+@footer_bg 					:	@warning;
+@footer_ff 					:	@b-ff; 
+@footer_fs 					:	@b-fs; 
+@footer_lh 					:	@b-lh; 
+
+//= logotip
+@footer_logo_color 			: 	@primary;
+@footer_logo_widht 			: 	120px;
+@footer_logo_height 		: 	50px;
+
+//= size
+/*@footer_xs 				:	75px;*/
+@footer_sm 					:	112px;
+@footer_device_sm_p 		:	112px;
+@footer_device_sm_l 		:	112px;
+@footer_screen 				:	334px;
+@footer_screen_md 			:	84px;
+@footer_screen_lg 			:	@footer_screen;
+@footer_screen_xxl 			:	@footer_screen;
+//===== end's footer =====//
+
+//===== btn =====//
+@btn_fs 					: 	@b-fs;
+@btn_lh 					: 	@b-lh;
+@btn_radius 				:	@b_rad;
+//== base ==
+@btn_color 					:	@white;
+@btn_border_color 			:	@primary;
+@btn_bg_color 				:	@gradient;
+//= hover =
+@btn_hover_color 			:	@white;
+@btn_hover_bg_color 		:	@success;	
+@btn_hover_border_color 	:	@success;
+
+//== white ==
+@btn_w_color 				:	@primary;
+@btn_w_border_color 		:	@primary;
+@btn_w_bg_color 			:	@white;
+//= hover =
+@btn_w_hover_color 			:	@success;	
+@btn_w_hover_border_color 	:	@success;
+@btn_w_hover_bg_color 		:	@white;	
+
+//== invers ==
+@btn_i_color 				:	@warning;
+@btn_i_border_color 		:	@info;
+@btn_i_bg_color 			:	@white;
+//= hover =
+@btn_i_hover_color 			:	@primary;
+@btn_i_hover_border_color 	:	@success;
+@btn_i_hover_bg_color 		:	@white;	
+
+//== link ==
+@btn_l_color 				:	@primary;
+@btn_l_border 				:	9px;
+@btn_l_border_color 		:	@info;
+@btn_l_bg_color 			:	@info;
+//= hover =
+@btn_l_hover_border 		:	2px;
+@btn_l_hover_color 			:	@primary;
+@btn_l_hover_border_color 	:	@primary;
+@btn_l_hover_bg_color 		:	@primary;
+
+//== icon ==
+@btn_icon_size 				: 	40px;
+@btn_icon_bg 				: 	transparent;
+@btn_icon_border_color		: 	@primary;
+@btn_icon_border			: 	2px;
+@btn_icon_color				: 	@primary;
+
+@btn_icon_bg_hover			: 	@primary;
+@btn_icon_border_color_hover: 	@primary;
+@btn_icon_color_hover		: 	@white;
+//===== end's btn =====//
+
+//===== tabs =====//
+@tabs_color 				:	@default;
+@tabs_border_color 			:	@info;
+@tabs_color_active 			:	@primary;
+@tabs_bg_active 			:	@primary;
+@tabs_border_color_active 	:	@primary;
+//===== end's tabs =====//
+
+//===== form  =====//
+//=== input ===
+@input_label				: 	@default;
+@input_bg					:	@white;
+@input_height				:	60px;
+@input_height_textarea		:	145px;
+@input_radius				:	3px;
+@input_border_color			:	@info;
+@input_border_width			:	2px;
+
+//= focus =
+@input_focus_bg				:	@white;
+@input_focus_border_color	:	@primary;
+
+//== input text ==
+@input_t_color				:	@warning;
+@input_t_fs					:	@b-fs;
+@input_t_lh					:	@b-lh;
+//= focus =
+@input_focus_t_color		:	@primary;
+
+//== placeholder ==
+@input_plh_color			:	@warning;
+@input_plh_fs				:	@b-fs;
+@input_plh_lh				:	@b-lh;
+//= focus =
+@input_focus_plh_color		:	@warning;
+
+//== white ==
+@input_w_bg					:	fadeout(@white, 100%);
+@input_w_color				:	@white;
+@input_w_border_color		:	@white;
+//= focus =
+@input_w_focus_bg			:	@white;
+@input_w_focus_border_color	:	@primary;
+@input_w_focus_color		:	@b-color;
+
+//== placeholder ==
+@input_w_plh_color			:	@white;
+//= focus =
+@input_w_focus_plh_color	:	@b-color;
+
+//=== range ===
+@range_height 				: 	32px;
+@range_line_bg 				: 	@warning;
+@range_line_bg_hover 		: 	@primary;
+
+@range_btn_bg 				: 	@primary;
+@range_btn_bg_hover 		: 	@success;
+@range_btn_color 			: 	@white;
+
+//=== radio ===
+@radio_gutter 				: 	4px;
+@radio_size 				: 	40px;
+@radio_radius 				: 	3px;
+@radio_border		 		: 	2px;
+@radio_border_color 		: 	@info;
+@radio_border_color_active	: 	@primary;
+@radio_color 				: 	@warning;
+@radio_color_active			: 	@white;
+@radio_bg 					: 	@white;
+@radio_bg_hover 			: 	@primary;
+@radio_bg_active 			: 	@primary;
+
+//=== error ===
+@form_error_bg 				: 	@primary;
+@form_error_bg_pass 		: 	@success;
+@form_error_bg_load 		: 	@default;
+@form_error_text_color 		: 	@white;
+@form_error_border_color 	: 	@primary;
+@form_error_border_width 	: 	0px;
+@form_error_fs 				: 	@b-fs - 6;
+@form_error_lh 				: 	@b-lh - 6;
+@form_error_radius 			: 	0;
+
+//=== switch ===
+@switch_color				:	@warning;
+@switch_fs					:	@b-fs;
+@switch_lh					:	@b-lh;
+@switch_size				:	16px;
+@switch_border_width		:	2px;
+@switch_border_color		:	@warning;
+@switch_bg_color			:	transparent;
+//= focus =
+@switch_focus_color			:	@primary;
+@switch_focus_border_color	:	@primary;
+@switch_focus_bg_color		:	@primary;
+
+//== white ==
+@switch_w_color				:	@white;
+@switch_w_border_color		:	@white;
+@switch_w_bg_color			:	fadeout(@white, 100%);
+//= focus =
+@switch_w_focus_border_color:	@primary;
+//=== search ===
+@search_border 				:	1px;
+@search_radius				:	3px;
+@search_border_color		:	@warning;
+@search_size				:	50px;
+
+@search_input_color			:	@default;
+@search_input_bg			:	@white;
+
+@search_btn_color			:	@white;
+@search_btn_bg				:	@gradient;
+//= focus =
+@search_border_f_color		:	@primary;
+@search_input_f_color		:	@default;
+@search_input_f_bg			:	@white;
+
+@search_btn_f_color			:	@white;
+@search_btn_f_bg			:	@success;
+//===== end's form =====//
+//===== table =====//
+@table_color 				:	@b-color;
+@table_border_color 		:	@danger;
+@table_bg_colspan 			:	@white;
+@table_padding 				:	30px 15px;
+
+@table_head_color 			:	@warning;
+@table_head_bg 				:	fadeout(@danger, 50%);
+@table_head_padding 		:	15px 25px;
+@table_head_border_color 	:	fadeout(@danger, 50%);
+//===== end's table =====//
+
+//===== pagination =====//
+@pagin_gutter 				:	2px;
+@pagin_color 				: 	@warning;
+@pagin_color_hover 			: 	@warning;
+@pagin_color_active 		: 	@white;
+@pagin_bg 					:	@b-color;
+@pagin_bg_hover 			: 	fadeout(@info, 70%);
+@pagin_bg_active 			: 	@primary;
+//===== end's pagination =====//
+
+//===== breadcrumb =====//
+@bread_fs 					: 	@b-fs;
+@bread_lh 					: 	@b-lh;
+@bread_color 				: 	@warning;
+@bread_color_active 		: 	@primary;
+@bread_style_line 			:	solid;
+//===== end's breadcrumb =====//
+
+//===== modals =====//
+@modal_backdrop 			:	@default;
+@modal_backdrop_fade 		:	0.9;
+@modal_bg 					:	@white;
+@modal_border_rad 			:	0;
+@modal_width 				:	760px;
+@modal_width_device 		:	650px;
+@modal_btn_width 			: 	34px;
+@modal_btn_border_rad 		:	50%;
+@modal_btn_color 			:	@primary;
+@modal_btn_bg 				:	@modal_bg;
+@modal_btn_border 			:	2px;
+@modal_btn_border_color 	:	@primary;
+@modal_btn_color_hover 		:	@white;
+@modal_btn_bg_hover 		:	@success;
+@modal_btn_border_color_hover:	@success;
+//===== end's modals =====//
+
+//===== map =====//
+@map_popup_bg 				:	@white;
+@map_popup_color 			:	@primary;
+//===== end's map =====//
+
+//===== continfo =====//
+@continfo_color 			:	@warning;
+@continfo_icon_bg 			:	@white;
+@continfo_icon_color 		:	@primary;
+@continfo_icon_size 		:	20px;
+@continfo_icon_padding 		:	6px;
+@continfo_icon_border 		:	2px;
+@continfo_icon_border_color	:	@primary;
+@continfo_icon_radius		:	5px;
+//===== end's continfo =====//
+
+//===== social =====//
+@soc_size 					: 	32px;
+@soc_border_radius 			: 	50%;
+@soc_border 				: 	@info;
+@soc_bg 					: 	@info;
+@soc_bg_hover 				: 	@info;
+@soc_color 					: 	@info;
+@soc_color_hover 			: 	@white;
+@soc_color_contacts  		:	@b-color;
+@soc_gutter 				:	5px; 
+//===== end's  social =====//
+
+//===== slider slick =====//
+@slider_btn_width 			: 	46px;
+@slider_btn_padding 		: 	0px;
+@slider_btn_color 			: 	@info;
+@slider_btn_bg 				: 	fadeout(@white, 50%);
+@slider_btn_border 			: 	0px;
+@slider_btn_border_color 	: 	fadeout(@white, 100%);
+@slider_btn_radius 			: 	0;
+
+@slider_btn_color_hover 	: 	@white;
+@slider_btn_bg_hover 		: 	@b-color-a;
+@slider_btn_border_color_hover:	@b-color-a;
+
+@slider_dots_bottom 		: 	1.5vw;
+@slider_dots_width 			: 	15px;
+@slider_dots_gutter 		: 	10px;
+@slider_dots_bg 			: 	@warning;
+@slider_dots_radius 		: 	50%;
+@slider_dots_border_color 	: 	@warning;
+@slider_dots_border_width 	: 	1px;
+
+@slider_dots_bg_active 		: 	@white;
+//===== end's slider slick =====//
+//===== cabinet navbar =====//
+@cabinet_nav_fs 			: 	@b-fs;
+@cabinet_nav_lh 			: 	@b-lh;
+@cabinet_nav_color 			: 	@warning;
+@cabinet_nav_color_link 	: 	@default;
+@cabinet_nav_color_active 	: 	@primary;
+@cabinet_nav_bg 			: 	@white;
+
+@cabinet_nav_color_device 	: 	@white;
+@cabinet_nav_bg_device 		: 	@success;
+
+@cabinet_nav_icon_color 	: 	@primary;
+@cabinet_nav_icon_color_hover : @white;
+
+@cabinet_nav_humb_size		: 	42px;
+@cabinet_nav_humb_bg		: 	@white;
+@cabinet_nav_humb_bg_active	: 	@white;
+
+@cabinet_nav_size_device 	: 	54px;
+@cabinet_nav_size			: 	415px;
+
+@cabinet_basket_bar_smart 	:   70px;
+@cabinet_basket_bar_tablet 	:   75px; 
+//===== end's cabinet navbar =====//

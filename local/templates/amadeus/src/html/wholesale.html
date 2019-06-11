@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="ru-RU"> 
+	<head>
+		[[azbntple 
+			tpl="/src/block/site/default/head/.html" 
+			title=" "
+			description=" "
+		]] 		
+	</head>
+	<body class="is--index-page"> 
+		[[azbntple 
+			tpl="/src/block/site/default/navbar/navbar.html"
+			navbar_prefix="navbar__"
+			navbar_mod="is--scroll"
+			navbar_retail="  "
+			navbar_wholesale="is--active"
+		]] 
+		[[azbntple 
+			tpl="/src/block/site/default/header/panel-wholesale.html"
+			block_prefix="header-block__"
+			block_mod="is--wholesale"
+			block_heading="Трикотажная одежда оптом"
+			block_heading_small="Напрямую от производителя с доставкой по всей России"
+			block_btn="Получить оптовый прайс"
+			block_bg="{{url-path-img}}/temp/bg-index-header.jpg"
+		]]	
+		[[azbntple  
+			tpl="/src/block/site/page/index-catalog.html"
+			content_prefix="content-block__"
+			content_mod="is--index-catalog"
+			block_heading_mod="is--h1"
+			block_grid="is--grid"
+			block_heading_level="h2"
+			block_heading="Рекомендуем"
+		]]	
+		[[azbntple  
+			tpl="/src/block/site/page/index-about.html"
+			content_prefix="content-block__"
+			content_mod="is--index-about"
+			block_heading_mod="is--h1"
+			block_heading_level="h2"
+			block_heading="Новым клиентам"
+		]]		
+		[[azbntple 
+			tpl="/src/block/site/default/footer/footer.html"
+			footer_prefix="footer__" 
+		]]
+		[[azbntple tpl="/src/block/site/default/modals/include.html" ]]
+		[[azbntple tpl="/src/block/site/default/script/script.html" ]]
+	</body>
+</html>

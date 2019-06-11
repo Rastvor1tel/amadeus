@@ -1,0 +1,35 @@
+<header class="{{block_prefix}}block  {{block_mod}}"  style="background-image: url({{block_bg}});">
+
+	<div class="container {{block_prefix}}container  {{block_mod}}">
+		<div class="{{block_prefix}}panel  {{block_mod}}">
+			<div class="{{block_prefix}}inner  {{block_mod}}">
+				<div class="{{block_prefix}}heading-small  {{block_mod}}">{{block_heading_small}}</div>
+				<h1 class="{{block_prefix}}heading  {{block_mod}}">{{block_heading}}</h1>
+				<div class="{{block_prefix}}btn  {{block_mod}}">						
+					[[azbntple 
+						tpl="/src/block/site/default/button/link.html"
+						button_prefix="btn__" 
+						button_mod="  "
+						button_link="{{page.catalog}}"
+						button_name="{{block_btn}}" 
+					]]
+				</div>
+				<div class="{{block_prefix}}soc  {{block_mod}}">
+					[[azbntple 
+						tpl="/src/block/site/default/social/panel-header.html" 
+						block_prefix="social__" 
+						block_mod="is--header" 
+					]]
+				</div>
+			</div>
+		</div>
+	</div>	
+	<div class="{{block_prefix}}slider-block  {{block_mod}}">
+		<div class="{{block_prefix}}slider  {{block_mod}}" data-slider-slick="slick-header">
+			<div class="{{block_prefix}}slider-item"><img src="{{url-path-img}}/temp/header-slider-item1.png" class="img-responsive" alt=""></div>
+			<div class="{{block_prefix}}slider-item"><img src="{{url-path-img}}/temp/header-slider-item2.png" class="img-responsive" alt=""></div>
+			<div class="{{block_prefix}}slider-item"><img src="{{url-path-img}}/temp/header-slider-item3.png" class="img-responsive" alt=""></div>
+			<div class="{{block_prefix}}slider-item"><img src="{{url-path-img}}/temp/header-slider-item4.png" class="img-responsive" alt=""></div>
+		</div>
+	</div>
+</header>
