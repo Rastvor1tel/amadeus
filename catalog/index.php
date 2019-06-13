@@ -56,7 +56,7 @@ $APPLICATION->IncludeComponent(
 		"ADD_SECTIONS_CHAIN" => "Y",
 		"ADD_ELEMENT_CHAIN" => "N",
 		"USE_SALE_BESTSELLERS" => "Y",
-		"USE_FILTER" => "N",
+		"USE_FILTER" => "Y",
 		"FILTER_VIEW_MODE" => "VERTICAL",
 		"FILTER_HIDE_ON_MOBILE" => "N",
 		"INSTANT_RELOAD" => "N",
@@ -129,7 +129,7 @@ $APPLICATION->IncludeComponent(
 		"SECTION_TOP_DEPTH" => "2",
 		"SECTIONS_VIEW_MODE" => "LIST",
 		"SECTIONS_SHOW_PARENT_NAME" => "Y",
-		"PAGE_ELEMENT_COUNT" => "12",
+		"PAGE_ELEMENT_COUNT" => "30",
 		"LINE_ELEMENT_COUNT" => "3",
 		"ELEMENT_SORT_FIELD" => "sort",
 		"ELEMENT_SORT_ORDER" => "asc",
@@ -254,6 +254,25 @@ $APPLICATION->IncludeComponent(
 		"USE_ELEMENT_COUNTER" => "Y",
 		"DISABLE_INIT_JS_IN_COMPONENT" => "N",
 		"DETAIL_SET_VIEWED_IN_COMPONENT" => "N",
+		"FILTER_NAME" => "arrfilter",
+		"FILTER_FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"FILTER_PROPERTY_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"FILTER_PRICE_CODE" => array(
+		),
+		"FILTER_OFFERS_FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"FILTER_OFFERS_PROPERTY_CODE" => array(
+			0 => "",
+			1 => "",
+		),
 		"SEF_URL_TEMPLATES" => array(
 			"sections" => "",
 			"section" => "#SECTION_CODE#/",
