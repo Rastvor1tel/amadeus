@@ -192,7 +192,9 @@ class exSetMinMaxProductPrice {
                                 array("ID", "IBLOCK_ID"),
                                 array(),
                                 1,
-                                array($tPrice)))) {
+                                array($tPrice),
+                                false
+                            ))) {
                             $offers = array_shift($offers);
                             if (intval($offers["CATALOG_PRICE_" . $tPrice["ID"]]) > 0) {
                                 CIBLockElement::SetPropertyValueCode($arEl["ID"],
@@ -210,7 +212,9 @@ class exSetMinMaxProductPrice {
                                 array("ID", "IBLOCK_ID"),
                                 array(),
                                 1,
-                                array($tPrice)))) {
+                                array($tPrice),
+                                false
+                            ))) {
                             $offers = array_shift($offers);
                             if (intval($offers["CATALOG_PRICE_" . $tPrice["ID"]]) > 0) {
                                 CIBLockElement::SetPropertyValueCode($arEl["ID"],

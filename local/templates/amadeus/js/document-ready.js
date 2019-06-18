@@ -1043,18 +1043,20 @@ $(function () {
                 name: "method",
                 value: o
             })), new Azbn7__API__Request(s.serialize(), function (t) {
-                s.trigger("reset").empty().remove(), i.trigger("reset"), i.closest(".modal").modal("hide"), $(n).modal()
+                s.trigger("reset").empty().remove(), i.trigger("reset"), i.closest(".modal").modal("hide"),
+                    $(n).modal()
             })
         }
     })
 }), function ($) {
     var k = {
         init: function (t) {
-            return this.data("jqv") && null != this.data("jqv") || (t = k._saveOptions(this, t), $(document).on("click", ".formError", function () {
-                $(this).fadeOut(150, function () {
-                    $(this).closest(".formError").remove()
-                })
-            })), this
+            return this.data("jqv") && null != this.data("jqv") || (t = k._saveOptions(this, t),
+                $(document).on("click", ".formError", function () {
+                    $(this).fadeOut(150, function () {
+                        $(this).closest(".formError").remove()
+                    })
+                })), this
         },
         attach: function (t) {
             var e, i = this;
@@ -1164,7 +1166,8 @@ $(function () {
                         })
                     } else $("html, body").animate({scrollTop: t}, 1100, function () {
                         s.focusFirstField && n.focus()
-                    }), $("html, body").animate({scrollLeft: e}, 1100)
+                    }),
+                        $("html, body").animate({scrollLeft: e}, 1100)
                 } else s.focusFirstField && n.focus();
                 return !1
             }
@@ -1544,7 +1547,8 @@ $(function () {
         _showPrompt: function (t, e, i, s, o, n) {
             t.data("jqv-prompt-at") instanceof jQuery ? t = t.data("jqv-prompt-at") : t.data("jqv-prompt-at") && (t = $(t.data("jqv-prompt-at")));
             var a = k._getPrompt(t);
-            n && (a = !1), $.trim(e) && (a ? k._updatePrompt(t, a, e, i, s, o) : k._buildPrompt(t, e, i, s, o))
+            n && (a = !1),
+            $.trim(e) && (a ? k._updatePrompt(t, a, e, i, s, o) : k._buildPrompt(t, e, i, s, o))
         },
         _buildPrompt: function (t, e, i, s, o) {
             var n = $("<div>");
@@ -1555,7 +1559,8 @@ $(function () {
                 case"load":
                     n.addClass("blackPopup")
             }
-            s && n.addClass("ajaxed"), $("<div>").addClass("formErrorContent").html(e).appendTo(n);
+            s && n.addClass("ajaxed"),
+                $("<div>").addClass("formErrorContent").html(e).appendTo(n);
             var a = t.data("promptPosition") || o.promptPosition;
             if (o.showArrow) {
                 var r = $("<div>").addClass("formErrorArrow");
@@ -1994,13 +1999,15 @@ if (twoGis_cont.length) {
                 s = DG.popup({className: "map__popup"}).setContent(i);
             DG.marker(twoGis_map_data.placemarks[e].coord, {icon: t}).addTo(map).bindPopup(s)
         }
-    }), $(document.body).on("click.azbn7", "[data-office]", null, function (t) {
-        t.preventDefault();
-        var e = $(this).attr("data-coord").split(",");
-        console.dir(e);
-        var i = parseFloat((e[0] || "").trim()), s = parseFloat((e[1] || "").trim());
-        $("[data-office]").removeClass("is--active"), $(this).addClass("is--active"), map.setView([i, s])
-    })
+    }),
+        $(document.body).on("click.azbn7", "[data-office]", null, function (t) {
+            t.preventDefault();
+            var e = $(this).attr("data-coord").split(",");
+            console.dir(e);
+            var i = parseFloat((e[0] || "").trim()), s = parseFloat((e[1] || "").trim());
+            $("[data-office]").removeClass("is--active"),
+                $(this).addClass("is--active"), map.setView([i, s])
+        })
 }
 !function (e) {
     "function" == typeof define && define.amd ? define(["jquery"], function (t) {
@@ -3275,182 +3282,237 @@ if (twoGis_cont.length) {
             return !this.config.mobile && this.util().isMobile(navigator.userAgent)
         }, t
     }()
-}.call(this), $(function () {
-    $(document.body).on("fecss.default", null, {}, function (t) {
-        console.log("body trigger:fecss.default")
-    }), $(document.body).on("fecss.init", null, {}, function (t) {
-        console.log("body trigger:fecss.init");
-        var e = (new Date).getTime();
-        $(document.body).attr("data-created_at", e)
-    }), $(document.body).on("fecss.window.unload", null, {}, function (t, e) {
-        console.log("body trigger:fecss.window.unload: " + JSON.stringify(e))
-    }), $(document.body).on("fecss.ajax.success", null, {}, function (t) {
-        console.log("body trigger:fecss.ajax.success")
-    }), $(document.body).on("fecss.keydown", null, {}, function (t, e) {
-        console.log("body trigger:fecss.keydown: " + JSON.stringify(e))
-    }), $(document.body).on("DOMSubtreeModified", null, {}, function (t, e) {
-    }), $(document.body).on("wheel mousewheel DOMMouseScroll MozMousePixelScroll", function (t) {
-        -t.originalEvent.deltaY || t.originalEvent.detail || t.originalEvent.wheelDelta
-    }), $(document.body).on("changeClass", null, {}, function (t, e) {
-        $(function () {
-        })
-    }), $(function () {
-        var t = "noname-browser", e = navigator.userAgent.toLowerCase();
-        -1 != e.indexOf("msie") && (t = "msie"), -1 != e.indexOf("trident") && (t = "msie"), -1 != e.indexOf("konqueror") && (t = "konqueror"), -1 != e.indexOf("firefox") && (t = "firefox"), -1 != e.indexOf("safari") && (t = "safari"), -1 != e.indexOf("chrome") && (t = "chrome"), -1 != e.indexOf("chromium") && (t = "chromium"), -1 != e.indexOf("opera") && (t = "opera"), -1 != e.indexOf("yabrowser") && (t = "yabrowser"), $("html").eq(0).addClass(t)
-    }), $(function () {
-        $(document.body).on("keydown", function (t) {
-            $(document.body).trigger("fecss.keydown", [{
-                alt: t.altKey,
-                ctrl: t.ctrlKey,
-                shift: t.shiftKey,
-                meta: t.metaKey,
-                key: t.which,
-                liter: String.fromCharCode(t.which)
-            }])
-        })
-    }), $(function () {
-    }), $(document.body).on("click.fecss.scrollto", ".scrollto", {}, function (t) {
-        t.preventDefault(), console.log("body trigger:click.fecss.scrollto");
-        var e = $(this), i = $(e.attr("href")).eq(0), s = parseInt(e.attr("data-scrollto-diff")) || 0,
-            o = parseInt(e.attr("data-scrollto-speed")) || 777;
-        $("html, body").animate({scrollTop: i.offset().top + s}, o), $('[data-scrollto="nav-item"]').removeClass("is--active"), e.parent().addClass("is--active")
-    }), $(document.body).on("click", '[data-scrollto="navbar"].is--open .scrollto', {}, function (t) {
-        (screenJS.isXS() || screenJS.isSM() || screenJS.isMD()) && (t.preventDefault(), $('[data-scrollto="humb"]').trigger("click"))
+}.call(this),
+    $(function () {
+        $(document.body).on("fecss.default", null, {}, function (t) {
+            console.log("body trigger:fecss.default")
+        }),
+            $(document.body).on("fecss.init", null, {}, function (t) {
+                console.log("body trigger:fecss.init");
+                var e = (new Date).getTime();
+                $(document.body).attr("data-created_at", e)
+            }),
+            $(document.body).on("fecss.window.unload", null, {}, function (t, e) {
+                console.log("body trigger:fecss.window.unload: " + JSON.stringify(e))
+            }),
+            $(document.body).on("fecss.ajax.success", null, {}, function (t) {
+                console.log("body trigger:fecss.ajax.success")
+            }),
+            $(document.body).on("fecss.keydown", null, {}, function (t, e) {
+                console.log("body trigger:fecss.keydown: " + JSON.stringify(e))
+            }),
+            $(document.body).on("DOMSubtreeModified", null, {}, function (t, e) {
+            }),
+            $(document.body).on("wheel mousewheel DOMMouseScroll MozMousePixelScroll", function (t) {
+                -t.originalEvent.deltaY || t.originalEvent.detail || t.originalEvent.wheelDelta
+            }),
+            $(document.body).on("changeClass", null, {}, function (t, e) {
+                $(function () {
+                })
+            }),
+            $(function () {
+                var t = "noname-browser", e = navigator.userAgent.toLowerCase();
+                -1 != e.indexOf("msie") && (t = "msie"), -1 != e.indexOf("trident") && (t = "msie"), -1 != e.indexOf("konqueror") && (t = "konqueror"), -1 != e.indexOf("firefox") && (t = "firefox"), -1 != e.indexOf("safari") && (t = "safari"), -1 != e.indexOf("chrome") && (t = "chrome"), -1 != e.indexOf("chromium") && (t = "chromium"), -1 != e.indexOf("opera") && (t = "opera"), -1 != e.indexOf("yabrowser") && (t = "yabrowser"),
+                    $("html").eq(0).addClass(t)
+            }),
+            $(function () {
+                $(document.body).on("keydown", function (t) {
+                    $(document.body).trigger("fecss.keydown", [{
+                        alt: t.altKey,
+                        ctrl: t.ctrlKey,
+                        shift: t.shiftKey,
+                        meta: t.metaKey,
+                        key: t.which,
+                        liter: String.fromCharCode(t.which)
+                    }])
+                })
+            }),
+            $(function () {
+            }),
+            $(document.body).on("click.fecss.scrollto", ".scrollto", {}, function (t) {
+                t.preventDefault(), console.log("body trigger:click.fecss.scrollto");
+                var e = $(this), i = $(e.attr("href")).eq(0), s = parseInt(e.attr("data-scrollto-diff")) || 0,
+                    o = parseInt(e.attr("data-scrollto-speed")) || 777;
+                $("html, body").animate({scrollTop: i.offset().top + s}, o),
+                    $('[data-scrollto="nav-item"]').removeClass("is--active"), e.parent().addClass("is--active")
+            }),
+            $(document.body).on("click", '[data-scrollto="navbar"].is--open .scrollto', {}, function (t) {
+                (screenJS.isXS() || screenJS.isSM() || screenJS.isMD()) && (t.preventDefault(),
+                    $('[data-scrollto="humb"]').trigger("click"))
+            });
+        var t = window.location.pathname;
+        $('.aside__nav a[href="' + t + '"]').parent().addClass("is--active"),
+            $('.aside__dropdown [data-toggle="dropdown"]').on("click", function (t) {
+                t.preventDefault(), t.stopPropagation(),
+                    $(this).parent().siblings().removeClass("open"),
+                    $(this).parent().toggleClass("open")
+            }),
+            $(".aside__nav").closest("body").addClass("is--aside-navbar");
+        t = window.location.pathname;
+        $('.cabinet__navbar-nav a[href="' + t + '"]').parent().addClass("is--active"),
+            $(".cabinet__navbar-block").closest("body").addClass("is--aside-cabinet"),
+            $(".cabinet__basket-total-bar").closest("body").addClass("is--basket-bar"), screenJS.isXS() && $(".cabinet__order-body").removeAttr("id"),
+            $(".cabinet__filter-btn-block").on("click", function (t) {
+                $(this).closest(".cabinet__filter-block").toggleClass("open")
+            }),
+            $(".card-item__btn.is--catalog-page").on("click", function (t) {
+                $(this).toggleClass("is--active")
+            }),
+            $(".form__control[type='tel']").mask("+7 (999) 999-99-99", {placeholder: "+7 (___) ___-__-__"}),
+            $("[data-validation]").validationEngine("attach", {
+                promptPosition: "bottomLeft",
+                scroll: !1
+            }),
+            $(document.body).on("click", ".form__btn-pass", null, function (t) {
+                t.preventDefault();
+                var e = $(this);
+                e.hasClass("is--view") && ($(".form__btn-pass.is--view").removeClass("is--active"),
+                    $(".form__btn-pass.is--hide").addClass("is--active"),
+                    $(".form__control.is--pass").attr("type", "text")), e.hasClass("is--hide") && ($(".form__btn-pass.is--hide").removeClass("is--active"),
+                    $(".form__btn-pass.is--view").addClass("is--active"),
+                    $(".form__control.is--pass").attr("type", "password"))
+            }),
+            $("img").addClass("img-responsive");
+        var e = $(".navbar__hamburger-card"), i = e.data("toggle-nav"), s = e.data("body"), o = e.data("collapse-nav");
+        e.on("click", function () {
+            $(s).toggleClass("is--open-navbar"),
+                $(i).toggleClass("is--open"),
+                $(o).toggleClass("is--open"),
+                $(this).toggleClass("is--active")
+        }),
+            $(document.body).on("click", function (t) {
+                0 == $(t.target).closest(".navbar__block").length && ($(s).removeClass("is--open-navbar"),
+                    $(i).removeClass("is--open"),
+                    $(o).removeClass("is--open"), e.removeClass("is--active"))
+            });
+        t = window.location.pathname;
+        $('.navbar__nav a[href="' + t + '"]').parent().addClass("is--active"),
+            $('.navbar-aside__nav a[href="' + t + '"]').parent().addClass("is--active"),
+            $('.tabs__nav a[href="' + t + '"]').parent().addClass("is--active"),
+            $('[data-azbn-toggle="dropdown"]').on("click", function (t) {
+                $(".azbn-dropdown").toggleClass("open")
+            }),
+            $('.navbar-aside__dropdown [data-toggle="dropdown"]').on("click", function (t) {
+                t.preventDefault(), t.stopPropagation(),
+                    $(this).parent().siblings().removeClass("open"),
+                    $(this).parent().toggleClass("open")
+            }),
+            $(".azbn__search-dropdown").on("shown.bs.dropdown", function (t) {
+                $(".azbn__search-input").focus()
+            });
+        var n, a, r = $(".js-range-slider"), l = $(".js-from"), c = $(".js-to"), d = function () {
+            l.prop("value", n), c.prop("value", a)
+        }, h = function () {
+            range.update({from: n, to: a})
+        };
+        r.ionRangeSlider({
+            step: 1, onChange: function (t) {
+                n = t.from, a = t.to, d()
+            }, onFinish: function (t) {
+                n = t.from, a = t.to, d()
+            }
+        }), /*l.on("change", function () {
+            (n = +$(this).prop("value")) < min && (n = min), a < n && (n = a), d(), h()
+        }),*/ c.on("change", function () {
+            (a = +$(this).prop("value")) > max && (a = max), a < n && (a = n), d(), h()
+        }),
+            $(document.body).on("click.fecss.scrollto", ".scrollto", {}, function (t) {
+                t.preventDefault(), console.log("body trigger:click.fecss.scrollto");
+                var e = $(this), i = $(e.attr("href")).eq(0), s = parseInt(e.attr("data-scrollto-diff")) || 0,
+                    o = parseInt(e.attr("data-scrollto-speed")) || 777;
+                $("html, body").animate({scrollTop: i.offset().top + s}, o),
+                    $(".navbar__nav .navbar__nav-item").removeClass("is--active"), e.parent().addClass("is--active")
+            }),
+            $(document.body).on("click", ".navbar__collapse.is--open .navbar__nav-link.scrollto", {}, function (t) {
+                (screenJS.isXS() || screenJS.isSM() || screenJS.isMD()) && (t.preventDefault(),
+                    $(".navbar__hamburger-btn").trigger("click"))
+            }),
+            $(function () {
+                var t = $('[data-slider-slick="slick-header"]'), e = $('[data-slider-slick="slick-gallery"]'),
+                    i = $('[data-slider-slick="slick-index-catalog"]'), s = $('[data-slider-slick="slick-catalog"]'),
+                    o = $('[data-slider-slick="slick-catalog-view"]'), n = $('[data-slider-slick="slick-catalog-nav"]'),
+                    a = "/local/templates/amadeus",
+                    r = '<button type="button" class="slick-btn  is--prev"><span class="sr-only">Предыдущий слайд</span><svg class="icon-svg icon-icon-prev" role="img"><use xlink:href="' + a + '/img/svg/sprite.svg#icon-prev"></use></svg></button>',
+                    l = '<button type="button" class="slick-btn  is--next"><span class="sr-only">Следующий слайд</span><svg class="icon-svg icon-icon-next" role="img"><use xlink:href="' + a + '/img/svg/sprite.svg#icon-next"></use></svg></button>';
+                $(".slick-cloned .content-block__preview").removeAttr("data-fancybox"), t.slick({
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    infinite: !0,
+                    arrows: !1,
+                    dots: !0,
+                    autoplay: !0,
+                    autoplaySpeed: 4e3,
+                    prevArrow: r,
+                    nextArrow: l,
+                    fade: !0
+                }), i.slick({
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
+                    arrows: !0,
+                    dots: !1,
+                    infinite: !0,
+                    prevArrow: r,
+                    nextArrow: l,
+                    responsive: [{breakpoint: 1025, settings: {slidesToShow: 3, slidesToScroll: 3}}, {
+                        breakpoint: 768,
+                        settings: {slidesToShow: 2, slidesToScroll: 2}
+                    }, {breakpoint: 565, settings: {slidesToShow: 1, slidesToScroll: 1}}]
+                });
+                var c = $(".tabs__link");
+                c.on("click", function () {
+                    var t = $(this), e = t.data("filter");
+                    i.slick("slickUnfilter"), "new" == e ? (i.slick("slickFilter", ".is--new"), c.parent().removeClass("active"), t.parent().addClass("active")) : "hit" == e ? (i.slick("slickFilter", ".is--hit"), c.parent().removeClass("active"), t.parent().addClass("active")) : "discounts" == e && (i.slick("slickFilter", ".is--discounts"), c.parent().removeClass("active"), t.parent().addClass("active"))
+                }), i.slick("slickFilter", ".is--new"), o.slick({
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
+                    arrows: !0,
+                    dots: !1,
+                    infinite: !0,
+                    prevArrow: r,
+                    nextArrow: l,
+                    responsive: [{breakpoint: 1025, settings: {slidesToShow: 3, slidesToScroll: 3}}, {
+                        breakpoint: 768,
+                        settings: {slidesToShow: 2, slidesToScroll: 2}
+                    }, {breakpoint: 565, settings: {slidesToShow: 1, slidesToScroll: 1}}]
+                }), e.slick({
+                    slidesToShow: 4,
+                    slidesToScroll: 4,
+                    arrows: !0,
+                    dots: !0,
+                    infinite: !0,
+                    prevArrow: r,
+                    nextArrow: l,
+                    responsive: [{breakpoint: 1600, settings: {slidesToShow: 3, slidesToScroll: 3}}, {
+                        breakpoint: 768,
+                        settings: {arrows: !1, slidesToShow: 1, slidesToScroll: 1}
+                    }]
+                }), s.slick({
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: !0,
+                    prevArrow: r,
+                    nextArrow: l,
+                    fade: !0,
+                    asNavFor: n
+                }), n.slick({slidesToShow: 5, slidesToScroll: 1, arrows: !1, dots: !1, asNavFor: s, focusOnSelect: !0})
+            }),
+            $(".text__block table").addClass("table table-bordered"),
+            $(".text__block ol").addClass("is--counts"),
+            $(".text__block ul").addClass("is--styled"),
+            $(".text__block .table.table-bordered").wrap('<div class="table-responsive"></div>'),
+            $(window).on("resize", function (t) {
+                $(function () {
+                    var t = 767, e = 992, i = 991, s = 1200, o = 360, n = 769, a = 768, r = 961, l = "window-width",
+                        c = "window-height", d = $(window).outerWidth(!0), h = $(window).outerHeight(!0),
+                        p = $("html body").eq(0);
+                    d < 768 && (p.hasClass("window-width-sm") && p.removeClass("window-width-sm"), p.hasClass("window-width-md") && p.removeClass("window-width-md"), p.hasClass("window-width-lg") && p.removeClass("window-width-lg"), l = "window-width-xs"), t < d && d < e && (p.hasClass("window-width-xs") && p.removeClass("window-width-xs"), p.hasClass("window-width-md") && p.removeClass("window-width-md"), p.hasClass("window-width-lg") && p.removeClass("window-width-lg"), l = "window-width-sm"), i < d && d < s && (p.hasClass("window-width-xs") && p.removeClass("window-width-xs"), p.hasClass("window-width-sm") && p.removeClass("window-width-sm"), p.hasClass("window-width-lg") && p.removeClass("window-width-lg"), l = "window-width-md"), 1199 < d && (p.hasClass("window-width-xs") && p.removeClass("window-width-xs"), p.hasClass("window-width-sm") && p.removeClass("window-width-sm"), p.hasClass("window-width-md") && p.removeClass("window-width-md"), l = "window-width-lg"), h < 361 && (p.hasClass("window-height-sm") && p.removeClass("window-height-sm"), p.hasClass("window-height-md") && p.removeClass("window-height-md"), p.hasClass("window-height-lg") && p.removeClass("window-height-lg"), c = "window-height-xs"), o < h && h < n && (p.hasClass("window-height-xs") && p.removeClass("window-height-xs"), p.hasClass("window-height-md") && p.removeClass("window-height-md"), p.hasClass("window-height-lg") && p.removeClass("window-height-lg"), c = "window-height-sm"), a < h && h < r && (p.hasClass("window-height-xs") && p.removeClass("window-height-xs"), p.hasClass("window-height-sm") && p.removeClass("window-height-sm"), p.hasClass("window-height-lg") && p.removeClass("window-height-lg"), c = "window-height-md"), 960 < h && (p.hasClass("window-height-xs") && p.removeClass("window-height-xs"), p.hasClass("window-height-sm") && p.removeClass("window-height-sm"), p.hasClass("window-height-md") && p.removeClass("window-height-md"), c = "window-height-lg"),
+                        $("html body").eq(0).addClass(l).addClass(c)
+                })
+            }).trigger("resize"),
+            $(window).on("scroll", function (t) {
+                var e = $(document).scrollTop(), i = $(".navbar__block.is--scroll");
+                i.hasClass("opacity") ? e <= 200 && i.removeClass("opacity") : 200 < e && i.addClass("opacity"), i.hasClass("fixed") ? e <= 400 && i.removeClass("fixed") : 400 < e && i.addClass("fixed"), i.hasClass("scroll-navbar") ? e <= 500 && i.removeClass("scroll-navbar") : 500 < e && i.addClass("scroll-navbar")
+            }).trigger("scroll"), window.onbeforeunload = function (t) {
+            $("body").trigger("fecss.window.unload", [t])
+        }, $(document.body).trigger("fecss.init")
     });
-    var t = window.location.pathname;
-    $('.aside__nav a[href="' + t + '"]').parent().addClass("is--active"), $('.aside__dropdown [data-toggle="dropdown"]').on("click", function (t) {
-        t.preventDefault(), t.stopPropagation(), $(this).parent().siblings().removeClass("open"), $(this).parent().toggleClass("open")
-    }), $(".aside__nav").closest("body").addClass("is--aside-navbar");
-    t = window.location.pathname;
-    $('.cabinet__navbar-nav a[href="' + t + '"]').parent().addClass("is--active"), $(".cabinet__navbar-block").closest("body").addClass("is--aside-cabinet"), $(".cabinet__basket-total-bar").closest("body").addClass("is--basket-bar"), screenJS.isXS() && $(".cabinet__order-body").removeAttr("id"), $(".cabinet__filter-nav-item.dropdown").on("click", ".cabinet__filter-nav-dropdown", function (t) {
-        t.preventDefault(), t.stopPropagation()
-    }), $(".cabinet__filter-btn-block").on("click", function (t) {
-        $(this).closest(".cabinet__filter-block").toggleClass("open")
-    }), $(".card-item__btn.is--catalog-page").on("click", function (t) {
-        $(this).toggleClass("is--active")
-    }), $(".form__control[type='tel']").mask("+7 (999) 999-99-99", {placeholder: "+7 (___) ___-__-__"}), $("[data-validation]").validationEngine("attach", {
-        promptPosition: "bottomLeft",
-        scroll: !1
-    }), $(document.body).on("click", ".form__btn-pass", null, function (t) {
-        t.preventDefault();
-        var e = $(this);
-        e.hasClass("is--view") && ($(".form__btn-pass.is--view").removeClass("is--active"), $(".form__btn-pass.is--hide").addClass("is--active"), $(".form__control.is--pass").attr("type", "text")), e.hasClass("is--hide") && ($(".form__btn-pass.is--hide").removeClass("is--active"), $(".form__btn-pass.is--view").addClass("is--active"), $(".form__control.is--pass").attr("type", "password"))
-    }), $("img").addClass("img-responsive");
-    var e = $(".navbar__hamburger-card"), i = e.data("toggle-nav"), s = e.data("body"), o = e.data("collapse-nav");
-    e.on("click", function () {
-        $(s).toggleClass("is--open-navbar"), $(i).toggleClass("is--open"), $(o).toggleClass("is--open"), $(this).toggleClass("is--active")
-    }), $(document.body).on("click", function (t) {
-        0 == $(t.target).closest(".navbar__block").length && ($(s).removeClass("is--open-navbar"), $(i).removeClass("is--open"), $(o).removeClass("is--open"), e.removeClass("is--active"))
-    });
-    t = window.location.pathname;
-    $('.navbar__nav a[href="' + t + '"]').parent().addClass("is--active"), $('.navbar-aside__nav a[href="' + t + '"]').parent().addClass("is--active"), $('.tabs__nav a[href="' + t + '"]').parent().addClass("is--active"), $('[data-azbn-toggle="dropdown"]').on("click", function (t) {
-        $(".azbn-dropdown").toggleClass("open")
-    }), $('.navbar-aside__dropdown [data-toggle="dropdown"]').on("click", function (t) {
-        t.preventDefault(), t.stopPropagation(), $(this).parent().siblings().removeClass("open"), $(this).parent().toggleClass("open")
-    }), $(".azbn__search-dropdown").on("shown.bs.dropdown", function (t) {
-        $(".azbn__search-input").focus()
-    });
-    var n, a, r = $(".js-range-slider"), l = $(".js-from"), c = $(".js-to"), d = function () {
-        l.prop("value", n), c.prop("value", a)
-    }, h = function () {
-        range.update({from: n, to: a})
-    };
-    r.ionRangeSlider({
-        step: 1, onChange: function (t) {
-            n = t.from, a = t.to, d()
-        }, onFinish: function (t) {
-            n = t.from, a = t.to, d()
-        }
-    }), l.on("change", function () {
-        (n = +$(this).prop("value")) < min && (n = min), a < n && (n = a), d(), h()
-    }), c.on("change", function () {
-        (a = +$(this).prop("value")) > max && (a = max), a < n && (a = n), d(), h()
-    }), $(document.body).on("click.fecss.scrollto", ".scrollto", {}, function (t) {
-        t.preventDefault(), console.log("body trigger:click.fecss.scrollto");
-        var e = $(this), i = $(e.attr("href")).eq(0), s = parseInt(e.attr("data-scrollto-diff")) || 0,
-            o = parseInt(e.attr("data-scrollto-speed")) || 777;
-        $("html, body").animate({scrollTop: i.offset().top + s}, o), $(".navbar__nav .navbar__nav-item").removeClass("is--active"), e.parent().addClass("is--active")
-    }), $(document.body).on("click", ".navbar__collapse.is--open .navbar__nav-link.scrollto", {}, function (t) {
-        (screenJS.isXS() || screenJS.isSM() || screenJS.isMD()) && (t.preventDefault(), $(".navbar__hamburger-btn").trigger("click"))
-    }), $(function () {
-        var t = $('[data-slider-slick="slick-header"]'), e = $('[data-slider-slick="slick-gallery"]'),
-            i = $('[data-slider-slick="slick-index-catalog"]'), s = $('[data-slider-slick="slick-catalog"]'),
-            o = $('[data-slider-slick="slick-catalog-view"]'), n = $('[data-slider-slick="slick-catalog-nav"]'),
-            a = "/local/templates/amadeus",
-            r = '<button type="button" class="slick-btn  is--prev"><span class="sr-only">Предыдущий слайд</span><svg class="icon-svg icon-icon-prev" role="img"><use xlink:href="' + a + '/img/svg/sprite.svg#icon-prev"></use></svg></button>',
-            l = '<button type="button" class="slick-btn  is--next"><span class="sr-only">Следующий слайд</span><svg class="icon-svg icon-icon-next" role="img"><use xlink:href="' + a + '/img/svg/sprite.svg#icon-next"></use></svg></button>';
-        $(".slick-cloned .content-block__preview").removeAttr("data-fancybox"), t.slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            infinite: !0,
-            arrows: !1,
-            dots: !0,
-            autoplay: !0,
-            autoplaySpeed: 4e3,
-            prevArrow: r,
-            nextArrow: l,
-            fade: !0
-        }), i.slick({
-            slidesToShow: 4,
-            slidesToScroll: 4,
-            arrows: !0,
-            dots: !1,
-            infinite: !0,
-            prevArrow: r,
-            nextArrow: l,
-            responsive: [{breakpoint: 1025, settings: {slidesToShow: 3, slidesToScroll: 3}}, {
-                breakpoint: 768,
-                settings: {slidesToShow: 2, slidesToScroll: 2}
-            }, {breakpoint: 565, settings: {slidesToShow: 1, slidesToScroll: 1}}]
-        });
-        var c = $(".tabs__link");
-        c.on("click", function () {
-            var t = $(this), e = t.data("filter");
-            i.slick("slickUnfilter"), "new" == e ? (i.slick("slickFilter", ".is--new"), c.parent().removeClass("active"), t.parent().addClass("active")) : "hit" == e ? (i.slick("slickFilter", ".is--hit"), c.parent().removeClass("active"), t.parent().addClass("active")) : "discounts" == e && (i.slick("slickFilter", ".is--discounts"), c.parent().removeClass("active"), t.parent().addClass("active"))
-        }), i.slick("slickFilter", ".is--new"), o.slick({
-            slidesToShow: 4,
-            slidesToScroll: 4,
-            arrows: !0,
-            dots: !1,
-            infinite: !0,
-            prevArrow: r,
-            nextArrow: l,
-            responsive: [{breakpoint: 1025, settings: {slidesToShow: 3, slidesToScroll: 3}}, {
-                breakpoint: 768,
-                settings: {slidesToShow: 2, slidesToScroll: 2}
-            }, {breakpoint: 565, settings: {slidesToShow: 1, slidesToScroll: 1}}]
-        }), e.slick({
-            slidesToShow: 4,
-            slidesToScroll: 4,
-            arrows: !0,
-            dots: !0,
-            infinite: !0,
-            prevArrow: r,
-            nextArrow: l,
-            responsive: [{breakpoint: 1600, settings: {slidesToShow: 3, slidesToScroll: 3}}, {
-                breakpoint: 768,
-                settings: {arrows: !1, slidesToShow: 1, slidesToScroll: 1}
-            }]
-        }), s.slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            arrows: !0,
-            prevArrow: r,
-            nextArrow: l,
-            fade: !0,
-            asNavFor: n
-        }), n.slick({slidesToShow: 5, slidesToScroll: 1, arrows: !1, dots: !1, asNavFor: s, focusOnSelect: !0})
-    }), $(".text__block table").addClass("table table-bordered"), $(".text__block ol").addClass("is--counts"), $(".text__block ul").addClass("is--styled"), $(".text__block .table.table-bordered").wrap('<div class="table-responsive"></div>'), $(window).on("resize", function (t) {
-        $(function () {
-            var t = 767, e = 992, i = 991, s = 1200, o = 360, n = 769, a = 768, r = 961, l = "window-width",
-                c = "window-height", d = $(window).outerWidth(!0), h = $(window).outerHeight(!0),
-                p = $("html body").eq(0);
-            d < 768 && (p.hasClass("window-width-sm") && p.removeClass("window-width-sm"), p.hasClass("window-width-md") && p.removeClass("window-width-md"), p.hasClass("window-width-lg") && p.removeClass("window-width-lg"), l = "window-width-xs"), t < d && d < e && (p.hasClass("window-width-xs") && p.removeClass("window-width-xs"), p.hasClass("window-width-md") && p.removeClass("window-width-md"), p.hasClass("window-width-lg") && p.removeClass("window-width-lg"), l = "window-width-sm"), i < d && d < s && (p.hasClass("window-width-xs") && p.removeClass("window-width-xs"), p.hasClass("window-width-sm") && p.removeClass("window-width-sm"), p.hasClass("window-width-lg") && p.removeClass("window-width-lg"), l = "window-width-md"), 1199 < d && (p.hasClass("window-width-xs") && p.removeClass("window-width-xs"), p.hasClass("window-width-sm") && p.removeClass("window-width-sm"), p.hasClass("window-width-md") && p.removeClass("window-width-md"), l = "window-width-lg"), h < 361 && (p.hasClass("window-height-sm") && p.removeClass("window-height-sm"), p.hasClass("window-height-md") && p.removeClass("window-height-md"), p.hasClass("window-height-lg") && p.removeClass("window-height-lg"), c = "window-height-xs"), o < h && h < n && (p.hasClass("window-height-xs") && p.removeClass("window-height-xs"), p.hasClass("window-height-md") && p.removeClass("window-height-md"), p.hasClass("window-height-lg") && p.removeClass("window-height-lg"), c = "window-height-sm"), a < h && h < r && (p.hasClass("window-height-xs") && p.removeClass("window-height-xs"), p.hasClass("window-height-sm") && p.removeClass("window-height-sm"), p.hasClass("window-height-lg") && p.removeClass("window-height-lg"), c = "window-height-md"), 960 < h && (p.hasClass("window-height-xs") && p.removeClass("window-height-xs"), p.hasClass("window-height-sm") && p.removeClass("window-height-sm"), p.hasClass("window-height-md") && p.removeClass("window-height-md"), c = "window-height-lg"), $("html body").eq(0).addClass(l).addClass(c)
-        })
-    }).trigger("resize"), $(window).on("scroll", function (t) {
-        var e = $(document).scrollTop(), i = $(".navbar__block.is--scroll");
-        i.hasClass("opacity") ? e <= 200 && i.removeClass("opacity") : 200 < e && i.addClass("opacity"), i.hasClass("fixed") ? e <= 400 && i.removeClass("fixed") : 400 < e && i.addClass("fixed"), i.hasClass("scroll-navbar") ? e <= 500 && i.removeClass("scroll-navbar") : 500 < e && i.addClass("scroll-navbar")
-    }).trigger("scroll"), window.onbeforeunload = function (t) {
-        $("body").trigger("fecss.window.unload", [t])
-    }, $(document.body).trigger("fecss.init")
-});
