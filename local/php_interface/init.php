@@ -1,5 +1,9 @@
 <?
 
+use Bitrix\Main\Diag\Debug;
+
+$eventManager = \Bitrix\Main\EventManager::getInstance();
+
 define('AZBN__DIR', __DIR__ . '/azbn/', true);
 define('AZBN__ROOT', '/_azbn7_', true);//$_SERVER["DOCUMENT_ROOT"]
 
@@ -9,25 +13,93 @@ if (file_exists(AZBN__DIR . 'functions.php')) {
     //require_once(AZBN__DIR . 'events.php');
 }
 
+
+/*------new_site------*/
+
+define("TEMPLATE_DIR", "/local/templates/amadeus");
+
+$eventManager->addEventHandler("main", "OnBeforeUserLogin", "OnBeforeUserLogin");
+$eventManager->addEventHandler("main", "OnBeforeUserRegister", "OnBeforeUserRegister");
+$eventManager->addEventHandler("sale", "OnBeforeBasketAdd", "OnBeforeBasketAdd");
+
 /*------helper for breadcrumb------*/
-require_once(dirname(__FILE__).'/classes/ComponentHelper.php');
+require_once(dirname(__FILE__) . '/classes/ComponentHelper.php');
 function ShowNavChain($template = '.default') {
     global $APPLICATION;
     $APPLICATION->IncludeComponent('bitrix:breadcrumb', $template);
 }
+
 /*------end of helper for breadcrumb------*/
 
-/*
-if(\Bitrix\Main\Context::getCurrent()->getRequest()->isAdminSection()) {
-	
-	if(file_exists(AZBN__DIR . 'fields.php')) {
-		require_once(AZBN__DIR . 'fields.php');
-	}
-	
+function getMinOffersPrice($offers) {
+    $minPrice = 0;
+    foreach ($offers as $key => $offer) {
+        if ($offer['CATALOG_PRICE_3'] || $offer['CATALOG_PRICE_4']) {
+            if (CSite::InGroup([9])) {
+                if ($minPrice == 0 || $minPrice > $offer['CATALOG_PRICE_3']) {
+                    $minPrice = $offer['CATALOG_PRICE_3'];
+                }
+            } else {
+                if ($minPrice == 0 || $minPrice > $offer['CATALOG_PRICE_4']) {
+                    $minPrice = $offer['CATALOG_PRICE_4'];
+                }
+            }
+        }
+    }
+    return $minPrice;
 }
-*/
 
-define("TEMPLATE_DIR", "/local/templates/amadeus");
+// авторизация по Login и E-mail
+function OnBeforeUserLogin(&$arFields) {
+    if (isset($_POST['USER_LOGIN'])) {
+        $e = strpos($_POST['USER_LOGIN'], "@");
+        if ((int)$e > 0) {
+            $filter = Array("EMAIL" => $_POST['USER_LOGIN']);
+            $rsUsers = CUser::GetList($by = "id", $order = "desc", $filter);
+            $res = $rsUsers->Fetch();
+            $arFields["LOGIN"] = $res['LOGIN'];
+        }
+    }
+}
+
+// регистрация без Login и ConfirmPassword
+function OnBeforeUserRegister(&$arFields) {
+    if ($_POST['USER_TYPE'])
+        $arFields["GROUP_ID"][] = $_POST['USER_TYPE'];
+    $arFields["LOGIN"] = $arFields["EMAIL"];
+    $arFields["CONFIRM_PASSWORD"] = $arFields["PASSWORD"];
+}
+
+// изменение провайдера цен
+function OnBeforeBasketAdd(&$arFields) {
+    $arFields['PRODUCT_PROVIDER_CLASS'] = "DialProductProvider";
+}
+
+// провайдер цен
+Bitrix\Main\Loader::includeModule('catalog');
+CBitrixComponent::includeComponentClass('dial:profile.info.discount');
+
+class DialProductProvider extends CCatalogProductProvider {
+    public static function GetProductData($params) {
+        // стандартная обработка
+        $result = parent::GetProductData($params);
+
+        if(!$result['DISCOUNT_VALUE']) {
+            // вычисляем модификатор цены
+            $discount = new ProfileInfoDiscount;
+            $discount = $discount->getDiscount();
+            if ($discount)
+                $modifier = $discount / 100;
+            else
+                $modifier = 1;
+            $result['PRICE'] *= $modifier;
+            $result['BASE_PRICE'] -= $result['PRICE'];
+        }
+        return $result;
+    }
+}
+
+/*------end_of_new_site------*/
 
 class exSite {
     public function _ShowH1() {
@@ -70,52 +142,6 @@ class exSite {
         return NULL;
     }
 }
-
-/* Email вместо логина */
-AddEventHandler("main", "OnBeforeUserRegister", "CustomOnBeforeUserRegister");
-function CustomOnBeforeUserRegister(&$arFields) {
-    if (isset($arFields["LOGIN"])) {
-        $arFields["EMAIL"] = $arFields["LOGIN"];
-    }
-}
-
-// -
-
-/* Обработка Web форм */
-AddEventHandler("form", "onAfterResultAdd", "CWebFormOnBeforeResultAdd");
-function CWebFormOnBeforeResultAdd($FORM_ID, $RESULT_ID) {
-    if (intval($FORM_ID) > 0 &&
-        intval($RESULT_ID) > 0) {
-
-        /* Купить в 1 клик */
-        $form = "BuyOneClick";
-        if (is_array($form = CForm::GetList(($by = "sort"),
-                ($order = "asc"),
-                array("SID" => $form),
-                $isFiltered)->Fetch()) &&
-            $form["ID"] == $FORM_ID) {
-
-            if (isset($_POST["ELEMENT_ID"]) &&
-                intval($_POST["ELEMENT_ID"]) > 0 &&
-                CModule::IncludeModule("iblock")) {
-                $arElement = intval($_POST["ELEMENT_ID"]);
-                if (is_array($arElement = CIBlockElement::GetList(array(),
-                    array("ID" => $arElement),
-                    false,
-                    false,
-                    array("ID", "NAME", "IBLOCK_ID", "DETAIL_PAGE_URL"))->GetNext())) {
-                    CFormResult::SetField($RESULT_ID, "PAGE_ELEMENT", $_SERVER["REQUEST_SCHEME"] . "://" . $_SERVER["SERVER_NAME"] . $arElement["DETAIL_PAGE_URL"]);
-                    CFormResult::SetField($RESULT_ID, "ELEMENT_NAME", $arElement["NAME"]);
-                }
-            }
-
-        }
-        // -
-
-    }
-}
-
-// -
 
 /* Минимальная/Максимальная стоимость товара */
 AddEventHandler("catalog", "OnPriceAdd", array("exSetMinMaxProductPrice", "OnHandlerPrice"));

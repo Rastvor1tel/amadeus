@@ -12,18 +12,22 @@
         </div>
         <div class="cabinet__userbar-group">
             <div class="cabinet__userbar-heading"><a href="<?=$arResult['LINK']?>"><?=$arResult['NAME']?></a></div>
-            <div class="cabinet__userbar-contacts">
-                <div class="cabinet__userbar-icon"><svg class="icon-svg icon-contacts-email" role="img">
-                        <use xlink:href="<?=TEMPLATE_DIR?>/img/svg/sprite.svg#contacts-email"></use>
-                    </svg></div>
-                <span><?=$arResult['EMAIL']?></span>
-            </div>
-            <div class="cabinet__userbar-contacts">
-                <div class="cabinet__userbar-icon"><svg class="icon-svg icon-contacts-tel" role="img">
-                        <use xlink:href="<?=TEMPLATE_DIR?>/img/svg/sprite.svg#contacts-tel"></use>
-                    </svg></div>
-                <span><?=$arResult['PHONE']?></span>
-            </div>
+            <?if($arResult['EMAIL']):?>
+                <div class="cabinet__userbar-contacts">
+                    <div class="cabinet__userbar-icon"><svg class="icon-svg icon-contacts-email" role="img">
+                            <use xlink:href="<?=TEMPLATE_DIR?>/img/svg/sprite.svg#contacts-email"></use>
+                        </svg></div>
+                    <span><?=$arResult['EMAIL']?></span>
+                </div>
+            <?endif;?>
+            <?if($arResult['PHONE']):?>
+                <div class="cabinet__userbar-contacts">
+                    <div class="cabinet__userbar-icon"><svg class="icon-svg icon-contacts-tel" role="img">
+                            <use xlink:href="<?=TEMPLATE_DIR?>/img/svg/sprite.svg#contacts-tel"></use>
+                        </svg></div>
+                    <span><?=$arResult['PHONE']?></span>
+                </div>
+            <?endif;?>
         </div>
     </div>
 </div>

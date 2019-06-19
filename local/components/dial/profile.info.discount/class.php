@@ -4,7 +4,7 @@ CBitrixComponent::includeComponentClass('dial:profile.info');
 
 class ProfileInfoDiscount extends ProfileInfo {
 
-    private function getDiscount() {
+    public function getDiscount() {
         $result = $this->getUserField('UF_DISCOUNT');
         return $result;
     }
