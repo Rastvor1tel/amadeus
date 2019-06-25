@@ -1,8 +1,16 @@
 <?
+
+use Bitrix\Main\Context;
+
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Моя корзина");
-?>
-<?
+
+$request = Bitrix\Main\Context::getCurrent()->getRequest();
+$deleteParam = $request->get('BASKET_CLEAR');
+if ($deleteParam == "Y") {
+	CSaleBasket::DeleteAll(CSaleBasket::GetBasketUserID());
+}
+
 $APPLICATION->IncludeComponent(
 	"bitrix:sale.basket.basket", 
 	"site",

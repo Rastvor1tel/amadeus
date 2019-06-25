@@ -89,11 +89,10 @@ class DialProductProvider extends CCatalogProductProvider {
             $discount = new ProfileInfoDiscount;
             $discount = $discount->getDiscount();
             if ($discount)
-                $modifier = $discount / 100;
+                $modifier = 1 - $discount / 100;
             else
                 $modifier = 1;
-            $result['PRICE'] *= $modifier;
-            $result['BASE_PRICE'] -= $result['PRICE'];
+            $result['BASE_PRICE'] *= $modifier;
         }
         return $result;
     }
