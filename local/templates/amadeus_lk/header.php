@@ -102,10 +102,10 @@ IncludeTemplateLangFile(__FILE__);
                         <div class="row navbar__collapse-row  is--jcsb">
                             <div class="navbar__collapse-cols cols">
                                 <ul class="navbar__nav-top">
-                                    <li class="navbar__nav-top-item<?= !CSite::InGroup([9]) ? ' is--active' : ''; ?>">
+                                    <li class="navbar__nav-top-item<?= !CSite::InGroup(GROUP_ID_OPT) ? ' is--active' : ''; ?>">
                                         <span class="navbar__nav-top-link">Розничный покупатель</span>
                                     </li>
-                                    <li class="navbar__nav-top-item<?= CSite::InGroup([9]) ? ' is--active' : ''; ?>">
+                                    <li class="navbar__nav-top-item<?= CSite::InGroup(GROUP_ID_OPT) ? ' is--active' : ''; ?>">
                                         <span class="navbar__nav-top-link">Оптовый покупатель</span>
                                     </li>
                                 </ul>

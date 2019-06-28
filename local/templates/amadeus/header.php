@@ -102,15 +102,46 @@ IncludeTemplateLangFile(__FILE__);
                         <div class="row navbar__collapse-row  is--jcsb">
                             <div class="navbar__collapse-cols cols">
                                 <ul class="navbar__nav-top">
-                                    <li class="navbar__nav-top-item<?= !CSite::InGroup([9]) ? ' is--active' : ''; ?>">
+                                    <li class="navbar__nav-top-item<?= !CSite::InGroup(GROUP_ID_OPT) ? ' is--active' : ''; ?>">
                                         <span class="navbar__nav-top-link">Розничный покупатель</span>
                                     </li>
-                                    <li class="navbar__nav-top-item<?= CSite::InGroup([9]) ? ' is--active' : ''; ?>">
+                                    <li class="navbar__nav-top-item<?= CSite::InGroup(GROUP_ID_OPT) ? ' is--active' : ''; ?>">
                                         <span class="navbar__nav-top-link">Оптовый покупатель</span>
                                     </li>
                                 </ul>
                             </div>
                             <div class="navbar__collapse-cols cols">
+                                <?/*$APPLICATION->IncludeComponent("bitrix:search.title","",Array(
+                                        "SHOW_INPUT" => "Y",
+                                        "INPUT_ID" => "title-search-input",
+                                        "CONTAINER_ID" => "title-search",
+                                        "PRICE_CODE" => array("BASE","RETAIL"),
+                                        "PRICE_VAT_INCLUDE" => "Y",
+                                        "PREVIEW_TRUNCATE_LEN" => "150",
+                                        "SHOW_PREVIEW" => "Y",
+                                        "PREVIEW_WIDTH" => "75",
+                                        "PREVIEW_HEIGHT" => "75",
+                                        "CONVERT_CURRENCY" => "Y",
+                                        "CURRENCY_ID" => "RUB",
+                                        "PAGE" => "#SITE_DIR#search/index.php",
+                                        "NUM_CATEGORIES" => "3",
+                                        "TOP_COUNT" => "10",
+                                        "ORDER" => "date",
+                                        "USE_LANGUAGE_GUESS" => "Y",
+                                        "CHECK_DATES" => "Y",
+                                        "SHOW_OTHERS" => "Y",
+                                        "CATEGORY_0_TITLE" => "Новости",
+                                        "CATEGORY_0" => array("iblock_news"),
+                                        "CATEGORY_0_iblock_news" => array("all"),
+                                        "CATEGORY_1_TITLE" => "Форумы",
+                                        "CATEGORY_1" => array("forum"),
+                                        "CATEGORY_1_forum" => array("all"),
+                                        "CATEGORY_2_TITLE" => "Каталоги",
+                                        "CATEGORY_2" => array("iblock_books"),
+                                        "CATEGORY_2_iblock_books" => "all",
+                                        "CATEGORY_OTHERS_TITLE" => "Прочее"
+                                    )
+                                );*/?>
                                 <form action="<?= SITE_TEMPLATE_PATH ?>/search.html" class="navbar__search-form">
                                     <input type="text" placeholder="Поиск" class="navbar__search-input">
                                     <button type="submit" class="navbar__search-btn">

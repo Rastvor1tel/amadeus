@@ -17,6 +17,7 @@ if (file_exists(AZBN__DIR . 'functions.php')) {
 /*------new_site------*/
 
 define("TEMPLATE_DIR", "/local/templates/amadeus");
+define("GROUP_ID_OPT", [9]);
 
 $eventManager->addEventHandler("main", "OnBeforeUserLogin", "OnBeforeUserLogin");
 $eventManager->addEventHandler("main", "OnBeforeUserRegister", "OnBeforeUserRegister");
@@ -34,15 +35,9 @@ function ShowNavChain($template = '.default') {
 function getMinOffersPrice($offers) {
     $minPrice = 0;
     foreach ($offers as $key => $offer) {
-        if ($offer['CATALOG_PRICE_3'] || $offer['CATALOG_PRICE_4']) {
-            if (CSite::InGroup([9])) {
-                if ($minPrice == 0 || $minPrice > $offer['CATALOG_PRICE_3']) {
-                    $minPrice = $offer['CATALOG_PRICE_3'];
-                }
-            } else {
-                if ($minPrice == 0 || $minPrice > $offer['CATALOG_PRICE_4']) {
-                    $minPrice = $offer['CATALOG_PRICE_4'];
-                }
+        if ($offer['ITEM_PRICES'][0]['PRICE']) {
+            if ($minPrice == 0 || $minPrice > $offer['ITEM_PRICES'][0]['PRICE']) {
+                $minPrice = $offer['ITEM_PRICES'][0]['PRICE'];
             }
         }
     }
