@@ -12,23 +12,23 @@ IncludeTemplateLangFile(__FILE__);
     CJSCore::Init(['ajax']);
     Asset::getInstance()->addString('<meta name="viewport" content="width=device-width">');
     Asset::getInstance()->addString('<meta http-equiv="X-UA-Compatible" content="IE=edge">');
-    Asset::getInstance()->addString('<meta name="msapplication-config" content="' . SITE_TEMPLATE_PATH . '/favicon/browserconfig.xml">');
+    Asset::getInstance()->addString('<meta name="msapplication-config" content="' . TEMPLATE_DIR . '/favicon/browserconfig.xml">');
     Asset::getInstance()->addString('<meta name="apple-mobile-web-app-title" content="amadeus-family.ru">');
     Asset::getInstance()->addString('<meta name="application-name" content="amadeus-family.ru">');
     Asset::getInstance()->addString('<meta name="msapplication-TileColor" content="#ffffff">');
     Asset::getInstance()->addString('<meta name="theme-color" content="#ffffff">');
-    Asset::getInstance()->addString('<link rel="apple-touch-icon" sizes="180x180" href="' . SITE_TEMPLATE_PATH . '/favicon/apple-touch-icon.png">');
-    Asset::getInstance()->addString('<link rel="icon" type="image/png" sizes="32x32" href="' . SITE_TEMPLATE_PATH . '/favicon/favicon-32x32.png">');
-    Asset::getInstance()->addString('<link rel="icon" type="image/png" sizes="16x16" href="' . SITE_TEMPLATE_PATH . '/favicon/favicon-16x16.png">');
-    Asset::getInstance()->addString('<link rel="manifest" href="' . SITE_TEMPLATE_PATH . '/favicon/site.webmanifest">');
-    Asset::getInstance()->addString('<link rel="mask-icon" href="' . SITE_TEMPLATE_PATH . '/favicon/safari-pinned-tab.svg" color="#E31E24">');
-    Asset::getInstance()->addString('<link rel="shortcut icon" href="' . SITE_TEMPLATE_PATH . '/favicon/favicon.ico">');
+    Asset::getInstance()->addString('<link rel="apple-touch-icon" sizes="180x180" href="' . TEMPLATE_DIR . '/favicon/apple-touch-icon.png">');
+    Asset::getInstance()->addString('<link rel="icon" type="image/png" sizes="32x32" href="' . TEMPLATE_DIR . '/favicon/favicon-32x32.png">');
+    Asset::getInstance()->addString('<link rel="icon" type="image/png" sizes="16x16" href="' . TEMPLATE_DIR . '/favicon/favicon-16x16.png">');
+    Asset::getInstance()->addString('<link rel="manifest" href="' . TEMPLATE_DIR . '/favicon/site.webmanifest">');
+    Asset::getInstance()->addString('<link rel="mask-icon" href="' . TEMPLATE_DIR . '/favicon/safari-pinned-tab.svg" color="#E31E24">');
+    Asset::getInstance()->addString('<link rel="shortcut icon" href="' . TEMPLATE_DIR . '/favicon/favicon.ico">');
 
-    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/site.css');
-    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/custom.css');
-    Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/jquery-3.2.1.min.js');
-    Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/document-ready.js');
-    Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . '/js/svg4everybody.min.js');
+    Asset::getInstance()->addCss(TEMPLATE_DIR . '/css/site.css');
+    Asset::getInstance()->addCss(TEMPLATE_DIR . '/css/custom.css');
+    Asset::getInstance()->addJs(TEMPLATE_DIR . '/js/jquery-3.2.1.min.js');
+    Asset::getInstance()->addJs(TEMPLATE_DIR . '/js/document-ready.js');
+    Asset::getInstance()->addJs(TEMPLATE_DIR . '/js/svg4everybody.min.js');
 
     $APPLICATION->ShowHead();
     ?>
@@ -51,9 +51,9 @@ IncludeTemplateLangFile(__FILE__);
             <div class="navbar__container container  is--header">
                 <div class="navbar__header-row row  is--gap-xs">
                     <div class="navbar__header-cols cols  is--logotip">
-                        <a class="navbar__logotip" href="<?= SITE_TEMPLATE_PATH ?>/">
+                        <a class="navbar__logotip" href="<?= TEMPLATE_DIR ?>/">
                             <svg class="icon-svg icon-logotip" role="img">
-                                <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/img/svg/sprite.svg#logotip"></use>
+                                <use xlink:href="<?= TEMPLATE_DIR ?>/img/svg/sprite.svg#logotip"></use>
                             </svg>
                         </a>
                     </div>
@@ -61,11 +61,11 @@ IncludeTemplateLangFile(__FILE__);
                         <div class="navbar__icon-wrap">
                             <a href="/personal/basket/" class="navbar__icon  is--basket">
                                 <svg class="icon-svg icon-icon-basket" role="img">
-                                    <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/img/svg/sprite.svg#icon-basket"></use>
+                                    <use xlink:href="<?= TEMPLATE_DIR ?>/img/svg/sprite.svg#icon-basket"></use>
                                 </svg>
                                 <span class="navbar__icon-bage">20</span>
                             </a>
-                            <a href="<?= SITE_TEMPLATE_PATH ?>/login.html" class="navbar__icon  is--login">
+                            <a href="<?= TEMPLATE_DIR ?>/login.html" class="navbar__icon  is--login">
                                 <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M10.4333 11.7766C10.454 11.7766 10.4747 11.7766 10.4996 11.7766C10.5079 11.7766 10.5161 11.7766 10.5244 11.7766C10.5369 11.7766 10.5534 11.7766 10.5658 11.7766C11.7793 11.7559 12.7609 11.3293 13.4857 10.5134C15.0802 8.71589 14.8152 5.6345 14.7862 5.34045C14.6826 3.13295 13.6389 2.07683 12.7775 1.58397C12.1355 1.21537 11.3859 1.01657 10.5493 1H10.5203C10.5161 1 10.5079 1 10.5037 1H10.4789C10.0191 1 9.11627 1.07455 8.25067 1.56741C7.38092 2.06026 6.32066 3.11638 6.21712 5.34045C6.18813 5.6345 5.92307 8.71589 7.5176 10.5134C8.23824 11.3293 9.21981 11.7559 10.4333 11.7766ZM7.32294 5.44399C7.32294 5.43156 7.32708 5.41914 7.32708 5.41085C7.46376 2.44129 9.57185 2.12239 10.4747 2.12239H10.4913C10.4996 2.12239 10.512 2.12239 10.5244 2.12239C11.6427 2.14724 13.5437 2.60282 13.6721 5.41085C13.6721 5.42328 13.6721 5.4357 13.6762 5.44399C13.6804 5.47298 13.9703 8.2893 12.6532 9.77201C12.1314 10.3601 11.4356 10.65 10.5203 10.6583C10.512 10.6583 10.5079 10.6583 10.4996 10.6583C10.4913 10.6583 10.4872 10.6583 10.4789 10.6583C9.56771 10.65 8.86777 10.3601 8.35007 9.77201C7.03717 8.29758 7.3188 5.46884 7.32294 5.44399Z M19.0108 16.8874C19.0108 16.8832 19.0108 16.8791 19.0108 16.8749C19.0108 16.8418 19.0067 16.8087 19.0067 16.7714C18.9818 15.9514 18.928 14.0338 17.1305 13.4208C17.1181 13.4167 17.1015 13.4125 17.0891 13.4084C15.2212 12.9321 13.6681 11.8553 13.6515 11.8428C13.3989 11.6647 13.051 11.7269 12.8729 11.9795C12.6948 12.2322 12.7569 12.5801 13.0096 12.7581C13.08 12.8078 14.7284 13.9551 16.7909 14.4852C17.7559 14.829 17.8636 15.8602 17.8926 16.8045C17.8926 16.8418 17.8926 16.8749 17.8967 16.9081C17.9008 17.2808 17.876 17.8565 17.8097 18.1878C17.1388 18.5689 14.5089 19.8859 10.508 19.8859C6.52379 19.8859 3.87729 18.5647 3.2022 18.1837C3.13593 17.8524 3.10694 17.2767 3.11523 16.9039C3.11523 16.8708 3.11937 16.8377 3.11937 16.8004C3.14836 15.8561 3.25604 14.8248 4.22104 14.4811C6.28357 13.9509 7.93194 12.7996 8.00235 12.754C8.25499 12.5759 8.31711 12.228 8.13902 11.9754C7.96093 11.7227 7.61304 11.6606 7.3604 11.8387C7.34383 11.8511 5.799 12.928 3.92284 13.4042C3.90628 13.4084 3.89385 13.4125 3.88143 13.4167C2.08396 14.0338 2.03012 15.9514 2.00527 16.7673C2.00527 16.8045 2.00527 16.8377 2.00113 16.8708C2.00113 16.8749 2.00113 16.8791 2.00113 16.8832C1.99699 17.0986 1.99284 18.2044 2.21235 18.7594C2.25377 18.8671 2.32832 18.9582 2.42772 19.0203C2.55196 19.1031 5.5298 21 10.5122 21C15.4946 21 18.4724 19.099 18.5966 19.0203C18.6919 18.9582 18.7706 18.8671 18.812 18.7594C19.0191 18.2086 19.0149 17.1027 19.0108 16.8874Z"/>
                                     <g class="navbar__icon-autoriz">
@@ -111,37 +111,14 @@ IncludeTemplateLangFile(__FILE__);
                                 </ul>
                             </div>
                             <div class="navbar__collapse-cols cols">
-                                <?$APPLICATION->IncludeComponent("bitrix:search.title","",Array(
-                                        "SHOW_INPUT" => "Y",
-                                        "INPUT_ID" => "title-search-input",
-                                        "CONTAINER_ID" => "title-search",
-                                        "PRICE_CODE" => array("BASE","RETAIL"),
-                                        "PRICE_VAT_INCLUDE" => "Y",
-                                        "PREVIEW_TRUNCATE_LEN" => "150",
-                                        "SHOW_PREVIEW" => "Y",
-                                        "PREVIEW_WIDTH" => "75",
-                                        "PREVIEW_HEIGHT" => "75",
-                                        "CONVERT_CURRENCY" => "Y",
-                                        "CURRENCY_ID" => "RUB",
-                                        "PAGE" => "#SITE_DIR#search/index.php",
-                                        "NUM_CATEGORIES" => "3",
-                                        "TOP_COUNT" => "10",
-                                        "ORDER" => "date",
-                                        "USE_LANGUAGE_GUESS" => "Y",
-                                        "CHECK_DATES" => "Y",
-                                        "SHOW_OTHERS" => "Y",
-                                        "CATEGORY_0_TITLE" => "Новости",
-                                        "CATEGORY_0" => array("iblock_news"),
-                                        "CATEGORY_0_iblock_news" => array("all"),
-                                        "CATEGORY_1_TITLE" => "Форумы",
-                                        "CATEGORY_1" => array("forum"),
-                                        "CATEGORY_1_forum" => array("all"),
-                                        "CATEGORY_2_TITLE" => "Каталоги",
-                                        "CATEGORY_2" => array("iblock_books"),
-                                        "CATEGORY_2_iblock_books" => "all",
-                                        "CATEGORY_OTHERS_TITLE" => "Прочее"
-                                    )
-                                );?>
+                                <form action="<?= TEMPLATE_DIR ?>/search.html" class="navbar__search-form">
+                                    <input type="text" placeholder="Поиск" class="navbar__search-input">
+                                    <button type="submit" class="navbar__search-btn">
+                                        <svg class="icon-svg icon-icon-search" role="img">
+                                            <use xlink:href="<?= TEMPLATE_DIR ?>/img/svg/sprite.svg#icon-search"></use>
+                                        </svg>
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -152,7 +129,7 @@ IncludeTemplateLangFile(__FILE__);
                             <div class="navbar__collapse-cols cols  is--left">
                                 <a class="navbar__logotip" href="/">
                                     <svg class="icon-svg icon-logotip" role="img">
-                                        <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/img/svg/sprite.svg#logotip"></use>
+                                        <use xlink:href="<?= TEMPLATE_DIR ?>/img/svg/sprite.svg#logotip"></use>
                                     </svg>
                                 </a>
                             </div>
@@ -229,82 +206,11 @@ IncludeTemplateLangFile(__FILE__);
         </div>
     </div>
 </nav>
-<? if ($APPLICATION->GetCurPage() == '/'): ?>
-    <header class="header-block__block  is--retail"
-            style="background-image: url(/amadeus/img/temp/bg-index-header.jpg);">
-
-        <div class="container header-block__container  is--retail">
-            <div class="header-block__panel  is--retail">
-                <div class="header-block__inner  is--retail">
-                    <div class="header-block__heading-small  is--retail">Интернет-магазин</div>
-                    <h1 class="header-block__heading  is--retail">Трикотажная одежда</h1>
-                    <div class="header-block__btn  is--retail">
-                        <a href="<?= SITE_TEMPLATE_PATH ?>/catalog.html" class="btn__item    ">
-                            <span class="btn__name">Каталог</span>
-                        </a>
-                    </div>
-                    <div class="header-block__soc  is--retail">
-                        <div class="social__block">
-                            <div class="social__row row  is--header">
-                                <div class="social__cols cols  is--header">
-                                    <a href="tg://resolve?domain=amadeusfamily" class="social__item  is--tg  is--header"
-                                       target="_blank">
-                                        <svg class="icon-svg icon-soc-tg" role="img">
-                                            <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/img/svg/sprite.svg#soc-tg"></use>
-                                        </svg>
-                                    </a>
-                                </div>
-                                <div class="social__cols cols  is--header">
-                                    <a href="viber://chat?number=79092258887"
-                                       class="social__item  is--viber  is--header" target="_blank">
-                                        <svg class="icon-svg icon-soc-viber" role="img">
-                                            <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/img/svg/sprite.svg#soc-viber"></use>
-                                        </svg>
-                                    </a>
-                                </div>
-                                <div class="social__cols cols  is--header">
-                                    <a href="https://wa.me/79092258887" class="social__item  is--wa  is--header"
-                                       target="_blank">
-                                        <svg class="icon-svg icon-soc-wa" role="img">
-                                            <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/img/svg/sprite.svg#soc-wa"></use>
-                                        </svg>
-                                    </a>
-                                </div>
-                                <div class="social__cols cols  is--tel  is--header">
-                                    <a href="tel:+79092258887" class="social__tel   is--header">+7 (909) 225-88-87</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="header-block__slider-block  is--retail">
-            <div class="header-block__slider  is--retail" data-slider-slick="slick-header">
-                <div class="header-block__slider-item"><img
-                            src="<?= SITE_TEMPLATE_PATH ?>/img/temp/header-slider-item1.png" class="img-responsive"
-                            alt=""></div>
-                <div class="header-block__slider-item"><img
-                            src="<?= SITE_TEMPLATE_PATH ?>/img/temp/header-slider-item2.png" class="img-responsive"
-                            alt=""></div>
-                <div class="header-block__slider-item"><img
-                            src="<?= SITE_TEMPLATE_PATH ?>/img/temp/header-slider-item3.png" class="img-responsive"
-                            alt=""></div>
-                <div class="header-block__slider-item"><img
-                            src="<?= SITE_TEMPLATE_PATH ?>/img/temp/header-slider-item4.png" class="img-responsive"
-                            alt=""></div>
-            </div>
-        </div>
-    </header>
-<? elseif(explode('/', $APPLICATION->GetCurDir())[1] == 'catalog'): ?>
-<main class="content-block__panel  is--aside-navbar  is--dark-bg">
-<?else:?>
-<main class="content-block__panel  is--aside-navbar  is--bg">
-    <div class="content-block__container container  is--full">
+<main class="content-block__panel  is--aside-cabinet">
+    <div class="content-block__container container is--default-page-xs is--full">
         <div class="page-header__group  is--h1">
             <?$APPLICATION->IncludeComponent('bitrix:breadcrumb', '');?>
             <div class="page-header__panel  is--h1">
                 <h1 class="page-header__heading  is--h1"><?$APPLICATION->ShowTitle(false)?></h1>
             </div>
         </div>
-<? endif; ?>
