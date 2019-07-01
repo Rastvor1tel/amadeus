@@ -1,0 +1,9 @@
+.popup__wrap {
+    width: 100%;
+    max-width: 1000px;
+}
+img.calendar-icon {
+    position: absolute;
+    left: 140px;
+    top: 0;
+}
