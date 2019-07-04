@@ -25,6 +25,7 @@
     Asset::getInstance()->addCss(TEMPLATE_DIR . '/css/site.css');
     Asset::getInstance()->addCss(TEMPLATE_DIR . '/css/custom.css');
     Asset::getInstance()->addJs(TEMPLATE_DIR . '/js/jquery-3.2.1.min.js');
+    Asset::getInstance()->addJs('//maps.api.2gis.ru/2.0/loader.js?pkg=full');
     Asset::getInstance()->addJs(TEMPLATE_DIR . '/js/document-ready.js');
     Asset::getInstance()->addJs(TEMPLATE_DIR . '/js/svg4everybody.min.js');
 

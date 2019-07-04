@@ -134,8 +134,8 @@
                                 ?>
                             </div>
                             <div class="navbar__collapse-cols cols  is--right-center">
-                                <a href="tel:+79092258887" class="continfo__item   is--navbar  is--noicon">
-                                    <span class="continfo__item-name  is--navbar  is--noicon">+7 (909) 225-88-87</span>
+                                <a href="tel:+<?=preg_replace("/[^0-9]/", '', COption::GetOptionString('grain.customsettings','phone'));?>" class="continfo__item   is--navbar  is--noicon">
+                                    <span class="continfo__item-name  is--navbar  is--noicon"><?=COption::GetOptionString('grain.customsettings','phone')?></span>
                                 </a>
                             </div>
                             <div class="navbar__collapse-cols cols  is--right">
