@@ -28,7 +28,7 @@ if($arParams["SHOW_INPUT"] !== "N"):?>
             <input id="<?echo $INPUT_ID?>" type="text" name="q" value="" size="40" maxlength="50" autocomplete="off" placeholder="Поиск" class="navbar__search-input">
             <button name="s" type="submit" class="navbar__search-btn">
                 <svg class="icon-svg icon-icon-search" role="img">
-                    <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/img/svg/sprite.svg#icon-search"></use>
+                    <use xlink:href="<?= TEMPLATE_DIR ?>/img/svg/sprite.svg#icon-search"></use>
                 </svg>
             </button>
         </form>

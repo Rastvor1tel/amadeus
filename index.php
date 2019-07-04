@@ -319,7 +319,7 @@ $APPLICATION->SetPageProperty("keywords", "трикотажная фабрика
 </div>
 <div class="content-block__panel  is--index-about">
     <div class="bg-block__card  is--index-about">
-        <div class="bg-block__inner  is--index-about" style="background-image: url(/amadeus/img/default/bg-index-about.png)"></div>
+        <div class="bg-block__inner  is--index-about" style="background-image: url(<?=TEMPLATE_DIR?>/img/default/bg-index-about.png)"></div>
     </div>
     <div class="content-block__container container  is--index-about">
         <div class="page-header__group  is--h1">
