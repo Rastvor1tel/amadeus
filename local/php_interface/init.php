@@ -13,7 +13,6 @@ if (file_exists(AZBN__DIR . 'functions.php')) {
     //require_once(AZBN__DIR . 'events.php');
 }
 
-
 /*------new_site------*/
 
 define("TEMPLATE_DIR", "/local/templates/amadeus");

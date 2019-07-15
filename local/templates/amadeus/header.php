@@ -14,7 +14,7 @@
                     <div class="header-block__heading-small  is--retail">Интернет-магазин</div>
                     <h1 class="header-block__heading  is--retail">Трикотажная одежда</h1>
                     <div class="header-block__btn  is--retail">
-                        <a href="<?= SITE_TEMPLATE_PATH ?>/catalog.html" class="btn__item    ">
+                        <a href="/catalog/" class="btn__item    ">
                             <span class="btn__name">Каталог</span>
                         </a>
                     </div>

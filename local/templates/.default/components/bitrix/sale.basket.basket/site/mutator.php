@@ -11,7 +11,6 @@ $mobileColumns = array_fill_keys($mobileColumns, true);
 $result['BASKET_ITEM_RENDER_DATA'] = array();
 
 foreach ($this->basketItems as $row) {
-
     $rowData = array(
         'ID' => $row['ID'],
         'PRODUCT_ID' => $row['PRODUCT_ID'],

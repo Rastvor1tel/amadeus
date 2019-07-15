@@ -52,7 +52,7 @@ if ($type == 'sizeList') {
     $colorID = $request->get('colorID');
     $catalogGroup = CPrice::GetBasePrice($productID);
     $optFilter = CSite::InGroup(GROUP_ID_OPT)?'PROPERTY_OPT_USERS_VALUE':'!PROPERTY_OPT_USERS_VALUE';
-    $arOffers = CCatalogSKU::getOffersList($productID, $iblockID, ['PROPERTY_COLOR_REF' => $colorID, $optFilter => 'Да'], ['*', 'CATALOG_GROUP_' . $catalogGroup['CATALOG_GROUP_ID']], ['CODE' => ['COLOR_REF', 'SIZES_CLOTHES', 'OPT_USER']]);
+    $arOffers = CCatalogSKU::getOffersList($productID, $iblockID, ['PROPERTY_COLOR_REF' => $colorID, /*$optFilter => 'Да'*/], ['*', 'CATALOG_GROUP_' . $catalogGroup['CATALOG_GROUP_ID']], ['CODE' => ['COLOR_REF', 'SIZES_CLOTHES', 'OPT_USER']]);
     $arOffers = $arOffers[$productID];
 
     usort($arOffers, "sizeSort");
@@ -76,8 +76,7 @@ if ($type == 'sizeList') {
                                 <path d="M6.9967 14a.6364.6364 0 0 0 .6388-.6385v-5.723h5.7257A.6365.6365 0 0 0 14 7a.6365.6365 0 0 0-.6388-.6385H7.6355V.6385A.6364.6364 0 0 0 6.9967 0c-.1739 0-.3378.0702-.4515.1839a.6226.6226 0 0 0-.184.4512v5.723H.6357c-.174 0-.3378.0703-.4515.184-.1171.117-.1873.274-.184.4512 0 .3544.2843.6385.6388.6385l5.719.0067v5.723c0 .3544.2843.6385.6388.6385z"/>
                             </svg>
                         </button>
-                        <input type="number" class="form__size-qty-input" max="<?= $arOffer['CATALOG_QUANTITY'] ?>"
-                               value="0">
+                        <input type="number" class="form__size-qty-input" max="10000<?/*= $arOffer['CATALOG_QUANTITY'] */?>" value="0">
                         <button type="button" class="form__size-qty-btn  is--minus" data-action="-">
                             <svg width="14" height="2" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M.6385 1.277A.6363.6363 0 0 1 0 .6385.6363.6363 0 0 1 .6385 0h5.723l1.2803.0033h5.7231a.6226.6226 0 0 1 .4512.1839c.1137.1137.1839.2775.1839.4513a.6363.6363 0 0 1-.6385.6385H.6385z"/>

@@ -1,6 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Каталог");
+$iblockID = CSite::InGroup(GROUP_ID_OPT) ? 16 : 2 ;
 ?>
 <?
 $APPLICATION->IncludeComponent(
@@ -9,7 +10,7 @@ $APPLICATION->IncludeComponent(
 	array(
 		"COMPONENT_TEMPLATE" => ".default",
 		"IBLOCK_TYPE" => "catalog",
-		"IBLOCK_ID" => "2",
+		"IBLOCK_ID" => $iblockID,
 		"HIDE_NOT_AVAILABLE" => "N",
 		"HIDE_NOT_AVAILABLE_OFFERS" => "N",
 		"TEMPLATE_THEME" => "blue",
@@ -57,7 +58,7 @@ $APPLICATION->IncludeComponent(
 		"ADD_ELEMENT_CHAIN" => "N",
 		"USE_SALE_BESTSELLERS" => "Y",
 		"USE_FILTER" => "Y",
-		"FILTER_VIEW_MODE" => "VERTICAL",
+		"FILTER_VIEW_MODE" => "HORIZONTAL",
 		"FILTER_HIDE_ON_MOBILE" => "N",
 		"INSTANT_RELOAD" => "N",
 		"USE_REVIEW" => "N",
@@ -65,6 +66,8 @@ $APPLICATION->IncludeComponent(
 		"PRODUCT_ID_VARIABLE" => "id",
 		"USE_COMPARE" => "N",
 		"PRICE_CODE" => array(
+			0 => "Оптовая цена",
+			1 => "Розничная цена",
 		),
 		"USE_PRICE_COUNT" => "N",
 		"SHOW_PRICE_COUNT" => "1",
@@ -147,14 +150,15 @@ $APPLICATION->IncludeComponent(
 		"LIST_BROWSER_TITLE" => "-",
 		"SECTION_BACKGROUND_IMAGE" => "-",
 		"LIST_OFFERS_FIELD_CODE" => array(
-			0 => "",
+			0 => "NAME",
 			1 => "",
 		),
 		"LIST_OFFERS_PROPERTY_CODE" => array(
-			0 => "",
-			1 => "",
+			0 => "COLOR_REF",
+			1 => "SIZES_CLOTHES",
+			2 => "",
 		),
-		"LIST_OFFERS_LIMIT" => "5",
+		"LIST_OFFERS_LIMIT" => "0",
 		"LIST_PRODUCT_BLOCKS_ORDER" => "price,props,sku,quantityLimit,quantity,buttons",
 		"LIST_PRODUCT_ROW_VARIANTS" => "[{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false}]",
 		"LIST_ENLARGE_PRODUCT" => "STRICT",
@@ -178,8 +182,9 @@ $APPLICATION->IncludeComponent(
 			1 => "",
 		),
 		"DETAIL_OFFERS_PROPERTY_CODE" => array(
-			0 => "",
-			1 => "",
+			0 => "COLOR_REF",
+			1 => "SIZES_CLOTHES",
+			2 => "",
 		),
 		"DETAIL_MAIN_BLOCK_PROPERTY_CODE" => array(
 		),
@@ -253,8 +258,8 @@ $APPLICATION->IncludeComponent(
 		"COMPATIBLE_MODE" => "Y",
 		"USE_ELEMENT_COUNTER" => "Y",
 		"DISABLE_INIT_JS_IN_COMPONENT" => "N",
-		"DETAIL_SET_VIEWED_IN_COMPONENT" => "N",
-		"FILTER_NAME" => "arrfilter",
+		"DETAIL_SET_VIEWED_IN_COMPONENT" => "Y",
+		"FILTER_NAME" => "arrFilter",
 		"FILTER_FIELD_CODE" => array(
 			0 => "",
 			1 => "",
@@ -264,13 +269,15 @@ $APPLICATION->IncludeComponent(
 			1 => "",
 		),
 		"FILTER_PRICE_CODE" => array(
+			0 => "Оптовая цена",
+			1 => "Розничная цена",
 		),
 		"FILTER_OFFERS_FIELD_CODE" => array(
 			0 => "",
 			1 => "",
 		),
 		"FILTER_OFFERS_PROPERTY_CODE" => array(
-			0 => "",
+			0 => "SIZES_CLOTHES",
 			1 => "",
 		),
 		"SEF_URL_TEMPLATES" => array(
