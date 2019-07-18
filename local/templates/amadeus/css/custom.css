@@ -5,6 +5,11 @@
 .col-xs-12 {
     width: 100%;
 }
+.basketNotify__text {
+    padding: 40px 30px 20px;
+    font-size: 18px;
+    text-align: center;
+}
 .card-item__preview.is--catalog {
     background: #fff;
     display: flex;

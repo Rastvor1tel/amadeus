@@ -1,13 +1,11 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="ru-RU">
-<?$APPLICATION->IncludeFile('/local/include/head.php');?>
+<?include_once($_SERVER['DOCUMENT_ROOT'].'/local/include/head.php');?>
 <body<?= $APPLICATION->GetCurPage() == '/' ? ' class="is--index-page"' : ''; ?>>
-<?$APPLICATION->IncludeFile('/local/include/header.php');?>
+<?include_once($_SERVER['DOCUMENT_ROOT'].'/local/include/header.php');?>
 <? if ($APPLICATION->GetCurPage() == '/'): ?>
-    <header class="header-block__block  is--retail"
-            style="background-image: url(/amadeus/img/temp/bg-index-header.jpg);">
-
+    <header class="header-block__block  is--retail" style="background-image: url(<?=TEMPLATE_DIR?>/img/temp/bg-index-header.jpg);">
         <div class="container header-block__container  is--retail">
             <div class="header-block__panel  is--retail">
                 <div class="header-block__inner  is--retail">
