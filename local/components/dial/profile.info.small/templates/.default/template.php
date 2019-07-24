@@ -5,9 +5,11 @@
         <div class="cabinet__userbar-preview">
             <img src="<?=$arResult['IMAGE']?$arResult['IMAGE']:TEMPLATE_DIR.'/img/temp/card-lock.jpg';?>" class="img-responsive" alt="">
             <a href="<?=$arResult['LINK']?>" class="cabinet__userbar-btn">
-                <button type="button" class="btn-icon__item  is--dark  is--xs" title="Редактировать"><svg class="icon-svg icon-icon-edit" role="img">
+                <button type="button" class="btn-icon__item  is--dark  is--xs" title="Редактировать">
+                    <svg class="icon-svg icon-icon-edit" role="img">
                         <use xlink:href="<?=TEMPLATE_DIR?>/img/svg/sprite.svg#icon-edit"></use>
-                    </svg></button>
+                    </svg>
+                </button>
             </a>
         </div>
         <div class="cabinet__userbar-group">
@@ -26,6 +28,15 @@
                             <use xlink:href="<?=TEMPLATE_DIR?>/img/svg/sprite.svg#contacts-tel"></use>
                         </svg></div>
                     <span><?=$arResult['PHONE']?></span>
+                </div>
+            <?endif;?>
+            <?
+            CModule::IncludeModule('logictim.balls');
+            $userBonus = cHelper::UserBallance($arResult['ID']);
+            ?>
+            <?if($userBonus):?>
+                <span class="cabinet__userbar-contacts">
+                    <span>Количество бонусов:&nbsp;</span><span><?=$userBonus?></span>
                 </div>
             <?endif;?>
         </div>

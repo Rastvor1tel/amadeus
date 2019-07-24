@@ -10,6 +10,9 @@
     font-size: 18px;
     text-align: center;
 }
+.cabinet__navbar-btn {
+    justify-content: center;
+}
 .card-item__preview.is--catalog {
     background: #fff;
     display: flex;

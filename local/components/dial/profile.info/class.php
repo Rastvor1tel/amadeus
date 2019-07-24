@@ -16,6 +16,7 @@ class ProfileInfo extends CBitrixComponent {
 
     public function getUserArray() {
         $result = [
+            'ID' => $this->getUserField('ID'),
             'NAME' => $this->getUserField('NAME').' '.$this->getUserField('LAST_NAME'),
             'EMAIL' => $this->getUserField('EMAIL'),
             'PHONE' => $this->getUserField('PERSONAL_PHONE'),
