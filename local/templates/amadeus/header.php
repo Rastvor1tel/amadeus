@@ -5,70 +5,97 @@
 <body<?= $APPLICATION->GetCurPage() == '/' ? ' class="is--index-page"' : ''; ?>>
 <?include_once($_SERVER['DOCUMENT_ROOT'].'/local/include/header.php');?>
 <? if ($APPLICATION->GetCurPage() == '/'): ?>
+<?if(CSite::InGroup(GROUP_ID_OPT)):?>
+        <header class="header-block__block  is--wholesale">
+            <?$APPLICATION->IncludeComponent(
+                "bitrix:news.list",
+                "slider_opt",
+                array(
+                    "COMPONENT_TEMPLATE" => "slider_opt",
+                    "IBLOCK_TYPE" => "slider",
+                    "IBLOCK_ID" => "23",
+                    "NEWS_COUNT" => "20",
+                    "PARENT_SECTION" => "301",
+                    "SORT_BY1" => "SORT",
+                    "SORT_ORDER1" => "ASC",
+                    "SORT_BY2" => "ID",
+                    "SORT_ORDER2" => "DESC",
+                    "FILTER_NAME" => "",
+                    "FIELD_CODE" => array(
+                        0 => "",
+                        1 => "",
+                    ),
+                    "PROPERTY_CODE" => array(
+                        0 => "",
+                        1 => "",
+                    ),
+                    "CHECK_DATES" => "Y",
+                    "DETAIL_URL" => "",
+                    "CACHE_TYPE" => "A",
+                    "CACHE_TIME" => "36000000",
+                    "CACHE_FILTER" => "N",
+                    "CACHE_GROUPS" => "Y",
+                    "SET_TITLE" => "N",
+                    "SET_BROWSER_TITLE" => "N",
+                    "SET_META_KEYWORDS" => "N",
+                    "SET_META_DESCRIPTION" => "N",
+                    "SET_LAST_MODIFIED" => "N",
+                    "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+                    "ADD_SECTIONS_CHAIN" => "N",
+                    "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+                    "SET_STATUS_404" => "N",
+                    "SHOW_404" => "N",
+                    "MESSAGE_404" => ""
+                ),
+                false
+            );?>
+        </header>
+    <?else:?>
     <header class="header-block__block  is--retail" style="background-image: url(<?=TEMPLATE_DIR?>/img/temp/bg-index-header.jpg);">
-        <div class="container header-block__container  is--retail">
-            <div class="header-block__panel  is--retail">
-                <div class="header-block__inner  is--retail">
-                    <div class="header-block__heading-small  is--retail">Интернет-магазин</div>
-                    <h1 class="header-block__heading  is--retail">Трикотажная одежда</h1>
-                    <div class="header-block__btn  is--retail">
-                        <a href="/catalog/" class="btn__item    ">
-                            <span class="btn__name">Каталог</span>
-                        </a>
-                    </div>
-                    <div class="header-block__soc  is--retail">
-                        <div class="social__block">
-                            <div class="social__row row  is--header">
-                                <div class="social__cols cols  is--header">
-                                    <a href="tg://resolve?domain=amadeusfamily" class="social__item  is--tg  is--header"
-                                       target="_blank">
-                                        <svg class="icon-svg icon-soc-tg" role="img">
-                                            <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/img/svg/sprite.svg#soc-tg"></use>
-                                        </svg>
-                                    </a>
-                                </div>
-                                <div class="social__cols cols  is--header">
-                                    <a href="viber://chat?number=79092258887"
-                                       class="social__item  is--viber  is--header" target="_blank">
-                                        <svg class="icon-svg icon-soc-viber" role="img">
-                                            <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/img/svg/sprite.svg#soc-viber"></use>
-                                        </svg>
-                                    </a>
-                                </div>
-                                <div class="social__cols cols  is--header">
-                                    <a href="https://wa.me/79092258887" class="social__item  is--wa  is--header"
-                                       target="_blank">
-                                        <svg class="icon-svg icon-soc-wa" role="img">
-                                            <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/img/svg/sprite.svg#soc-wa"></use>
-                                        </svg>
-                                    </a>
-                                </div>
-                                <div class="social__cols cols  is--tel  is--header">
-                                    <a href="tel:+79092258887" class="social__tel   is--header">+7 (909) 225-88-87</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="header-block__slider-block  is--retail">
-            <div class="header-block__slider  is--retail" data-slider-slick="slick-header">
-                <div class="header-block__slider-item"><img
-                            src="<?= SITE_TEMPLATE_PATH ?>/img/temp/header-slider-item1.png" class="img-responsive"
-                            alt=""></div>
-                <div class="header-block__slider-item"><img
-                            src="<?= SITE_TEMPLATE_PATH ?>/img/temp/header-slider-item2.png" class="img-responsive"
-                            alt=""></div>
-                <div class="header-block__slider-item"><img
-                            src="<?= SITE_TEMPLATE_PATH ?>/img/temp/header-slider-item3.png" class="img-responsive"
-                            alt=""></div>
-                <div class="header-block__slider-item"><img
-                            src="<?= SITE_TEMPLATE_PATH ?>/img/temp/header-slider-item4.png" class="img-responsive"
-                            alt=""></div>
-            </div>
-        </div>
+        <?$APPLICATION->IncludeComponent(
+            "bitrix:news.list",
+            "slider_rozn",
+            array(
+                "COMPONENT_TEMPLATE" => "slider_rozn",
+                "IBLOCK_TYPE" => "slider",
+                "IBLOCK_ID" => "23",
+                "NEWS_COUNT" => "20",
+                "PARENT_SECTION" => "300",
+                "SORT_BY1" => "SORT",
+                "SORT_ORDER1" => "ASC",
+                "SORT_BY2" => "ID",
+                "SORT_ORDER2" => "DESC",
+                "FILTER_NAME" => "",
+                "FIELD_CODE" => array(
+                    0 => "",
+                    1 => "",
+                ),
+                "PROPERTY_CODE" => array(
+                    0 => "",
+                    1 => "",
+                ),
+                "CHECK_DATES" => "Y",
+                "DETAIL_URL" => "",
+                "CACHE_TYPE" => "A",
+                "CACHE_TIME" => "36000000",
+                "CACHE_FILTER" => "N",
+                "CACHE_GROUPS" => "Y",
+                "SET_TITLE" => "N",
+                "SET_BROWSER_TITLE" => "N",
+                "SET_META_KEYWORDS" => "N",
+                "SET_META_DESCRIPTION" => "N",
+                "SET_LAST_MODIFIED" => "N",
+                "INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+                "ADD_SECTIONS_CHAIN" => "N",
+                "HIDE_LINK_WHEN_NO_DETAIL" => "N",
+                "SET_STATUS_404" => "N",
+                "SHOW_404" => "N",
+                "MESSAGE_404" => ""
+            ),
+            false
+        );?>
     </header>
+<?endif;?>
 <? elseif(explode('/', $APPLICATION->GetCurDir())[1] == 'catalog'): ?>
 <main class="content-block__panel  is--aside-navbar  is--dark-bg">
 <?else:?>

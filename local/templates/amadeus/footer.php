@@ -5,6 +5,6 @@
         </div>
     </main>
 <?endif;?>
-<?$APPLICATION->IncludeFile('/local/include/footer.php');?>
+<?include_once($_SERVER['DOCUMENT_ROOT'].'/local/include/footer.php');?>
     </body>
 </html>
