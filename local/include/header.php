@@ -51,12 +51,28 @@
                     <div class="navbar__container  container  is--collapse">
                         <div class="row navbar__collapse-row  is--jcsb">
                             <div class="navbar__collapse-cols cols">
+                                <?
+                                if(CSite::InGroup(GROUP_ID_OPT)) {
+                                    $optClass = ' current';
+                                    if (!$_COOKIE['roleValue'])
+                                        $optClass .= ' enabled';
+                                } else {
+                                    $roznClass = ' current';
+                                    if (!$_COOKIE['roleValue'])
+                                        $roznClass .= ' enabled';
+                                }
+                                if ($_COOKIE['roleValue'] == 'opt') {
+                                    $optClass .= ' enabled';
+                                } elseif ($_COOKIE['roleValue'] == 'rozn') {
+                                    $roznClass .= ' enabled';
+                                }
+                                ?>
                                 <ul class="navbar__nav-top">
-                                    <li class="navbar__nav-top-item<?= !CSite::InGroup(GROUP_ID_OPT) ? ' is--active' : ''; ?>">
-                                        <span data-role="rozn" class="navbar__nav-top-link">Розничный покупатель</span>
+                                    <li class="navbar__nav-top-item <?=$roznClass;?>">
+                                        <a href="/" data-role="rozn" class="navbar__nav-top-link">Розничный покупатель</a>
                                     </li>
-                                    <li class="navbar__nav-top-item<?= CSite::InGroup(GROUP_ID_OPT) ? ' is--active' : ''; ?>">
-                                        <span data-role="opt" class="navbar__nav-top-link">Оптовый покупатель</span>
+                                    <li class="navbar__nav-top-item <?=$optClass;?>">
+                                        <a href="/" data-role="opt" class="navbar__nav-top-link">Оптовый покупатель</a>
                                     </li>
                                 </ul>
                             </div>

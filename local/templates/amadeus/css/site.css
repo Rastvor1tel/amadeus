@@ -8719,7 +8719,7 @@ a.footer__logotip, a.footer__logotip:focus, a.footer__logotip:hover {
         border-left: 1px solid rgba(53, 44, 33, .3)
     }
 }
-.navbar__nav-top-item.is--active .navbar__nav-top-link, .navbar__nav-top-link:hover {
+.navbar__nav-top-item.enabled .navbar__nav-top-link, .navbar__nav-top-link:hover {
     background-color: #dcdadb;
     color: #8f2229
 }

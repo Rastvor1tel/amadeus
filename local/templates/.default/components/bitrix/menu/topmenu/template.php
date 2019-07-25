@@ -4,6 +4,11 @@
     <?foreach($arResult as $key => $arItem):?>
         <?if($arItem['IS_PARENT']):?>
             <?if($key == 1):?>
+                <?if($_COOKIE['role'] == 'N'):?>
+                <li class="navbar__nav-item dropdown is--full<?=$arItem['SELECTED']?' is--active':'';?>">
+                    <span class="navbar__nav-link disabled"><?=$arItem['TEXT']?></span>
+                </li>
+                <?else:?>
                 <li class="navbar__nav-item dropdown is--full<?=$arItem['SELECTED']?' is--active':'';?>">
                     <a href="<?=$arItem['LINK']?>" class="dropdown-toggle navbar__nav-link" data-toggle="dropdown">
                         <div class="navbar__nav-caret">
@@ -47,6 +52,7 @@
                         </div>
                     </div>
                 </li>
+                <?endif;?>
             <?else:?>
                 <li class="navbar__nav-item dropdown<?=$arItem['SELECTED']?' is--active':'';?>">
                     <a href="<?=$arItem["LINK"]?>" class="dropdown-toggle navbar__nav-link" data-toggle="dropdown">

@@ -1,16 +1,18 @@
 BX.ready(function () {
     BX.bindDelegate(document.body, 'click', {className: 'navbar__nav-top-item'}, function () {
-        if(!this.classList.contains('is--active')) {
-            var customerRole = this.getElementsByClassName('navbar__nav-top-link')[0].innerText.toLowerCase();
-            BX.setCookie('customerRole', 'wrongRole', {expires: 3600});
+        var role = $(this).find('.navbar__nav-top-link').data('role');
+        BX.setCookie('roleValue', role, {expires: 3600});
+        if(!this.classList.contains('current')) {
+            BX.setCookie('role', 'N', {expires: 3600});
         } else {
-            BX.setCookie('customerRole', 'trueRole', {expires: 3600});
+            BX.setCookie('role', 'Y', {expires: 3600});
         }
     });
 
-    BX.bindDelegate(document.body, 'mousedown', {className: 'navbar__nav-item'}, function () {
-        if((!this.classList.contains('is--full')) && (BX.getCookie('customerRole') == 'wrongRole')) {
-            var customerRole = this.getElementsByClassName('navbar__nav-top-link')[0].innerText.toLowerCase();
+    BX.bindDelegate(document.body, 'click', {className: 'navbar__nav-link'}, function () {
+        if(this.classList.contains('disabled')) {
+            var customerRole = document.querySelector('.navbar__nav-top-item.enabled').textContent.toLowerCase();
+
             var content = BX.create(
                 'div',
                 {

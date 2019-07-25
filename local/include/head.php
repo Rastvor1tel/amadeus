@@ -6,7 +6,7 @@
     use Bitrix\Main\Localization\Loc;
 
     Loc::loadMessages(__FILE__);
-    CJSCore::Init(['ajax']);
+    CJSCore::Init(['ajax', 'popup', 'window']);
 
     Asset::getInstance()->addString('<meta name="viewport" content="width=device-width">');
     Asset::getInstance()->addString('<meta http-equiv="X-UA-Compatible" content="IE=edge">');
