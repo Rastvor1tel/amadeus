@@ -2,7 +2,7 @@
 
 global $APPLICATION;
 $aMenuLinksExt = $APPLICATION->IncludeComponent("bitrix:menu.sections", "", array(
-    "IBLOCK_ID" => 2,
+    "IBLOCK_ID" => $GLOBALS["IBLOCK_ID"],
     "DEPTH_LEVEL" => "2",
     "IS_SEF" => "Y",
     "SEF_BASE_URL" => "/catalog/",

@@ -1,16 +1,16 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Каталог");
-$iblockID = CSite::InGroup(GROUP_ID_OPT) ? 16 : 2 ;
-?>
-<?
+
+echo $GLOBALS["PRICE_TYPE"];
+
 $APPLICATION->IncludeComponent(
-	"bitrix:catalog", 
-	".default", 
+	"bitrix:catalog",
+	".default",
 	array(
 		"COMPONENT_TEMPLATE" => ".default",
-		"IBLOCK_TYPE" => "catalog",
-		"IBLOCK_ID" => $iblockID,
+		"IBLOCK_TYPE" => $GLOBALS["IBLOCK_TYPE"],
+		"IBLOCK_ID" => $GLOBALS["IBLOCK_ID"],
 		"HIDE_NOT_AVAILABLE" => "N",
 		"HIDE_NOT_AVAILABLE_OFFERS" => "N",
 		"TEMPLATE_THEME" => "blue",
@@ -66,8 +66,7 @@ $APPLICATION->IncludeComponent(
 		"PRODUCT_ID_VARIABLE" => "id",
 		"USE_COMPARE" => "N",
 		"PRICE_CODE" => array(
-			0 => "Оптовая цена",
-			1 => "Розничная цена",
+			0 => $GLOBALS["PRICE_TYPE"],
 		),
 		"USE_PRICE_COUNT" => "N",
 		"SHOW_PRICE_COUNT" => "1",
@@ -269,8 +268,7 @@ $APPLICATION->IncludeComponent(
 			1 => "",
 		),
 		"FILTER_PRICE_CODE" => array(
-			0 => "Оптовая цена",
-			1 => "Розничная цена",
+			0 => $GLOBALS["PRICE_TYPE"],
 		),
 		"FILTER_OFFERS_FIELD_CODE" => array(
 			0 => "",

@@ -1,6 +1,8 @@
 <?
-
+use Bitrix\Main\Loader;
 use Bitrix\Main\Diag\Debug;
+
+Loader::includeModule("main");
 
 $eventManager = \Bitrix\Main\EventManager::getInstance();
 

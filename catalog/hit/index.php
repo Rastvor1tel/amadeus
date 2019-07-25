@@ -2,10 +2,7 @@
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Хиты продаж");
 ?>
-<?
-require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
-$APPLICATION->SetTitle("Товары со скидкой");
-?><div class="aside__block is--catalog dropdown">
+<div class="aside__block is--catalog dropdown">
 <?$APPLICATION->IncludeComponent(
     "bitrix:catalog.section.list",
     "catalog",
@@ -15,8 +12,8 @@ $APPLICATION->SetTitle("Товары со скидкой");
         "CACHE_TIME" => "3600",
         "CACHE_TYPE" => "A",
         "COUNT_ELEMENTS" => "N",
-        "IBLOCK_ID" => "2",
-        "IBLOCK_TYPE" => "catalog",
+        "IBLOCK_ID" => $GLOBALS["IBLOCK_ID"],
+        "IBLOCK_TYPE" => $GLOBALS["IBLOCK_TYPE"],
         "SHOW_PARENT_NAME" => "N",
         "VIEW_MODE" => "LIST"
     ),
@@ -70,10 +67,12 @@ $APPLICATION->SetTitle("Товары со скидкой");
                         "FILTER_NAME" => "arrFilter",
                         "FILTER_VIEW_MODE" => "horizontal",
                         "HIDE_NOT_AVAILABLE" => "N",
-                        "IBLOCK_ID" => "2",
-                        "IBLOCK_TYPE" => "catalog",
+                        "IBLOCK_ID" => $GLOBALS["IBLOCK_ID"],
+                        "IBLOCK_TYPE" => $GLOBALS["IBLOCK_TYPE"],
                         "PAGER_PARAMS_NAME" => "arrPager",
-                        "PRICE_CODE" => array(0=>"Оптовая цена",1=>"Розничная цена",),
+                        "PRICE_CODE" => array(
+                            0 => PRICE_TYPE
+                        ),
                         "SAVE_IN_SESSION" => "N",
                         "SECTION_CODE" => "",
                         "SECTION_DESCRIPTION" => "-",
@@ -110,8 +109,8 @@ $APPLICATION->IncludeComponent(
     "bitrix:catalog.section",
     "catalog",
     array(
-        "IBLOCK_TYPE" => "catalog",
-        "IBLOCK_ID" => "2",
+        "IBLOCK_TYPE" => $GLOBALS["IBLOCK_TYPE"],
+        "IBLOCK_ID" => $GLOBALS["IBLOCK_ID"],
         "ELEMENT_SORT_FIELD" => $sort['SORT'],
         "ELEMENT_SORT_ORDER" => $sort['DIRECTION'],
         "ELEMENT_SORT_FIELD2" => "id",
@@ -132,8 +131,7 @@ $APPLICATION->IncludeComponent(
         "DISPLAY_COMPARE" => "N",
         "PAGE_ELEMENT_COUNT" => "12",
         "PRICE_CODE" => array(
-            0 => "Оптовая цена",
-            1 => "Розничная цена",
+            0 => $GLOBALS["PRICE_TYPE"],
         ),
         "USE_PRICE_COUNT" => "N",
         "PRICE_VAT_INCLUDE" => "N",
