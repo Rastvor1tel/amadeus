@@ -89,8 +89,8 @@
                         </div>
                     </div>
                     <div class="footer__cols cols  is--tel   is--footer">
-                        <a href="tel:+<?=preg_replace("/[^0-9]/", '', COption::GetOptionString('grain.customsettings','phone'));?>" class="continfo__item   is--footer">
-                            <span class="continfo__item-name  is--footer"><?=COption::GetOptionString('grain.customsettings','phone')?></span>
+                        <a href="tel:<?=preg_replace("/[^0-9\+]/", '', $GLOBALS["PHONE"]);?>" class="continfo__item   is--footer">
+                            <span class="continfo__item-name  is--footer"><?=$GLOBALS["PHONE"]?></span>
                         </a>
                     </div>
                     <div class="footer__cols cols  is--btn">

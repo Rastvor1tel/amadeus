@@ -6,8 +6,8 @@ $APPLICATION->SetTitle("Поиск");
 	".default", 
 	array(
 		"COMPONENT_TEMPLATE" => ".default",
-		"IBLOCK_TYPE" => "catalog",
-		"IBLOCK_ID" => "2",
+		"IBLOCK_TYPE" => $GLOBALS['IBLOCK_TYPE'],
+		"IBLOCK_ID" => $GLOBALS['IBLOCK_ID'],
 		"ELEMENT_SORT_FIELD" => "sort",
 		"ELEMENT_SORT_ORDER" => "asc",
 		"ELEMENT_SORT_FIELD2" => "id",

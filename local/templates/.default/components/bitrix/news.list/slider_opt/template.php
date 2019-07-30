@@ -7,7 +7,7 @@
             <div class="header-block__heading-small  is--wholesale"><?=$arResult['SLIDER']['SUBTITLE']?></div>
             <div class="header-block__btn  is--wholesale">
                 <a href="<?=$arResult['SLIDER']['LINK']?>" class="btn__item" data-toggle="modal" data-target="#modal-call">
-                    <span class="btn__name">Получить оптовый прайс</span>
+                    <span class="btn__name"><?=$arResult['SLIDER']['BUTTON_TEXT']?></span>
                 </a>
             </div>
             <div class="header-block__soc  is--wholesale">
@@ -40,10 +40,10 @@
                             </a>
                         </div>
                         <?endif;?>
-                        <?if(COption::GetOptionString('grain.customsettings','phone')):?>
+                        <?if($GLOBALS["PHONE"]):?>
                         <div class="social__cols cols  is--tel  is--wholesale">
-                            <a href="tel:+<?=preg_replace("/[^0-9]/", '', COption::GetOptionString('grain.customsettings','phone'));?>" class="social__tel   is--wholesale">
-                                <?=COption::GetOptionString('grain.customsettings','phone');?>
+                            <a href="tel:+<?=preg_replace("/[^0-9]/", '', $GLOBALS["PHONE"]);?>" class="social__tel   is--wholesale">
+                                <?=$GLOBALS["PHONE"];?>
                             </a>
                         </div>
                         <?endif;?>

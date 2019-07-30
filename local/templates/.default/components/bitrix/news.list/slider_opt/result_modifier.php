@@ -5,5 +5,6 @@ $arSection = CIBlockSection::GetList([], ['IBLOCK_ID' => $arResult['SECTION']['P
 $arResult['SLIDER'] = [
     'TITLE' => $arSection['UF_TITLE'],
     'SUBTITLE' => $arSection['UF_SUBTITLE'],
-    'LINK' => $arSection['UF_LINK']
+    'LINK' => $arSection['UF_LINK'],
+    'BUTTON_TEXT' => $arSection['UF_BUTTON_TEXT']
 ];

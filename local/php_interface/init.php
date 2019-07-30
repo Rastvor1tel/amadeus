@@ -2,8 +2,6 @@
 use Bitrix\Main\Loader;
 use Bitrix\Main\Diag\Debug;
 
-Loader::includeModule("main");
-
 $eventManager = \Bitrix\Main\EventManager::getInstance();
 
 define('AZBN__DIR', __DIR__ . '/azbn/', true);
@@ -19,6 +17,8 @@ if (file_exists(AZBN__DIR . 'functions.php')) {
 
 define("TEMPLATE_DIR", "/local/templates/amadeus");
 define("GROUP_ID_OPT", [9]);
+
+//Debug::writeToFile($GLOBALS['USER'], '', '/local/php_interface/log.txt');
 
 $eventManager->addEventHandler("main", "OnBeforeUserLogin", "OnBeforeUserLogin");
 $eventManager->addEventHandler("main", "OnBeforeUserRegister", "OnBeforeUserRegister");

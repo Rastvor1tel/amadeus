@@ -31,16 +31,6 @@
     Asset::getInstance()->addJs(TEMPLATE_DIR . '/js/custom.js');
 
     $APPLICATION->ShowHead();
-
-    if (CSite::InGroup(GROUP_ID_OPT)) {
-        $GLOBALS["IBLOCK_TYPE"] = "1c_catalog";
-        $GLOBALS["IBLOCK_ID"] = 24;
-        $GLOBALS["PRICE_TYPE"] = "сайт";
-    } else {
-        $GLOBALS["IBLOCK_TYPE"] = "catalog";
-        $GLOBALS["IBLOCK_ID"] = 2;
-        $GLOBALS["PRICE_TYPE"] = "Розничная цена";
-    }
     ?>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>

@@ -1,5 +1,11 @@
-<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
-<nav class="navbar__block  is--scroll<?= ($APPLICATION->GetCurPage() == '/') && (!CSite::InGroup(GROUP_ID_OPT)) ? ' is--index' : ''; ?>"
+<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
+
+if(($APPLICATION->GetCurPage() == '/'))
+    if (!CSite::InGroup(GROUP_ID_OPT) || $_COOKIE['roleValue'] == 'rozn') $navClass = ' is--index';
+else
+    $navClass = '';
+?>
+<nav class="navbar__block  is--scroll<?= $navClass ?>"
      data-scrollto="navbar">
     <? $APPLICATION->ShowPanel(); ?>
     <div class="navbar__inner">
@@ -144,8 +150,8 @@
                                 ?>
                             </div>
                             <div class="navbar__collapse-cols cols  is--right-center">
-                                <a href="tel:+<?=preg_replace("/[^0-9]/", '', COption::GetOptionString('grain.customsettings','phone'));?>" class="continfo__item   is--navbar  is--noicon">
-                                    <span class="continfo__item-name  is--navbar  is--noicon"><?=COption::GetOptionString('grain.customsettings','phone')?></span>
+                                <a href="tel:+<?=preg_replace("/[^0-9]/", '', $GLOBALS["PHONE"]);?>" class="continfo__item   is--navbar  is--noicon">
+                                    <span class="continfo__item-name  is--navbar  is--noicon"><?=$GLOBALS["PHONE"]?></span>
                                 </a>
                             </div>
                             <div class="navbar__collapse-cols cols  is--right">

@@ -7,23 +7,23 @@
                         <h4 class="continfo__heading  is--contacts">Склад интернет-магазина Amadeus</h4>
                         <div class="continfo__row row  is--contacts">
                             <div class="continfo__cols cols  is--address  is--contacts">
-                                <a href="#map-2gis" class="continfo__item   is--contacts scrollto" data-office data-coord="<?=COption::GetOptionString('grain.customsettings','coordinates')?>" data-scrollto-diff="-82">
+                                <a href="#map-2gis" class="continfo__item   is--contacts scrollto" data-office data-coord="<?=$GLOBALS["LOCATION"]?>" data-scrollto-diff="-82">
                                         <span class="continfo__item-icon  is--contacts">
                                             <svg class="icon-svg icon-contacts-address" role="img">
                                                 <use xlink:href="<?=TEMPLATE_DIR?>/img/svg/sprite.svg#contacts-address"></use>
                                             </svg>
                                         </span>
-                                    <span class="continfo__item-name  is--contacts"><?=COption::GetOptionString('grain.customsettings','adress')?></span>
+                                    <span class="continfo__item-name  is--contacts"><?=$GLOBALS["ADRESS"]?></span>
                                 </a>
                             </div>
                             <div class="continfo__cols cols  is--contacts">
-                                <a href="tel:+<?=preg_replace("/[^0-9]/", '', COption::GetOptionString('grain.customsettings','phone'));?>" class="continfo__item   is--contacts">
+                                <a href="tel:+<?=preg_replace("/[^0-9]/", '', $GLOBALS["PHONE"]);?>" class="continfo__item   is--contacts">
                                         <span class="continfo__item-icon  is--contacts">
                                             <svg class="icon-svg icon-contacts-tel" role="img">
                                                 <use xlink:href="<?=TEMPLATE_DIR?>/img/svg/sprite.svg#contacts-tel"></use>
                                             </svg>
                                         </span>
-                                    <span class="continfo__item-name  is--contacts"><?=COption::GetOptionString('grain.customsettings','phone')?></span>
+                                    <span class="continfo__item-name  is--contacts"><?=$GLOBALS["PHONE"]?></span>
                                 </a>
                             </div>
                             <div class="continfo__cols cols  is--contacts">
@@ -33,7 +33,7 @@
                                                 <use xlink:href="<?=TEMPLATE_DIR?>/img/svg/sprite.svg#contacts-clock"></use>
                                             </svg>
                                         </span>
-                                    <span class="continfo__item-name  is--contacts"><?=COption::GetOptionString('grain.customsettings','workingtime')?></span>
+                                    <span class="continfo__item-name  is--contacts"><?=$GLOBALS["WORKING_TIME"]?></span>
                                 </div>
                             </div>
                             <div class="continfo__cols cols  is--contacts">
@@ -43,7 +43,7 @@
                                                 <use xlink:href="<?=TEMPLATE_DIR?>/img/svg/sprite.svg#contacts-user"></use>
                                             </svg>
                                         </span>
-                                    <span class="continfo__item-name  is--contacts"><?=COption::GetOptionString('grain.customsettings','name')?></span>
+                                    <span class="continfo__item-name  is--contacts"><?=$GLOBALS["ORGANISATION"]?></span>
                                 </div>
                             </div>
                         </div>
@@ -100,7 +100,7 @@
                 </div>
             </div>
             <div class="content-block__cols cols is--cols-screen-7  is--cols-12">
-                <div class="map__block" id="map-2gis" data-map='{"center" : [<?=COption::GetOptionString('grain.customsettings','coordinates')?>],"zoom" : 18, "placemarks" : [{"coord" : [<?=COption::GetOptionString('grain.customsettings','coordinates')?>], "heading": "Склад интернет-магазина Amadeus"}]}' ></div>
+                <div class="map__block" id="map-2gis" data-map='{"center" : [<?=$GLOBALS["LOCATION"]?>],"zoom" : 18, "placemarks" : [{"coord" : [<?=$GLOBALS["LOCATION"]?>], "heading": "Склад интернет-магазина Amadeus"}]}' ></div>
             </div>
         </div>
     </div>
