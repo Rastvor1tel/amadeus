@@ -115,8 +115,9 @@ $APPLICATION->IncludeComponent(
         "ELEMENT_SORT_FIELD2" => "id",
         "ELEMENT_SORT_ORDER2" => "asc",
         "PROPERTY_CODE" => array(
-            0 => "",
-            1 => "",
+            0 => "NEWPRODUCT",
+            1 => "SALELEADER",
+            2 => "SPECIALOFFER"
         ),
         "FILTER_NAME" => "arrFilter",
         "CACHE_TYPE" => "A",
