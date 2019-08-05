@@ -7,8 +7,8 @@ class SortClassGet extends SortClass {
     private function getSortParam($param, $default = '') {
         switch ($param) {
             case 'price':
-                //$result = 'PROPERTY_MINIMUM_PRICE';
-                $result = 'CATALOG_PRICE_3';
+                $result = 'PROPERTY_MINIMUM_PRICE';
+                //$result = 'CATALOG_PRICE_3';
                 break;
             case 'popular':
                 $result = 'shows';

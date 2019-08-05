@@ -43,9 +43,10 @@
                 </div>
             </div>
             <div class="footer__info">
+                <?$arSite = CSite::GetByID(SITE_ID)->Fetch();?>
                 <div class="footer__row row  is--base">
                     <div class="footer__cols cols  is--copyright">
-                        &copy; Amadeus 2016 - 2018. Все права защищены.
+                        &copy; <?=$arSite['SITE_NAME']?> 2016 - <?=date('Y')?>. Все права защищены.
                     </div>
                     <div class="footer__cols cols  is--soc">
                         <div class="social__block">

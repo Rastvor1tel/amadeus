@@ -16,7 +16,7 @@ $this->setFrameMode(true);
     <ul class="aside__nav">
         <?foreach($arResult['SECTIONS'] as $key => $arSection):?>
             <?if($arSection['SUBSECTIONS']):?>
-                <li class="aside__nav-item dropdown<?=$key==0?' open':'';?>">
+                <li class="aside__nav-item dropdown<?=$arSection['CUR_SECTION']=='Y'?' open':'';?>">
                     <a href="<?=$arSection['SECTION_PAGE_URL']?>" class="aside__nav-link  dropdown-toggle" data-toggle="dropdown">
                         <span><?=$arSection['NAME']?></span>
                         <div class="aside__nav-icon">

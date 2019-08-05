@@ -4,21 +4,10 @@ use Bitrix\Main\Diag\Debug;
 
 $eventManager = \Bitrix\Main\EventManager::getInstance();
 
-define('AZBN__DIR', __DIR__ . '/azbn/', true);
-define('AZBN__ROOT', '/_azbn7_', true);//$_SERVER["DOCUMENT_ROOT"]
-
-if (file_exists(AZBN__DIR . 'functions.php')) {
-    require_once(AZBN__DIR . 'constants.php');
-    require_once(AZBN__DIR . 'functions.php');
-    //require_once(AZBN__DIR . 'events.php');
-}
-
 /*------new_site------*/
 
 define("TEMPLATE_DIR", "/local/templates/amadeus");
 define("GROUP_ID_OPT", [9]);
-
-//Debug::writeToFile($GLOBALS['USER'], '', '/local/php_interface/log.txt');
 
 $eventManager->addEventHandler("main", "OnBeforeUserLogin", "OnBeforeUserLogin");
 $eventManager->addEventHandler("main", "OnBeforeUserRegister", "OnBeforeUserRegister");

@@ -8598,11 +8598,6 @@ a.footer__logotip, a.footer__logotip:focus, a.footer__logotip:hover {
         margin-right: auto
     }
 }
-@media (min-width: 1200px) {
-    .navbar__block.is--index .navbar__collapse-cols.is--right-center {
-        display: none
-    }
-}
 .navbar__collapse-cols.is--right {
     display: none
 }

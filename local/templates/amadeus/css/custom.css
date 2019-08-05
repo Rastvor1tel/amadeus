@@ -1,3 +1,6 @@
+.header-block__btn.is--wholesale .btn__item {
+    margin-bottom: 10px;
+}
 [id^="bx_incl_area"] {
     display: flex;
     flex-wrap: wrap;

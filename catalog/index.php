@@ -138,7 +138,8 @@ $APPLICATION->IncludeComponent(
 		"LIST_PROPERTY_CODE" => array(
 			0 => "NEWPRODUCT",
 			1 => "SALELEADER",
-			2 => "SPECIALOFFER"
+			2 => "SPECIALOFFER",
+			3 => "MINIMUM_PRICE"
 		),
 		"LIST_PROPERTY_CODE_MOBILE" => array(
 		),

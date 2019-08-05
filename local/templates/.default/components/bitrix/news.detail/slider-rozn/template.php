@@ -9,7 +9,7 @@
                 <?foreach($arResult['DISPLAY_PROPERTIES']['BUTTONS']['VALUE'] as $key => $button):?>
                 <a href="<?=$arResult['DISPLAY_PROPERTIES']['BUTTONS']['DESCRIPTION'][$key]?>" class="btn__item">
                     <span class="btn__name"><?=$button?></span>
-                </a>
+                </a><br>
                 <?endforeach;?>
             </div>
             <div class="header-block__soc  is--retail">

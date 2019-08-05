@@ -5,9 +5,9 @@
             <div class="header-block__heading-small  is--wholesale"><?=$arResult['DISPLAY_PROPERTIES']['SUBTITLE']['VALUE']?></div>
             <div class="header-block__btn  is--wholesale">
                 <?foreach($arResult['DISPLAY_PROPERTIES']['BUTTONS']['VALUE'] as $key => $button):?>
-                <a href="<?=$arResult['DISPLAY_PROPERTIES']['BUTTONS']['DESCRIPTION'][$key]?>" class="btn__item" data-toggle="modal" data-target="#modal-call">
+                <a href="<?=$arResult['DISPLAY_PROPERTIES']['BUTTONS']['DESCRIPTION'][$key]?>" class="btn__item" <?=strpos($arResult['DISPLAY_PROPERTIES']['BUTTONS']['DESCRIPTION'][$key], '#modal')+1 == 1?' data-toggle="modal" data-target="'.$arResult['DISPLAY_PROPERTIES']['BUTTONS']['DESCRIPTION'][$key].'"':'';?>>
                     <span class="btn__name"><?=$button?></span>
-                </a>
+                </a><br>
                 <?endforeach;?>
             </div>
             <div class="header-block__soc  is--wholesale">
