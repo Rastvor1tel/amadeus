@@ -6,6 +6,7 @@
                     <div class="continfo__block  is--contacts">
                         <h4 class="continfo__heading  is--contacts">Склад интернет-магазина Amadeus</h4>
                         <div class="continfo__row row  is--contacts">
+                            <?if($GLOBALS["ADRESS"]):?>
                             <div class="continfo__cols cols  is--address  is--contacts">
                                 <a href="#map-2gis" class="continfo__item   is--contacts scrollto" data-office data-coord="<?=$GLOBALS["LOCATION"]?>" data-scrollto-diff="-82">
                                         <span class="continfo__item-icon  is--contacts">
@@ -16,6 +17,8 @@
                                     <span class="continfo__item-name  is--contacts"><?=$GLOBALS["ADRESS"]?></span>
                                 </a>
                             </div>
+                            <?endif;?>
+                            <?if($GLOBALS["PHONE"]):?>
                             <div class="continfo__cols cols  is--contacts">
                                 <a href="tel:+<?=preg_replace("/[^0-9]/", '', $GLOBALS["PHONE"]);?>" class="continfo__item   is--contacts">
                                         <span class="continfo__item-icon  is--contacts">
@@ -26,6 +29,8 @@
                                     <span class="continfo__item-name  is--contacts"><?=$GLOBALS["PHONE"]?></span>
                                 </a>
                             </div>
+                            <?endif;?>
+                            <?if($GLOBALS["WORKING_TIME"]):?>
                             <div class="continfo__cols cols  is--contacts">
                                 <div class="continfo__item   is--contacts">
                                         <span class="continfo__item-icon  is--contacts">
@@ -36,6 +41,8 @@
                                     <span class="continfo__item-name  is--contacts"><?=$GLOBALS["WORKING_TIME"]?></span>
                                 </div>
                             </div>
+                            <?endif;?>
+                            <?if($GLOBALS["ORGANISATION"]):?>
                             <div class="continfo__cols cols  is--contacts">
                                 <div class="continfo__item   is--contacts">
                                         <span class="continfo__item-icon  is--contacts">
@@ -46,6 +53,7 @@
                                     <span class="continfo__item-name  is--contacts"><?=$GLOBALS["ORGANISATION"]?></span>
                                 </div>
                             </div>
+                            <?endif;?>
                         </div>
                     </div>
                 </div>

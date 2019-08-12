@@ -6,7 +6,6 @@
     use Bitrix\Main\Localization\Loc;
 
     Loc::loadMessages(__FILE__);
-    CJSCore::Init(['ajax', 'popup', 'window']);
 
     Asset::getInstance()->addString('<meta name="viewport" content="width=device-width">');
     Asset::getInstance()->addString('<meta http-equiv="X-UA-Compatible" content="IE=edge">');
@@ -24,11 +23,32 @@
 
     Asset::getInstance()->addCss(TEMPLATE_DIR . '/css/site.css');
     Asset::getInstance()->addCss(TEMPLATE_DIR . '/css/custom.css');
-    Asset::getInstance()->addJs(TEMPLATE_DIR . '/js/jquery-3.2.1.min.js');
-    Asset::getInstance()->addJs(TEMPLATE_DIR . '/js/svg4everybody.min.js');
-    Asset::getInstance()->addJs('//maps.api.2gis.ru/2.0/loader.js?pkg=full');
-    Asset::getInstance()->addJs(TEMPLATE_DIR . '/js/document-ready.js');
-    Asset::getInstance()->addJs(TEMPLATE_DIR . '/js/custom.js');
+
+    $arJsConfig = [
+        'svg4everybody' => [
+            'js'  => TEMPLATE_DIR . '/js/svg4everybody.min.js',
+            'skip_core' => true,
+        ],
+        '2gis' => [
+            'js' => '//maps.api.2gis.ru/2.0/loader.js?pkg=full',
+            'skip_core' => true,
+        ],
+        'document_ready' => [
+            'js' => TEMPLATE_DIR . '/js/document-ready.js',
+            'rel' => ['jquery3'],
+            'skip_core' => true,
+        ],
+        'custom' => [
+            'js' => TEMPLATE_DIR . '/js/custom.js',
+            'rel' => ['jquery3'],
+            'skip_core' => true,
+        ]
+    ];
+    foreach ($arJsConfig as $ext => $arExt) {
+        CJSCore::RegisterExt($ext, $arExt);
+    }
+
+    CJSCore::Init(['ajax', 'popup', 'window', 'svg4everybody', 'document_ready', 'custom']);
 
     $APPLICATION->ShowHead();
     ?>

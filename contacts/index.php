@@ -1,6 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Контакты");
+CJSCore::Init(['2gis']);
 ?>
 <?
 $APPLICATION->IncludeComponent("bitrix:main.include", ".default", [

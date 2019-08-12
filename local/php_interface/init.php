@@ -1,4 +1,5 @@
 <?
+
 use Bitrix\Main\Loader;
 use Bitrix\Main\Diag\Debug;
 
@@ -12,7 +13,9 @@ define("GROUP_ID_OPT", [9]);
 $eventManager->addEventHandler("main", "OnBeforeUserLogin", "OnBeforeUserLogin");
 $eventManager->addEventHandler("main", "OnBeforeUserRegister", "OnBeforeUserRegister");
 $eventManager->addEventHandler("sale", "OnBeforeBasketAdd", "OnBeforeBasketAdd");
-$eventManager->addEventHandler("sale", "OnOrderNewSendEmail","OnOrderNewSendEmail");
+$eventManager->addEventHandler("sale", "OnOrderNewSendEmail", "OnOrderNewSendEmail");
+$eventManager->addEventHandler("iblock", "OnAfterIBlockElementUpdate", "elementOffersPrice");
+$eventManager->addEventHandler("iblock", "OnAfterIBlockElementAdd", "elementOffersPrice");
 
 /*------helper for breadcrumb------*/
 require_once(dirname(__FILE__) . '/classes/ComponentHelper.php');
@@ -70,7 +73,7 @@ class DialProductProvider extends CCatalogProductProvider {
         // стандартная обработка
         $result = parent::GetProductData($params);
 
-        if(!$result['DISCOUNT_VALUE']) {
+        if (!$result['DISCOUNT_VALUE']) {
             // вычисляем модификатор цены
             $discount = new ProfileInfoDiscount;
             $discount = $discount->getDiscount();
@@ -87,11 +90,57 @@ class DialProductProvider extends CCatalogProductProvider {
 function OnOrderNewSendEmail($orderID, $eventName, $arFields) {
     $arOrder = CSaleOrder::GetByID($orderID);
     $userGroups = CUser::GetUserGroup($arOrder['USER_ID']);
-    if (in_array(GROUP_ID_OPT, $userGroups)){
+    if (in_array(GROUP_ID_OPT, $userGroups)) {
         $adminEventName = 'SALE_NEW_ORDER_OPT';
-    }else{
+    } else {
         $adminEventName = 'SALE_NEW_ORDER_ROZN';
     }
     CEvent::Send($adminEventName, 's1', $arFields);
 }
+
+function elementOffersPrice($arFields) {
+    if ($arFields["ID"] > 0) {
+        $ID_BLOCK = $arFields['IBLOCK_ID'];
+        $PRICE_TYPE = $arFields['IBLOCK_ID'] == 28 ? 3 : 4;
+        $MIN_PRICE = get_offer_min_price($ID_BLOCK, $arFields['ID'], $PRICE_TYPE);
+        $MAX_PRICE = get_offer_max_price($ID_BLOCK, $arFields['ID'], $PRICE_TYPE);
+        CIBlockElement::SetPropertyValuesEx($arFields['ID'], $ID_BLOCK, array('MINIMUM_PRICE' => $MIN_PRICE));
+        CIBlockElement::SetPropertyValuesEx($arFields['ID'], $ID_BLOCK, array('MAXIMUM_PRICE' => $MAX_PRICE));
+    }
+}
+
+function get_offer_min_price($IBLOCK_ID, $item_id, $PRICE_TYPE) {
+    $ret = 0;
+    $arInfo = CCatalogSKU::GetInfoByProductIBlock($IBLOCK_ID);
+    if (is_array($arInfo)) {
+        $res = CIBlockElement::GetList(Array("PRICE" => "asc"), array('IBLOCK_ID' => $arInfo['IBLOCK_ID'], 'ACTIVE' => 'Y', 'PROPERTY_' . $arInfo['SKU_PROPERTY_ID'] => $item_id), false, false, array('ID', 'NAME'))->GetNext();
+        if ($res) {
+            $ret = GetCatalogProductPrice($res["ID"], $PRICE_TYPE);
+            if ($ret['PRICE']) {
+                $ret = $ret['PRICE'];
+            }
+        }
+    }
+    return $ret;
+}
+
+function get_offer_max_price($IBLOCK_ID, $item_id, $PRICE_TYPE) {
+    $ret = 0;
+    $arInfo = CCatalogSKU::GetInfoByProductIBlock($IBLOCK_ID);
+    if (is_array($arInfo)) {
+        $res = CIBlockElement::GetList(Array("PRICE" => "desc"),
+            array('IBLOCK_ID' => $arInfo['IBLOCK_ID'], 'ACTIVE' => 'Y', 'PROPERTY_' . $arInfo['SKU_PROPERTY_ID'] => $item_id),
+            false,
+            false,
+            array('ID', 'NAME'))->GetNext();
+        if ($res) {
+            $ret = GetCatalogProductPrice($res["ID"], $PRICE_TYPE);
+            if ($ret['PRICE']) {
+                $ret = $ret['PRICE'];
+            }
+        }
+    }
+    return $ret;
+}
+
 ?>

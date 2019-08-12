@@ -1,16 +1,436 @@
+Array
+(
+    [ACTIVE] => Y
+    [MODIFIED_BY] => 759
+    [ACTIVE_FROM] => 
+    [ACTIVE_TO] => 
+    [SORT] => 500
+    [NAME] => Жакет Д-1527
+    [CODE] => zhaket_d_1527
+    [TAGS] => 
+    [PREVIEW_TEXT] => Жакет Д-1527
+    [PREVIEW_TEXT_TYPE] => text
+    [DETAIL_TEXT] => <p>Строгий удлиненный жакет с&nbsp;карманами и&nbsp;декоративными пуговичками отлично впишется в&nbsp;Ваш гардероб. Подойдет как для офисных будней, так и&nbsp;для строгого и&nbsp;утонченного образа для выхода в&nbsp;свет.</p>
+    [DETAIL_TEXT_TYPE] => html
+    [TMP_ID] => 0
+    [PROPERTY_VALUES] => Array
+        (
+            [55] => Array
+                (
+                    [0] => Array
+                        (
+                            [VALUE] => 20
+                        )
 
+                )
 
+            [178] => Array
+                (
+                    [n0] => Array
+                        (
+                            [VALUE] => 
+                        )
 
+                )
 
+            [179] => 
+            [180] => 
+            [2] => Array
+                (
+                    [n0] => Array
+                        (
+                            [VALUE] => 
+                        )
 
+                )
 
+            [3] => Array
+                (
+                    [n0] => Array
+                        (
+                            [VALUE] => 
+                        )
 
+                )
 
+            [4] => Array
+                (
+                    [n0] => Array
+                        (
+                            [VALUE] => 
+                        )
 
+                )
 
+            [5] => Array
+                (
+                    [n1] => Array
+                        (
+                            [VALUE] => 
+                        )
 
+                )
 
+            [6] => 
+            [7] => Array
+                (
+                    [0] => Array
+                        (
+                            [VALUE] => 2
+                        )
 
+                )
 
+            [8] => 
+            [119] => 
+            [9] => Array
+                (
+                    [n0] => Array
+                        (
+                            [VALUE] => 
+                        )
+
+                )
+
+            [10] => Array
+                (
+                    [n0] => Array
+                        (
+                            [VALUE] => 
+                        )
+
+                )
+
+            [11] => Array
+                (
+                    [n0] => Array
+                        (
+                            [VALUE] => 
+                        )
+
+                )
+
+            [12] => Array
+                (
+                    [n0] => Array
+                        (
+                            [VALUE] => 
+                        )
+
+                )
+
+            [14] => Array
+                (
+                    [n0] => Array
+                        (
+                            [VALUE] => 
+                        )
+
+                    [n1] => Array
+                        (
+                            [VALUE] => 
+                        )
+
+                    [n2] => Array
+                        (
+                            [VALUE] => 
+                        )
+
+                    [n3] => Array
+                        (
+                            [VALUE] => 
+                        )
+
+                    [n4] => Array
+                        (
+                            [VALUE] => 
+                        )
+
+                )
+
+            [15] => Array
+                (
+                    [n0] => Array
+                        (
+                            [VALUE] => 
+                        )
+
+                )
+
+            [16] => Array
+                (
+                    [n0] => Array
+                        (
+                            [VALUE] => 
+                        )
+
+                )
+
+            [46] => Array
+                (
+                    [n0] => Array
+                        (
+                            [VALUE] => 
+                        )
+
+                )
+
+            [47] => Array
+                (
+                    [351153777] => Array
+                        (
+                            [VALUE] => Д-1527
+                        )
+
+                )
+
+            [48] => Array
+                (
+                    [n0] => Array
+                        (
+                            [VALUE] => 
+                            [DESCRIPTION] => 
+                        )
+
+                )
+
+            [49] => Array
+                (
+                    [351153778] => Array
+                        (
+                            [VALUE] => Женская одежда
+                            [DESCRIPTION] => ВидНоменклатуры
+                        )
+
+                    [351153779] => Array
+                        (
+                            [VALUE] => Товар
+                            [DESCRIPTION] => ТипНоменклатуры
+                        )
+
+                    [351153780] => Array
+                        (
+                            [VALUE] => 00-00000701
+                            [DESCRIPTION] => Код
+                        )
+
+                    [351153781] => Array
+                        (
+                            [VALUE] => 0
+                            [DESCRIPTION] => Вес
+                        )
+
+                    [n0] => Array
+                        (
+                            [VALUE] => 
+                            [DESCRIPTION] => 
+                        )
+
+                )
+
+            [50] => Array
+                (
+                    [351153782] => Array
+                        (
+                            [VALUE] => шт
+                            [DESCRIPTION] => 5
+                        )
+
+                )
+
+            [51] => Array
+                (
+                    [351153783] => Array
+                        (
+                            [VALUE] => Без налога
+                            [DESCRIPTION] => НДС
+                        )
+
+                    [n0] => Array
+                        (
+                            [VALUE] => 
+                            [DESCRIPTION] => 
+                        )
+
+                )
+
+            [52] => Array
+                (
+                    [81947896] => Array
+                        (
+                            [VALUE] => Array
+                                (
+                                    [name] => 
+                                    [type] => 
+                                    [tmp_name] => 
+                                    [error] => 4
+                                    [size] => 0
+                                    [description] => Цвет: темно - синий
+                                )
+
+                            [DESCRIPTION] => Цвет: темно - синий
+                        )
+
+                    [81947897] => Array
+                        (
+                            [VALUE] => Array
+                                (
+                                    [name] => 
+                                    [type] => 
+                                    [tmp_name] => 
+                                    [error] => 4
+                                    [size] => 0
+                                    [description] => Цвет: темно - синий
+                                )
+
+                            [DESCRIPTION] => Цвет: темно - синий
+                        )
+
+                    [81947898] => Array
+                        (
+                            [VALUE] => Array
+                                (
+                                    [name] => 
+                                    [type] => 
+                                    [tmp_name] => 
+                                    [error] => 4
+                                    [size] => 0
+                                    [description] => Цвет: георгин
+                                )
+
+                            [DESCRIPTION] => Цвет: георгин
+                        )
+
+                    [81947899] => Array
+                        (
+                            [VALUE] => Array
+                                (
+                                    [name] => 
+                                    [type] => 
+                                    [tmp_name] => 
+                                    [error] => 4
+                                    [size] => 0
+                                    [description] => Цвет: латунь
+                                )
+
+                            [DESCRIPTION] => Цвет: латунь
+                        )
+
+                )
+
+            [54] => Array
+                (
+                    [0] => Array
+                        (
+                            [VALUE] => 
+                        )
+
+                )
+
+            [17] => Array
+                (
+                    [n0] => Array
+                        (
+                            [VALUE] => 
+                        )
+
+                )
+
+            [18] => Array
+                (
+                    [n0] => Array
+                        (
+                            [VALUE] => 
+                        )
+
+                )
+
+            [20] => Array
+                (
+                    [355252831] => Array
+                        (
+                            [VALUE] => 1880.00
+                        )
+
+                )
+
+            [21] => Array
+                (
+                    [355252832] => Array
+                        (
+                            [VALUE] => 1880.00
+                        )
+
+                )
+
+            [19] => Array
+                (
+                )
+
+            [53] => Array
+                (
+                )
+
+            [124] => Array
+                (
+                )
+
+        )
+
+    [IBLOCK_SECTION] => Array
+        (
+            [0] => 182
+        )
+
+    [XML_ID] => ac14e363-946a-11e7-80c2-38d547007f29
+    [IPROPERTY_TEMPLATES] => Array
+        (
+            [ELEMENT_META_TITLE] => 
+            [ELEMENT_META_KEYWORDS] => 
+            [ELEMENT_META_DESCRIPTION] => 
+            [ELEMENT_PAGE_TITLE] => 
+            [ELEMENT_PREVIEW_PICTURE_FILE_ALT] => 
+            [ELEMENT_PREVIEW_PICTURE_FILE_TITLE] => 
+            [ELEMENT_PREVIEW_PICTURE_FILE_NAME] => 
+            [ELEMENT_DETAIL_PICTURE_FILE_ALT] => 
+            [ELEMENT_DETAIL_PICTURE_FILE_TITLE] => 
+            [ELEMENT_DETAIL_PICTURE_FILE_NAME] => 
+        )
+
+    [WF] => N
+    [SEARCHABLE_CONTENT] => ЖАКЕТ Д-1527
+ЖАКЕТ Д-1527
+СТРОГИЙ УДЛИНЕННЫЙ ЖАКЕТ С&NBSP;КАРМАНАМИ 
+И&NBSP;ДЕКОРАТИВНЫМИ ПУГОВИЧКАМИ ОТЛИЧНО ВПИШЕТСЯ В&NBSP;ВАШ ГАРДЕРОБ. ПОДОЙДЕТ КАК ДЛЯ ОФИСНЫХ БУДНЕЙ, ТАК И&NBSP;ДЛЯ СТРОГОГО И&NBSP;УТОНЧЕННОГО ОБРАЗА ДЛЯ ВЫХОДА В&NBSP;СВЕТ.
+    [PREVIEW_PICTURE_ID] => 
+    [PREVIEW_PICTURE] => Array
+        (
+            [name] => 
+            [type] => 
+            [tmp_name] => 
+            [error] => 4
+            [size] => 0
+            [description] => Цвет: темно- синий
+            [MODULE_ID] => iblock
+            [old_file] => 78460
+        )
+
+    [DETAIL_PICTURE_ID] => 
+    [DETAIL_PICTURE] => Array
+        (
+            [name] => 
+            [type] => 
+            [tmp_name] => 
+            [error] => 4
+            [size] => 0
+            [description] => Цвет: темно- синий
+            [MODULE_ID] => iblock
+            [old_file] => 78461
+        )
+
+    [ID] => 36232
+    [IBLOCK_ID] => 2
+    [RESULT] => 1
+)
 
 

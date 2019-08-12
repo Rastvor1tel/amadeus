@@ -13,27 +13,27 @@
             <div class="header-block__soc  is--wholesale">
                 <div class="social__block">
                     <div class="social__row row  is--wholesale">
-                        <?if(COption::GetOptionString('grain.customsettings','telegram')):?>
+                        <?if($GLOBALS['TELEGRAM']):?>
                             <div class="social__cols cols  is--wholesale">
-                                <a href="<?=COption::GetOptionString('grain.customsettings','telegram')?>" class="social__item  is--tg  is--wholesale" target="_blank">
+                                <a href="<?=$GLOBALS['TELEGRAM']?>" class="social__item  is--tg  is--wholesale" target="_blank">
                                     <svg class="icon-svg icon-soc-tg" role="img">
                                         <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/img/svg/sprite.svg#soc-tg"></use>
                                     </svg>
                                 </a>
                             </div>
                         <?endif;?>
-                        <?if(COption::GetOptionString('grain.customsettings','viber')):?>
+                        <?if($GLOBALS['VIBER']):?>
                             <div class="social__cols cols  is--wholesale">
-                                <a href="<?=COption::GetOptionString('grain.customsettings','viber')?>" class="social__item  is--viber  is--wholesale" target="_blank">
+                                <a href="<?=$GLOBALS['VIBER']?>" class="social__item  is--viber  is--wholesale" target="_blank">
                                     <svg class="icon-svg icon-soc-viber" role="img">
                                         <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/img/svg/sprite.svg#soc-viber"></use>
                                     </svg>
                                 </a>
                             </div>
                         <?endif;?>
-                        <?if(COption::GetOptionString('grain.customsettings','whatsapp')):?>
+                        <?if($GLOBALS['WHATSAPP']):?>
                             <div class="social__cols cols  is--wholesale">
-                                <a href="<?=COption::GetOptionString('grain.customsettings','whatsapp')?>" class="social__item  is--wa  is--wholesale" target="_blank">
+                                <a href="<?=$GLOBALS['WHATSAPP']?>" class="social__item  is--wa  is--wholesale" target="_blank">
                                     <svg class="icon-svg icon-soc-wa" role="img">
                                         <use xlink:href="<?= SITE_TEMPLATE_PATH ?>/img/svg/sprite.svg#soc-wa"></use>
                                     </svg>
