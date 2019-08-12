@@ -2,12 +2,12 @@
 
 if (CSite::InGroup(GROUP_ID_OPT)) {
     $GLOBALS["IBLOCK_TYPE"] = "1c_catalog";
-    $GLOBALS["IBLOCK_ID"] = 28;
-    $GLOBALS["PRICE_TYPE"] = "Оптовая цена";
+    $GLOBALS["IBLOCK_ID"] = 36;
+    $GLOBALS["PRICE_TYPE"] = "сайт";
 } else {
     $GLOBALS["IBLOCK_TYPE"] = "1c_catalog";
-    $GLOBALS["IBLOCK_ID"] = 32;
-    $GLOBALS["PRICE_TYPE"] = "Розничная цена";
+    $GLOBALS["IBLOCK_ID"] = 28;
+    $GLOBALS["PRICE_TYPE"] = "сайт";
 }
 
 if ($_COOKIE['roleValue'] == 'opt') {
