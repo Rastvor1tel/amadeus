@@ -12,8 +12,9 @@
             <div class="footer__navbar-inner-row row">
                 <div class="footer__navbar-inner-cols cols">
                     <ul class="footer__navbar-nav">
-                        <? foreach ($arItem['ITEMS'] as $key => $arSubItem): ?>
-                        <? if (($key > 0) && ($key % 5 == 0)): ?>
+                        <?$itemCount = 0?>
+                        <? foreach ($arItem['ITEMS'] as $arSubItem): ?>
+                        <? if (($itemCount > 0) && ($itemCount % 5 == 0)): ?>
                     </ul>
                 </div>
                 <div class="footer__navbar-inner-cols cols">
@@ -23,6 +24,7 @@
                             <a href="<?= $arSubItem['LINK'] ?>"
                                class="footer__navbar-inner-link"><?= $arSubItem['TEXT'] ?></a>
                         </li>
+                        <?$itemCount++;?>
                         <? endforeach; ?>
                     </ul>
                 </div>

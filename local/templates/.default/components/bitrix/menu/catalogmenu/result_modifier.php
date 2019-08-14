@@ -32,4 +32,6 @@ foreach ($arResult as &$arItem) {
         $arItem['ITEMS'] = $result;
     }
 }
+
+
 ?>

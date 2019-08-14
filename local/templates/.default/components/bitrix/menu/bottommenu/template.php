@@ -1,6 +1,7 @@
 <? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
 
 <? if ($arResult): ?>
+
     <div class="footer__navbar-cols cols">
     <ul class="footer__navbar-nav">
     <? foreach ($arResult as $key => $arItem): ?>

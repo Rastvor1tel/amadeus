@@ -2,7 +2,12 @@
 
 <div class="card-item__card  is--catalog">
     <a href="<?=$arResult['DETAIL_PAGE_URL']?>" class="card-item__preview  is--catalog">
-        <?if ($arResult['PREVIEW_PICTURE']['SRC']) echo '<img src="'.$arResult['PREVIEW_PICTURE']['SRC'].'" alt="'.$arResult['NAME'].'" class="img-responsive">';?>
+        <?
+        if ($arResult['PREVIEW_PICTURE']['SRC'])
+            echo '<img src="'.$arResult['PREVIEW_PICTURE']['SRC'].'" alt="'.$arResult['NAME'].'" class="img-responsive">';
+        else
+            echo '<img src="http://via.placeholder.com/500x690" alt="'.$arResult['NAME'].'" class="img-responsive">';
+        ?>
         <div class="card-item__bg  is--catalog">
             <div class="card-item__bg-view  is--catalog">Подробнее</div>
         </div>

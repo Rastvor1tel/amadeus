@@ -17,7 +17,7 @@
     justify-content: center;
 }
 .card-item__preview.is--catalog {
-    background: #fff;
+    /*background: #fff;*/
     display: flex;
     align-items: center;
     justify-content: center;

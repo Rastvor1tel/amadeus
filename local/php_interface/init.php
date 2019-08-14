@@ -143,6 +143,7 @@ function get_offer_min_price($IBLOCK_ID, $item_id, $PRICE_TYPE) {
             }
         }
     }
+    if ($ret == '') $ret = 0;
     return $ret;
 }
 
@@ -158,6 +159,7 @@ function get_offer_max_price($IBLOCK_ID, $item_id, $PRICE_TYPE) {
             }
         }
     }
+    if ($ret == '') $ret = 0;
     return $ret;
 }
 

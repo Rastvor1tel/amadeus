@@ -50,6 +50,7 @@ $APPLICATION->SetTitle("Поиск");
 		"CACHE_TIME" => "36000000",
 		"DISPLAY_COMPARE" => "N",
 		"PRICE_CODE" => array(
+		    "0" => $GLOBALS["PRICE_TYPE"]
 		),
 		"USE_PRICE_COUNT" => "N",
 		"SHOW_PRICE_COUNT" => "1",
@@ -72,4 +73,5 @@ $APPLICATION->SetTitle("Поиск");
 		"PAGER_SHOW_ALL" => "N"
 	),
 	false
-);?><? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
+);
+require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
