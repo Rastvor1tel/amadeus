@@ -2,7 +2,7 @@ BX.ready(function () {
     BX.bindDelegate(document.body, 'click', {className: 'navbar__nav-top-item'}, function () {
         var role = $(this).find('.navbar__nav-top-link').data('role');
         BX.setCookie('roleValue', role, {expires: 3600});
-        if(!this.classList.contains('current')) {
+        if (!this.classList.contains('current')) {
             BX.setCookie('role', 'N', {expires: 3600});
         } else {
             BX.setCookie('role', 'Y', {expires: 3600});
@@ -10,7 +10,7 @@ BX.ready(function () {
     });
 
     BX.bindDelegate(document.body, 'click', {className: 'navbar__nav-link'}, function () {
-        if(this.classList.contains('disabled')) {
+        if (this.classList.contains('disabled')) {
             var customerRole = document.querySelector('.navbar__nav-top-item.enabled').textContent.toLowerCase();
 
             var content = BX.create(
@@ -36,6 +36,15 @@ BX.ready(function () {
                         events: {
                             click: function () {
                                 this.popupWindow.close();
+                            }
+                        }
+                    }),
+                    new BX.PopupWindowButton({
+                        text: "Зарегистрироваться",
+                        className: "basketNotify__basket",
+                        events: {
+                            click: function () {
+                                window.location.href = '/personal/?register=yes';
                             }
                         }
                     })

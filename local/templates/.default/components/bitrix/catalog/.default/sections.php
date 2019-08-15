@@ -82,7 +82,7 @@ $APPLICATION->IncludeComponent(
                     "CACHE_GROUPS" => $arParams["CACHE_GROUPS"],
                     "SAVE_IN_SESSION" => "N",
                     "PAGER_PARAMS_NAME" => "arrPager",
-                    "PRICE_CODE" => $arParams["~PRICE_CODE"],
+                    "PRICE_CODE" => $arParams["PRICE_CODE"],
                     "CONVERT_CURRENCY" => "N",
                     "XML_EXPORT" => "N",
                     "SECTION_TITLE" => "-",

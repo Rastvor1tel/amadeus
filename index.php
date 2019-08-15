@@ -13,34 +13,25 @@ include_once($_SERVER['DOCUMENT_ROOT'].'/local/include/recommended.php');
         <div class="bg-block__inner  is--index-about" style="background-image: url(<?=TEMPLATE_DIR?>/img/default/bg-index-about.png)"></div>
     </div>
     <div class="content-block__container container  is--index-about">
-        <div class="page-header__group  is--h1">
-            <div class="page-header__panel  is--h1">
-                <h2  class="page-header__heading  is--h1">Новым клиентам</h2>
-            </div>
-        </div>
-        <div class="content-block__elem  is--xl  is--index-about">
-            <h5 class="content-block__heading  is--index-about">Как легко начать у нас покупать, пошаговая инструкция:</h5>
-            <div class="content-block__row row  is--gutter  is--index-about">
-                <div class="content-block__cols  cols  is--grid-3  is--index-about">
-                    <div class="content-block__card  is--index-about">
-                        <div class="content-block__card-item  is--num  is--index-about">01</div>
-                        <a href="<?=SITE_TEMPLATE_PATH?>/signup.html">Зарегистрируйтесь</a> <br>на&nbsp;сайте
-                    </div>
-                </div>
-                <div class="content-block__cols  cols  is--grid-3  is--index-about">
-                    <div class="content-block__card  is--index-about">
-                        <div class="content-block__card-item  is--num  is--index-about">02</div>
-                        Выберите ассортимент из&nbsp;<a href="<?=SITE_TEMPLATE_PATH?>/catalog.html">каталога</a>
-                    </div>
-                </div>
-                <div class="content-block__cols  cols  is--grid-3  is--index-about">
-                    <div class="content-block__card  is--index-about">
-                        <div class="content-block__card-item  is--num  is--index-about">03</div>
-                        Готово. Покупайте в режиме Online!
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?$APPLICATION->IncludeComponent(
+            "bitrix:news.list",
+            "index-steps",
+            array(
+                "IBLOCK_ID" => "38",
+                "COMPONENT_TEMPLATE" => "index-steps",
+                "IBLOCK_TYPE" => "services",
+                "NEWS_COUNT" => "20",
+                "SORT_BY1" => "SORT",
+                "SORT_ORDER1" => "ASC",
+                "SORT_BY2" => "ID",
+                "SORT_ORDER2" => "ASC",
+                "CACHE_TYPE" => "A",
+                "CACHE_TIME" => "36000000",
+                "CACHE_FILTER" => "N",
+                "CACHE_GROUPS" => "Y",
+            ),
+            false
+        );?>
         <div class="content-block__elem  is--lgx  is--index-about">
             <h2 class="content-block__heading  page-header__heading  is--h1">Одежда от производителя</h2>
             <div class="content-block__text  text__block  is--index-about">
