@@ -1,8 +1,4 @@
-<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
-
-ShowMessage($arParams["~AUTH_RESULT"]);
-ShowMessage($arResult["ERROR_MESSAGE"]);
-?>
+<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
 <div class="content-block__elem  is--left  is--full-top  is--login">
     <div class="content-block__container container  is--login">
         <div class="page-header__group  is--h1">
@@ -16,6 +12,14 @@ ShowMessage($arResult["ERROR_MESSAGE"]);
                     <h3 class="page-header__heading  is--h3">Войдите в личный кабинет, используя логин и пароль</h3>
                 </div>
             </div>
+            <?
+            if ($arParams["~AUTH_RESULT"] || $arResult["ERROR_MESSAGE"]) {
+                echo '<div class="page-header__panel">';
+                ShowMessage($arParams["~AUTH_RESULT"]);
+                ShowMessage($arResult["ERROR_MESSAGE"]);
+                echo '</div>';
+            }
+            ?>
             <form class="form__panel  is--login" method="post" action="<?= $arResult["AUTH_URL"] ?>" name="form_auth" data-validation >
                 <input type="hidden" name="AUTH_FORM" value="Y">
                 <input type="hidden" name="TYPE" value="AUTH">

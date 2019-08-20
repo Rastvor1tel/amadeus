@@ -119,7 +119,9 @@
     <? endif; ?>
 <? elseif (explode('/', $APPLICATION->GetCurDir())[1] == 'catalog'): ?>
 <main class="content-block__panel  is--aside-navbar  is--dark-bg">
-    <? else: ?>
+<? elseif (defined('ERROR_404') && ERROR_404=='Y') : ?>
+<main class="content-block__panel  is--aside-navbar  is--bg">
+<? else: ?>
     <main class="content-block__panel  is--aside-navbar  is--bg">
         <div class="content-block__container container  is--full">
             <div class="page-header__group  is--h1">
@@ -128,4 +130,4 @@
                     <h1 class="page-header__heading  is--h1"><? $APPLICATION->ShowTitle(false) ?></h1>
                 </div>
             </div>
-            <? endif; ?>
+<? endif; ?>

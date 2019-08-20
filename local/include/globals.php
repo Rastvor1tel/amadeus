@@ -3,11 +3,11 @@
 if (CSite::InGroup(GROUP_ID_OPT)) {
     $GLOBALS["IBLOCK_TYPE"] = "1c_catalog";
     $GLOBALS["IBLOCK_ID"] = 36;
-    $GLOBALS["PRICE_TYPE"] = "сайт";
+    $GLOBALS["PRICE_TYPE"] = "Розничная цена";
 } else {
     $GLOBALS["IBLOCK_TYPE"] = "1c_catalog";
     $GLOBALS["IBLOCK_ID"] = 28;
-    $GLOBALS["PRICE_TYPE"] = "сайт";
+    $GLOBALS["PRICE_TYPE"] = "Розничная цена";
 }
 
 if ($_COOKIE['roleValue'] == 'opt') {
@@ -35,3 +35,5 @@ $GLOBALS['ADRESS'] = COption::GetOptionString('grain.customsettings','adress');
 $GLOBALS['WORKING_TIME'] = COption::GetOptionString('grain.customsettings','workingtime');
 $GLOBALS['ORGANISATION'] = COption::GetOptionString('grain.customsettings','name');
 $GLOBALS['LOCATION'] = COption::GetOptionString('grain.customsettings','coordinates');
+
+//importOffersPrice();

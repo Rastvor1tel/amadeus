@@ -63,7 +63,7 @@ $APPLICATION->IncludeComponent(
 		"SET_TITLE" => "Y",
 		"ACTION_VARIABLE" => "basketAction",
 		"COMPATIBLE_MODE" => "Y",
-		"EMPTY_BASKET_HINT_PATH" => "/",
+		"EMPTY_BASKET_HINT_PATH" => "/catalog/",
 		"OFFERS_PROPS" => array(
 		),
 		"ADDITIONAL_PICT_PROP_2" => "-",

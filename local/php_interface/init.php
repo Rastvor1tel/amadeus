@@ -14,7 +14,6 @@ $eventManager->addEventHandler("main", "OnBeforeUserLogin", "OnBeforeUserLogin")
 $eventManager->addEventHandler("main", "OnBeforeUserRegister", "OnBeforeUserRegister");
 $eventManager->addEventHandler("sale", "OnBeforeBasketAdd", "OnBeforeBasketAdd");
 $eventManager->addEventHandler("sale", "OnOrderNewSendEmail", "OnOrderNewSendEmail");
-$eventManager->addEventHandler("catalog", "OnSuccessCatalogImport1C", "importOffersPrice");
 $eventManager->addEventHandler("iblock", "OnAfterIBlockElementUpdate", "elementOffersPrice");
 $eventManager->addEventHandler("iblock", "OnAfterIBlockElementAdd", "elementOffersPrice");
 
@@ -103,12 +102,12 @@ function importOffersPrice () {
     CModule::IncludeModule('iblock');
     CModule::IncludeModule('catalog');
     $IBLOCK_IDs = [28, 36];
-    $PRICE_TYPE = 5;
+    $PRICE_TYPE = 4;
 
     foreach($IBLOCK_IDs as $IBLOCK_ID) {
         $arSelect = ["ID", "NAME", "DATE_ACTIVE_FROM"];
         $arFilter = ["IBLOCK_ID" => $IBLOCK_ID, "ACTIVE" => "Y"];
-        $res = CIBlockElement::GetList(['ID', "NAME"], $arFilter, false, ["nPageSize" => 5000], $arSelect);
+        $res = CIBlockElement::GetList(['ID', "NAME"], $arFilter, false, false, $arSelect);
 
         while ($ob = $res->GetNextElement()) {
             $arFields = $ob->GetFields();
@@ -123,7 +122,7 @@ function importOffersPrice () {
 function elementOffersPrice($arFields) {
     if ($arFields["ID"] > 0) {
         $IBLOCK_ID = $arFields['IBLOCK_ID'];
-        $PRICE_TYPE = 5; //$PRICE_TYPE = $arFields['IBLOCK_ID'] == 28 ? 3 : 4;
+        $PRICE_TYPE = 4; //$PRICE_TYPE = $arFields['IBLOCK_ID'] == 28 ? 3 : 4;
         $MIN_PRICE = get_offer_min_price($IBLOCK_ID, $arFields['ID'], $PRICE_TYPE);
         $MAX_PRICE = get_offer_max_price($IBLOCK_ID, $arFields['ID'], $PRICE_TYPE);
         CIBlockElement::SetPropertyValuesEx($arFields['ID'], $IBLOCK_ID, ['MINIMUM_PRICE' => $MIN_PRICE]);

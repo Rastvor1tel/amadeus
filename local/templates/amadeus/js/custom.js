@@ -1,11 +1,14 @@
 BX.ready(function () {
+
+
     BX.bindDelegate(document.body, 'click', {className: 'navbar__nav-top-item'}, function () {
-        var role = $(this).find('.navbar__nav-top-link').data('role');
-        BX.setCookie('roleValue', role, {expires: 3600});
+        var role = $(this).find('.navbar__nav-top-link').data('role'),
+            cookieParams = {expires: 3600, path: '/'};
+        BX.setCookie('roleValue', role, cookieParams);
         if (!this.classList.contains('current')) {
-            BX.setCookie('role', 'N', {expires: 3600});
+            BX.setCookie('role', 'N', cookieParams);
         } else {
-            BX.setCookie('role', 'Y', {expires: 3600});
+            BX.setCookie('role', 'Y', cookieParams);
         }
     });
 

@@ -25,7 +25,7 @@ $CONTAINER_ID = CUtil::JSEscape($CONTAINER_ID);
 if($arParams["SHOW_INPUT"] !== "N"):?>
 	<div id="<?echo $CONTAINER_ID?>">
         <form action="<?echo $arResult["FORM_ACTION"]?>" class="navbar__search-form">
-            <input id="<?echo $INPUT_ID?>" type="text" name="q" value="" size="40" maxlength="50" autocomplete="off" placeholder="Поиск" class="navbar__search-input">
+            <input id="<?echo $INPUT_ID?>" type="text" name="q" value="" size="40" autocomplete="off" placeholder="Поиск" class="navbar__search-input">
             <button name="s" type="submit" class="navbar__search-btn">
                 <svg class="icon-svg icon-icon-search" role="img">
                     <use xlink:href="<?= TEMPLATE_DIR ?>/img/svg/sprite.svg#icon-search"></use>

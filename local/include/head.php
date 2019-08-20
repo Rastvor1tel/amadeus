@@ -38,9 +38,9 @@
             'rel' => ['jquery3'],
             'skip_core' => true,
         ],
-        'custom' => [
+        'script' => [
             'js' => TEMPLATE_DIR . '/js/custom.js',
-            'rel' => ['jquery3'],
+            'rel' => ['document_ready'],
             'skip_core' => true,
         ]
     ];
@@ -48,7 +48,7 @@
         CJSCore::RegisterExt($ext, $arExt);
     }
 
-    CJSCore::Init(['ajax', 'popup', 'window', 'svg4everybody', 'document_ready', 'custom']);
+    CJSCore::Init(['ajax', 'popup', 'window', 'svg4everybody', 'script']);
 
     $APPLICATION->ShowHead();
     ?>

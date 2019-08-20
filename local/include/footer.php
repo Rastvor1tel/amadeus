@@ -425,57 +425,42 @@
         </div>
     </div>
 </div>
-<div class="modal__block  modals  fade    " id="modal-catalog" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal__dialog    ">
-        <div class="modal__body    " >
+<div class="modal__block  modals fade" id="modal-catalog" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal__dialog">
+        <div class="modal__body">
             <button type="button" class="modal__btn-close  modal-close" data-dismiss="modal" aria-hidden="true">
                 <svg class="icon-svg icon-modal-close" role="img">
                     <use xlink:href="<?=SITE_TEMPLATE_PATH?>/img/svg/sprite.svg#modal-close"></use>
                 </svg>
             </button>
-            <div class="modal__content    ">
-                <div class="form__block    "  >
-                    <div class="page-header__group  is--h2  is--fw-500  align--center">
-                        <div class="page-header__panel  is--h2  is--fw-500  align--center">
-                            <h4 class="page-header__heading  is--h2  is--fw-500  align--center"><span>Получить оптовый прайс</span></h4>
-                            <div class="page-header__heading-small  is--h2  is--fw-500  align--center">Мы вышлим вам оптовый прайс в ближайшее время</div>
-                        </div>
-                    </div>
-                    <form action="#" class="form__panel    " data-validation >
-                        <input type="hidden" name="key" value="londonisthecapitalofgreatbritain">
-                        <input type="hidden" name="f[Форма: Получить оптовый прайс]">
-                        <div class="form__row row    ">
-                            <div class="form__cols cols  is--name    ">
-                                <div class="form__item        ">
-                                    <input type="text" class="form__control form-control validate[required, custom[onlyLetterSp]]        " id="fm_catalog[name]" name="f[Имя]" placeholder="Имя">
-                                </div>
-                            </div>
-                            <div class="form__cols cols  is--tel    ">
-                                <div class="form__item        ">
-                                    <input type="tel" class="form__control form-control validate[required, custom[phone]]        " id="fm_catalog[tel]" name="f[Номер телефона]" placeholder="Номер телефона">
-                                </div>
-                            </div>
-                            <div class="form__cols cols  is--tel    ">
-                                <div class="form__item      is--email">
-                                    <input type="email" class="form__control form-control validate[required, custom[email]]        " id="email[email]" name="f[E-mail]" placeholder="E-mail">
-                                </div>
-                            </div>
-                            <div class="form__cols cols  is--btn    ">
-                                <button type="submit" class="btn__item    ">
-                                    <span class="btn__name">Отправить</span>
-                                </button>
-                            </div>
-                            <div class="form__cols cols  is--agreement    ">
-                                <div class="form__item  is--agreement        ">
-                                    <input type="hidden" name="f[Согласие на обработку персональных данных]" value="Да">
-                                    <div class="form__text  is--agreement        ">
-                                        Нажимая на кнопку «Отправить», Вы соглашаетесь с правилами обработки <a href='/amadeus/agreement.html' target='_blank'>персональных данных</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+            <div class="modal__content">
+                <?$APPLICATION->IncludeComponent(
+                    "bitrix:form.result.new",
+                    "price",
+                    [
+                        "WEB_FORM_ID" => 7,
+                        "AJAX_MODE" => "Y",
+                        "AJAX_OPTION_JUMP" => "N",
+                        "AJAX_OPTION_SHADOW" => "N",
+                        "AJAX_OPTION_STYLE" => "N",
+                        "CACHE_TIME" => "3600",
+                        "CACHE_TYPE" => "A",
+                        "CHAIN_ITEM_LINK" => "",
+                        "CHAIN_ITEM_TEXT" => "",
+                        "COMPONENT_TEMPLATE" => "price",
+                        "EDIT_URL" => "",
+                        "IGNORE_CUSTOM_TEMPLATE" => "N",
+                        "LIST_URL" => "",
+                        "SEF_MODE" => "N",
+                        "SUCCESS_URL" => "",
+                        "USE_EXTENDED_ERRORS" => "N",
+                        "VARIABLE_ALIASES" => [
+                            "WEB_FORM_ID" => "WEB_FORM_ID",
+                            "RESULT_ID" => "RESULT_ID"
+                        ],
+                    ],
+                    false
+                );?>
             </div>
         </div>
     </div>

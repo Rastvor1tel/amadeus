@@ -5,69 +5,34 @@ CHTTP::SetStatus("404 Not Found");
 @define("ERROR_404","Y");
 
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetPageProperty("NOT_SHOW_NAV_CHAIN", "Y");
 
 $APPLICATION->SetTitle("Страница не найдена");?>
-<div class="page_404">
-	<div class="bx-404-container">
-		<div class="bx-404-block"><img src="<?=SITE_DIR?>images/404.png" alt=""></div>
-		<div class="bx-404-text-block">Неправильно набран адрес, <br>или такой страницы на сайте больше не существует.</div>
-		<div class="">Вернитесь на <a href="<?=SITE_DIR?>">главную</a> или воспользуйтесь картой сайта.</div>
-	</div>
-	<div class="map-columns row">
-		<div class="col-sm-10 col-sm-offset-1">
-			<div class="bx-maps-title">Карта сайта:</div>
-		</div>
-	</div>
-
-	<div class="col-sm-offset-2 col-sm-4">
-		<div class="bx-map-title"><i class="fa fa-leanpub"></i> Каталог</div>
-		<?$APPLICATION->IncludeComponent(
-			"bitrix:catalog.section.list",
-			"tree",
-			array(
-				"COMPONENT_TEMPLATE" => "tree",
-				"IBLOCK_TYPE" => "catalog",
-				"IBLOCK_ID" => "2",
-				"SECTION_ID" => $_REQUEST["SECTION_ID"],
-				"SECTION_CODE" => "",
-				"COUNT_ELEMENTS" => "Y",
-				"TOP_DEPTH" => "2",
-				"SECTION_FIELDS" => array(
-					0 => "",
-					1 => "",
-				),
-				"SECTION_USER_FIELDS" => array(
-					0 => "",
-					1 => "",
-				),
-				"SECTION_URL" => "",
-				"CACHE_TYPE" => "A",
-				"CACHE_TIME" => "36000000",
-				"CACHE_GROUPS" => "Y",
-				"ADD_SECTIONS_CHAIN" => "Y"
-			),
-			false
-		);
-		?>
-	</div>
-
-	<div class="col-sm-offset-1 col-sm-4">
-		<div class="bx-map-title"><i class="fa fa-info-circle"></i> О магазине</div>
-		<?
-		$APPLICATION->IncludeComponent(
-			"bitrix:main.map",
-			".default",
-			array(
-				"CACHE_TYPE" => "A",
-				"CACHE_TIME" => "36000000",
-				"SET_TITLE" => "N",
-				"LEVEL" => "3",
-				"COL_NUM" => "2",
-				"SHOW_DESCRIPTION" => "Y",
-				"COMPONENT_TEMPLATE" => ".default"
-			),
-			false
-		);?>
-	</div>
+<div class="content-block__container container  is--dafault-page      is--full">
+    <div class="page-header__group  is--h1 align--center-notsmart">
+        <div class="breadcrumb__block  justify--center-notsmart">
+            <ul class="breadcrumb__list  justify--center-notsmart">
+                <li class="breadcrumb__list-item">
+                    <a href="/" class="breadcrumb__list-link">Главная</a>
+                </li>
+                <li class="breadcrumb__list-item is--active">
+                    <span class="breadcrumb__list-link">Cтраница не найдена</span>
+                </li>
+            </ul>
+        </div>
+        <div class="page-header__panel  is--h1  is--ff-2  align--center-notsmart">
+            <h1 class="page-header__heading  is--h1 align--center-notsmart">Cтраница не найдена</h1>
+        </div>
+    </div>
+    <div class="content-block__elem      text__block  is--center">
+        <p>Запрашиваемая Вами страница не найдена или не существует</p>
+        <p>&nbsp;</p>
+        <p>
+            <a href="/" class="btn__item    ">
+                <span class="btn__name">Ha главную</span>
+            </a>
+        </p>
+    </div>
 </div>
+
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
