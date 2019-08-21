@@ -13,7 +13,7 @@
                     <a href="<?=$arItem['LINK']?>" class="dropdown-toggle navbar__nav-link" data-toggle="dropdown">
                         <div class="navbar__nav-caret">
                             <svg class="icon-svg icon-navbar-dropdown" role="img">
-                                <use xlink:href="<?=SITE_TEMPLATE_PATH?>/img/svg/sprite.svg#navbar-dropdown"></use>
+                                <use xlink:href="<?=TEMPLATE_DIR?>/img/svg/sprite.svg#navbar-dropdown"></use>
                             </svg>
                         </div>
                         <?=$arItem['TEXT']?>

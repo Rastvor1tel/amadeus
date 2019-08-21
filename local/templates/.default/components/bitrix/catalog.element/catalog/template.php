@@ -50,7 +50,7 @@
                             <div class="form__item  is--catalog-page    ">
                                 <select class="form__control color-list__select form-control validate[  ]  is--select  is--catalog-page        " id="color[select]" name="f[select]">
                                     <option>Выберите цвет:</option>
-                                    <?foreach($arResult['COLORS'] as $key => $arColor) echo '<option data-price="'.$arColor['PRICE'].'" value="'.$key.'">'.$arColor['VALUE'].'</option>';?>
+                                    <?foreach($arResult['COLORS'] as $arColor) echo '<option data-price="'.$arColor['PRICE'].'" value="'.$arColor['VALUE'].'">'.$arColor['NAME'].'</option>';?>
                                 </select>
                             </div>
                         </div>

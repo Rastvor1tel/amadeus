@@ -1,5 +1,7 @@
 <? if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();
 
+use Bitrix\Highloadblock\HighloadBlockTable;
+use Bitrix\Main\Loader;
 use Bitrix\Main\Localization\Loc;
 use Bitrix\Sale\PriceMaths;
 
@@ -10,14 +12,23 @@ $mobileColumns = array_fill_keys($mobileColumns, true);
 
 $result['BASKET_ITEM_RENDER_DATA'] = array();
 
+Loader::includeModule('highloadblock');
+$hlblockSize = HighloadBlockTable::getById(6)->fetch();
+$entitySize = HighloadBlockTable::compileEntity($hlblockSize)->getDataClass();
+$hlblockColor = HighloadBlockTable::getById(5)->fetch();
+$entityColor = HighloadBlockTable::compileEntity($hlblockColor)->getDataClass();
+
 foreach ($this->basketItems as $row) {
+    $hlSize = $entitySize::getList(['select' => ['*'], 'filter' => ['UF_XML_ID' => $row['PROPERTY_SIZES_CLOTHES_VALUE']]])->fetch()['UF_NAME'];
+    $hlColor = $entityColor::getList(['select' => ['*'], 'filter' => ['UF_XML_ID' => $row['PROPERTY_COLOR_REF_VALUE']]])->fetch()['UF_NAME'];
+
     $rowData = array(
         'ID' => $row['ID'],
         'PRODUCT_ID' => $row['PRODUCT_ID'],
         'NAME' => preg_replace('/^(.*?)\s\(.*?\)/', '$1', $row['NAME']),
         'ARTICLE' => $row['PROPERTY_CML2_ARTICLE_VALUE'],
-        'COLOR' => $row['PROPERTY_COLOR_REF_VALUE'],
-        'SIZE' => $row['PROPERTY_SIZES_CLOTHES_VALUE'],
+        'COLOR' => $hlColor,
+        'SIZE' => $hlSize,
         'OPT_NAME' => $row['PROPERTY_OPT_NAME_VALUE'],
         'QUANTITY' => $row['QUANTITY'],
         'PROPS' => $row['PROPS'],

@@ -4,10 +4,12 @@ if (CSite::InGroup(GROUP_ID_OPT)) {
     $GLOBALS["IBLOCK_TYPE"] = "1c_catalog";
     $GLOBALS["IBLOCK_ID"] = 36;
     $GLOBALS["PRICE_TYPE"] = "Розничная цена";
+    $GLOBALS["PRICE_ID"] = 4;
 } else {
     $GLOBALS["IBLOCK_TYPE"] = "1c_catalog";
     $GLOBALS["IBLOCK_ID"] = 28;
     $GLOBALS["PRICE_TYPE"] = "Розничная цена";
+    $GLOBALS["PRICE_ID"] = 4;
 }
 
 if ($_COOKIE['roleValue'] == 'opt') {

@@ -15,9 +15,10 @@ $arColors = [];
 foreach($arResult['OFFERS'] as $arOffer) {
     $arColor = $arOffer['DISPLAY_PROPERTIES']['COLOR_REF'];
     if ($arColor['VALUE']) {
-        $price = CSite::InGroup(GROUP_ID_OPT) ? $arOffer['CATALOG_PRICE_5'] : $arOffer['CATALOG_PRICE_4'];
-        $arColors[$arColor['VALUE_ENUM_ID']] = [
+        $price = $arOffer['CATALOG_PRICE_'.$GLOBALS["PRICE_ID"]];
+        $arColors[] = [
             'VALUE' => $arColor['VALUE'],
+            'NAME' => $arColor['DISPLAY_VALUE'],
             'PRICE' => $price
         ];
     }

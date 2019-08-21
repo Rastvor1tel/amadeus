@@ -3,8 +3,10 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/bitrix/modules/main/include/prolog_be
 
 use Bitrix\Main\Context;
 use Bitrix\Main\Loader;
+use Bitrix\Highloadblock\HighloadBlockTable;
 
 Loader::includeModule('iblock');
+Loader::includeModule('highloadblock');
 Loader::includeModule('catalog');
 Loader::includeModule('sale');
 
@@ -51,9 +53,12 @@ if ($type == 'sizeList') {
     $productID = $request->get('productID');
     $colorID = $request->get('colorID');
     $catalogGroup = CPrice::GetBasePrice($productID);
-    $optFilter = CSite::InGroup(GROUP_ID_OPT)?'PROPERTY_OPT_USERS_VALUE':'!PROPERTY_OPT_USERS_VALUE';
-    $arOffers = CCatalogSKU::getOffersList($productID, $iblockID, ['PROPERTY_COLOR_REF' => $colorID, /*$optFilter => 'Да'*/], ['*', 'CATALOG_GROUP_' . $catalogGroup['CATALOG_GROUP_ID']], ['CODE' => ['COLOR_REF', 'SIZES_CLOTHES', 'OPT_USER']]);
+    $arOffers = CCatalogSKU::getOffersList($productID, $iblockID, ['PROPERTY_COLOR_REF' => $colorID], ['*', 'CATALOG_GROUP_' . $catalogGroup['CATALOG_GROUP_ID']], ['CODE' => ['SIZES_CLOTHES']]);
     $arOffers = $arOffers[$productID];
+
+    $hlblock = HighloadBlockTable::getById(6)->fetch();
+    $entity = HighloadBlockTable::compileEntity($hlblock);
+    $entityClass = $entity->getDataClass();
 
     usort($arOffers, "sizeSort");
     ?>
@@ -62,15 +67,16 @@ if ($type == 'sizeList') {
     </div>
     <div class="card-item__elem  is--size-row  is--catalog-page">
         <? foreach ($arOffers as $arOffer): ?>
-            <? //print_r($arOffer);?>
-            <? if (!$arOffer['PROPERTIES']['SIZES_CLOTHES']['VALUE']) continue; ?>
+            <?
+            $hlSize = $entityClass::getList(['select' => ['*'], 'filter' => ['UF_XML_ID' => $arOffer['PROPERTIES']['SIZES_CLOTHES']['VALUE']]])->fetch();
+
+            if (!$arOffer['PROPERTIES']['SIZES_CLOTHES']['VALUE']) continue;
+            ?>
             <div class="card-item__elem  is--size-cols  is--catalog-page sizeBlock" data-id="<?= $arOffer['ID'] ?>">
                 <div class="form__size-block<?=CSite::InGroup(GROUP_ID_OPT)?' is--lg':'';?>" title="<?= $arOffer['PROPERTIES']['SIZES_CLOTHES']['VALUE'] ?>">
                     <label class="form__size">
-                        <input type="checkbox" class="form__size-input"
-                               <?= $arOffer['CATALOG_AVAILABLE'] != 'Y' ? 'disabled ' : ''; ?>name="size[<?= $arOffer['ID'] ?>]"
-                               id="<?= $arOffer['ID'] ?>">
-                        <div class="form__size-name"><?= $arOffer['PROPERTIES']['SIZES_CLOTHES']['VALUE'] ?></div>
+                        <input type="checkbox" class="form__size-input" <?= $arOffer['CATALOG_AVAILABLE'] != 'Y' ? 'disabled ' : ''; ?>name="size[<?= $arOffer['ID'] ?>]" id="<?= $arOffer['ID'] ?>">
+                        <div class="form__size-name"><?= $hlSize['UF_NAME'] ?></div>
                         <button type="button" class="form__size-qty-btn  is--plus" data-action="+">
                             <svg width="14" height="14" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M6.9967 14a.6364.6364 0 0 0 .6388-.6385v-5.723h5.7257A.6365.6365 0 0 0 14 7a.6365.6365 0 0 0-.6388-.6385H7.6355V.6385A.6364.6364 0 0 0 6.9967 0c-.1739 0-.3378.0702-.4515.1839a.6226.6226 0 0 0-.184.4512v5.723H.6357c-.174 0-.3378.0703-.4515.184-.1171.117-.1873.274-.184.4512 0 .3544.2843.6385.6388.6385l5.719.0067v5.723c0 .3544.2843.6385.6388.6385z"/>

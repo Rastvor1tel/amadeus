@@ -1,4 +1,8 @@
-<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die(); ?>
+<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
+
+setcookie('role', null, -1, '/');
+setcookie('roleValue', null, -1, '/');
+?>
 <div class="content-block__elem  is--left  is--full-top  is--login">
     <div class="content-block__container container  is--login">
         <div class="page-header__group  is--h1">

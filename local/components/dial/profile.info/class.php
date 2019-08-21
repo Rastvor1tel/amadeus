@@ -17,7 +17,7 @@ class ProfileInfo extends CBitrixComponent {
     public function getUserArray() {
         $result = [
             'ID' => $this->getUserField('ID'),
-            'NAME' => $this->getUserField('NAME').' '.$this->getUserField('LAST_NAME'),
+            'NAME' => $this->getUserField('NAME') . ' ' . $this->getUserField('LAST_NAME'),
             'EMAIL' => $this->getUserField('EMAIL'),
             'PHONE' => $this->getUserField('PERSONAL_PHONE'),
             'LINK' => $this->arParams['PROFILE']
@@ -31,7 +31,7 @@ class ProfileInfo extends CBitrixComponent {
             'TOTAL_PRICE' => 0
         ];
         $arItems = CSaleBasket::GetList([], ["FUSER_ID" => CSaleBasket::GetBasketUserID(), "LID" => SITE_ID, "ORDER_ID" => "NULL"], false, false, []);
-        while($arItem = $arItems->Fetch()) {
+        while ($arItem = $arItems->Fetch()) {
             $result['QUANTITY'] += 1;
             $result['TOTAL_PRICE'] += $arItem['PRICE'] * $arItem['QUANTITY'];
         }
@@ -47,10 +47,16 @@ class ProfileInfo extends CBitrixComponent {
 
     private function getUserOrders() {
         //TODO Заказы пользователя
+        $arUser = $this->getUserFields();
+        $orders = CSaleOrder::GetList([], ['USER_ID' => $arUser['ID'], 'PAYED' => 'Y']);
         $result = [
             'QUANTITY' => 0,
             'TOTAL_PRICE' => 0
         ];
+        while ($arOrder = $orders->Fetch()) {
+            $result['QUANTITY']++;
+            $result['TOTAL_PRICE'] += $arOrder['SUM_PAID'];
+        }
         $result['TOTAL_PRICE_FORMATTED'] = number_format($result['TOTAL_PRICE'], 0, '.', ' ');
         return $result;
     }

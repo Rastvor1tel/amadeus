@@ -1,6 +1,9 @@
 .header-block__btn.is--wholesale .btn__item {
     margin-bottom: 10px;
 }
+.content-block__preview.custom-style {
+    margin-top: -6.8vw;
+}
 [id^="bx_incl_area"] {
     display: flex;
     flex-wrap: wrap;
