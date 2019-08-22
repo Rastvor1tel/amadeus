@@ -51,7 +51,7 @@ if (isset($templateData['TEMPLATE_THEME'])) {
                         $prices[$step_num] = number_format($arItem["VALUES"]["MAX"]["VALUE"], $precision, ".", "");
                     }
                     ?>
-                    <li class="cabinet__filter-nav-item dropdown <?if ($arParams["FILTER_VIEW_MODE"] == "HORIZONTAL"):?>col-sm-6 col-md-4<? else: ?>col-lg-12<? endif ?> bx-filter-parameters-box bx-active">
+                    <li class="cabinet__filter-nav-item dropdown prop<?=$arItem['ID']?> <?if ($arParams["FILTER_VIEW_MODE"] == "HORIZONTAL"):?>col-sm-6 col-md-4<? else: ?>col-lg-12<? endif ?> bx-filter-parameters-box bx-active">
                         <a href="#" class="dropdown-toggle cabinet__filter-nav-link" data-toggle="dropdown">
                             <div class="cabinet__filter-nav-text">
                                 Цена, ₽:
@@ -98,7 +98,7 @@ if (isset($templateData['TEMPLATE_THEME'])) {
                 if ($arItem["DISPLAY_TYPE"] == "A" && ($arItem["VALUES"]["MAX"]["VALUE"] - $arItem["VALUES"]["MIN"]["VALUE"] <= 0))
                     continue;
                 ?>
-                <li class="cabinet__filter-nav-item dropdown <?if ($arParams["FILTER_VIEW_MODE"] == "HORIZONTAL"): ?>col-sm-6 col-md-4<? else: ?>col-lg-12<? endif ?> bx-filter-parameters-box <?if ($arItem["DISPLAY_EXPANDED"] == "Y"): ?>bx-active<? endif ?>">
+                <li class="cabinet__filter-nav-item dropdown prop<?=$arItem['ID']?> <?if ($arParams["FILTER_VIEW_MODE"] == "HORIZONTAL"): ?>col-sm-6 col-md-4<? else: ?>col-lg-12<? endif ?> bx-filter-parameters-box <?if ($arItem["DISPLAY_EXPANDED"] == "Y"): ?>bx-active<? endif ?>">
                     <a href="#" class="dropdown-toggle cabinet__filter-nav-link" data-toggle="dropdown">
                         <?
                         $value = ' - ';
@@ -112,7 +112,7 @@ if (isset($templateData['TEMPLATE_THEME'])) {
                         }
                         ?>
                         <div class="cabinet__filter-nav-text">
-                            Размер:
+                            <?=$arItem['NAME']?>:
                             <div class="cabinet__filter-nav-result is--size"><?=$value?></div>
                         </div>
                         <div class="cabinet__filter-nav-caret">

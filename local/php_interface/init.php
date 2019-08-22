@@ -1,4 +1,5 @@
 <?
+require_once($_SERVER['DOCUMENT_ROOT'] . '/include/webp/webpbufermodifier.php');
 
 use Bitrix\Main\Loader;
 use Bitrix\Main\Diag\Debug;

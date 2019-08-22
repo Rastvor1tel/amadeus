@@ -42,59 +42,97 @@ BX.ready(function() {
     BX.bindDelegate(
         document.body, 'click', {className: 'buyBtn'},
         function() {
-            var data = {
-                type: 'ADD2BASKET',
-                products: []
-            };
-            $('.card-item__elem.sizeBlock.active').each(function(){
-                var productData = {
-                    id: $(this).data('id'),
-                    quantity: $(this).find('.form__size-qty-input').val()
+            var quantity = $('#productsQuantity').text();
+            if(quantity > 0) {
+                var data = {
+                    type: 'ADD2BASKET',
+                    products: []
                 };
-                data.products.push(productData);
-            });
-            BX.ajax.loadJSON(
-                BX.message('templateFolder') + '/ajax.php',
-                data,
-                function (response) {
-                    var responseObj = BX.parseJSON(response);
-                    var content = BX.create(
-                        'div',
-                        {
-                            'props':{
-                                className: 'basketNotify__text'
-                            },
-                            text: 'Товар успешно добавлен в корзину'
-                        }
+
+                $('.card-item__elem.sizeBlock.active').each(function(){
+                    var productData = {
+                        id: $(this).data('id'),
+                        quantity: $(this).find('.form__size-qty-input').val()
+                    };
+                    data.products.push(productData);
+                });
+                BX.ajax.loadJSON(
+                    BX.message('templateFolder') + '/ajax.php',
+                    data,
+                    function (response) {
+                        var responseObj = BX.parseJSON(response);
+                        var content = BX.create(
+                            'div',
+                            {
+                                'props': {
+                                    className: 'basketNotify__text'
+                                },
+                                text: 'Товар успешно добавлен в корзину'
+                            }
                         );
-                    var popup = BX.PopupWindowManager.create("basketNotify", null, {
-                        content: content,
-                        closeIcon: {right: "20px", top: "10px"},
-                        autoHide: true,
-                        overlay: {
-                            backgroundColor: '#000', opacity: '60'
+                        var popup = BX.PopupWindowManager.create("basketNotify", null, {
+                            content: content,
+                            closeIcon: {right: "20px", top: "10px"},
+                            autoHide: true,
+                            overlay: {
+                                backgroundColor: '#000', opacity: '60'
+                            },
+                            buttons: [
+                                new BX.PopupWindowButton({
+                                    text: "Продолжить покупки",
+                                    className: "basketNotify__proceed",
+                                    events: {
+                                        click: function () {
+                                            this.popupWindow.close();
+                                        }
+                                    }
+                                }),
+                                new BX.PopupWindowButton({
+                                    text: "Перейти в корзину",
+                                    className: "basketNotify__basket",
+                                    events: {
+                                        click: function () {
+                                            window.location.href = '/personal/cart/';
+                                        }
+                                    }
+                                })
+                            ]
+                        });
+                        popup.show();
+                        BX.adjust(BX('headerBasketCount'), {html: responseObj.basket_count});
+                    }
+                )
+            } else {
+                var content = BX.create(
+                    'div',
+                    {
+                        'props': {
+                            className: 'basketNotify__text'
                         },
-                        buttons: [
-                            new BX.PopupWindowButton({
-                                text: "Продолжить покупки" ,
-                                className: "basketNotify__proceed" ,
-                                events: {click: function(){
+                        text: 'Не выбрано ни одного товара'
+                    }
+                );
+                var popup = BX.PopupWindowManager.create("basketNotify", null, {
+                    content: content,
+                    closeIcon: {right: "20px", top: "10px"},
+                    autoHide: true,
+                    overlay: {
+                        backgroundColor: '#000', opacity: '60'
+                    },
+                    buttons: [
+                        new BX.PopupWindowButton({
+                            text: "Закрыть",
+                            className: "basketNotify__proceed",
+                            events: {
+                                click: function () {
                                     this.popupWindow.close();
-                                }}
-                            }),
-                            new BX.PopupWindowButton({
-                                text: "Перейти в корзину" ,
-                                className: "basketNotify__basket" ,
-                                events: {click: function(){
-                                    window.location.href = '/personal/cart/';
-                                }}
-                            })
-                        ]
-                    });
-                    popup.show();
-                    BX.adjust(BX('headerBasketCount'), {html: responseObj.basket_count});
-                }
-            )
+                                }
+                            }
+                        })
+                    ]
+                });
+                popup.show();
+            }
         }
     );
     BX.bindDelegate(

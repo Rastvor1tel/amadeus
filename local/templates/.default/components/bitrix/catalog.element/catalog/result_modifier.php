@@ -16,7 +16,7 @@ foreach($arResult['OFFERS'] as $arOffer) {
     $arColor = $arOffer['DISPLAY_PROPERTIES']['COLOR_REF'];
     if ($arColor['VALUE']) {
         $price = $arOffer['CATALOG_PRICE_'.$GLOBALS["PRICE_ID"]];
-        $arColors[] = [
+        $arColors[$arColor['VALUE']] = [
             'VALUE' => $arColor['VALUE'],
             'NAME' => $arColor['DISPLAY_VALUE'],
             'PRICE' => $price
