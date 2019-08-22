@@ -34,10 +34,10 @@
     justify-content: center;
 }
 .card-item__preview.is--catalog img {
-    width: auto;
-    height: auto;
-    max-width: 100%;
-    max-height: 100%;
+    /*width: auto;*/
+    /*height: auto;*/
+    min-width: 100%;
+    height: 100%;
 }
 .content-block__panel.is--catalog-card-view.is--info-50 {
     width: 100%;

@@ -115,7 +115,7 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) {
                             <div class="form__item  is--agreement  is--signup">
                                 <input type="hidden" name="f[Согласие на обработку персональных данных]" value="Да">
                                 <div class="form__text  is--agreement  is--signup">
-                                    Нажимая на кнопку «Зарегистрироваться» вы соглашаетесть с правилами обработки <a href='/amadeus/agreement.html' target='_blank'>персональных данных</a>
+                                    Нажимая на кнопку «Зарегистрироваться» вы соглашаетесть с правилами обработки <a href='/policy/' target='_blank'>персональных данных</a>
                                 </div>
                             </div>
                         </div>
