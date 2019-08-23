@@ -1,7 +1,9 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Оптовикам");
-?><div>
+echo '<div class="text__block">';
+?>
+<div>
 	Мы работаем с:
 </div>
 <ul>
@@ -55,4 +57,8 @@ $APPLICATION->SetTitle("Оптовикам");
 	 Организаторы совместных покупок:&nbsp;ИНН, паспорт - основная страница с фото и страница с пропиской, телефон, электронная почта, ссылка на страницу/группу с закупкой.
 </p>
  <br>
- <br><? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
+ <br>
+<?
+echo '</div>';
+require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php");
+?>

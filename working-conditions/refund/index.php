@@ -1,7 +1,9 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Возврат и гарантия");
-?><p>
+echo '<div class="text__block">';
+?>
+<p>
 	 Изделия, приобретенные в интернет-магазине amadeus-family.ru, подлежат обмену или возврату в течение 14 дней с момента покупки (ст. 25 п.1 ЗоЗПП).
 </p>
 <h2>
@@ -95,4 +97,8 @@ $APPLICATION->SetTitle("Возврат и гарантия");
 	<li>сохранены этикетки и вшитые ярлыки;</li>
 	<li>вещь не была в использовании. Отсутствуют следы эксплуатации: следы косметики, духов, шерсти животных, затяжек и прочее;</li>
 	<li>одежда не была постирана.</li>
-</ul><? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
+</ul>
+<?
+echo '</div>';
+require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php");
+?>
