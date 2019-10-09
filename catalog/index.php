@@ -5,7 +5,7 @@ $APPLICATION->SetTitle("Каталог");
 $APPLICATION->IncludeComponent(
 	"bitrix:catalog",
 	".default",
-	array(
+	[
 		"COMPONENT_TEMPLATE" => ".default",
 		"IBLOCK_TYPE" => $GLOBALS["IBLOCK_TYPE"],
 		"IBLOCK_ID" => $GLOBALS["IBLOCK_ID"],
@@ -13,12 +13,12 @@ $APPLICATION->IncludeComponent(
 		"HIDE_NOT_AVAILABLE_OFFERS" => "N",
 		"TEMPLATE_THEME" => "blue",
 		"ADD_PICT_PROP" => "-",
-		"LABEL_PROP" => array(
-		),
+		"LABEL_PROP" => [
+		],
 		"PRODUCT_DISPLAY_MODE" => "N",
 		"OFFER_ADD_PICT_PROP" => "-",
-		"OFFER_TREE_PROPS" => array(
-		),
+		"OFFER_TREE_PROPS" => [
+		],
 		"COMMON_SHOW_CLOSE_POPUP" => "N",
 		"PRODUCT_SUBSCRIPTION" => "Y",
 		"SHOW_DISCOUNT_PERCENT" => "N",
@@ -63,9 +63,9 @@ $APPLICATION->IncludeComponent(
 		"ACTION_VARIABLE" => "action",
 		"PRODUCT_ID_VARIABLE" => "id",
 		"USE_COMPARE" => "N",
-		"PRICE_CODE" => array(
+		"PRICE_CODE" => [
 			0 => $GLOBALS["PRICE_TYPE"],
-		),
+		],
 		"USE_PRICE_COUNT" => "N",
 		"SHOW_PRICE_COUNT" => "1",
 		"PRICE_VAT_INCLUDE" => "Y",
@@ -77,20 +77,20 @@ $APPLICATION->IncludeComponent(
 		"ADD_PROPERTIES_TO_BASKET" => "Y",
 		"PRODUCT_PROPS_VARIABLE" => "prop",
 		"PARTIAL_PRODUCT_PROPERTIES" => "N",
-		"PRODUCT_PROPERTIES" => array(
-		),
-		"OFFERS_CART_PROPERTIES" => array(
-		),
+		"PRODUCT_PROPERTIES" => [
+		],
+		"OFFERS_CART_PROPERTIES" => [
+		],
 		"USE_COMMON_SETTINGS_BASKET_POPUP" => "N",
 		"COMMON_ADD_TO_BASKET_ACTION" => "ADD",
 		"TOP_ADD_TO_BASKET_ACTION" => "ADD",
 		"SECTION_ADD_TO_BASKET_ACTION" => "ADD",
-		"DETAIL_ADD_TO_BASKET_ACTION" => array(
+		"DETAIL_ADD_TO_BASKET_ACTION" => [
 			0 => "BUY",
-		),
-		"DETAIL_ADD_TO_BASKET_ACTION_PRIMARY" => array(
+		],
+		"DETAIL_ADD_TO_BASKET_ACTION_PRIMARY" => [
 			0 => "BUY",
-		),
+		],
 		"SEARCH_PAGE_RESULT_COUNT" => "50",
 		"SEARCH_RESTART" => "N",
 		"SEARCH_NO_WORD_LOGIC" => "Y",
@@ -103,20 +103,20 @@ $APPLICATION->IncludeComponent(
 		"TOP_ELEMENT_SORT_ORDER" => "asc",
 		"TOP_ELEMENT_SORT_FIELD2" => "id",
 		"TOP_ELEMENT_SORT_ORDER2" => "desc",
-		"TOP_PROPERTY_CODE" => array(
+		"TOP_PROPERTY_CODE" => [
 			0 => "",
 			1 => "",
-		),
-		"TOP_PROPERTY_CODE_MOBILE" => array(
-		),
-		"TOP_OFFERS_FIELD_CODE" => array(
+		],
+		"TOP_PROPERTY_CODE_MOBILE" => [
+		],
+		"TOP_OFFERS_FIELD_CODE" => [
 			0 => "",
 			1 => "",
-		),
-		"TOP_OFFERS_PROPERTY_CODE" => array(
+		],
+		"TOP_OFFERS_PROPERTY_CODE" => [
 			0 => "",
 			1 => "",
-		),
+		],
 		"TOP_OFFERS_LIMIT" => "5",
 		"TOP_VIEW_MODE" => "SECTION",
 		"TOP_PRODUCT_BLOCKS_ORDER" => "price,props,sku,quantityLimit,quantity,buttons",
@@ -135,28 +135,28 @@ $APPLICATION->IncludeComponent(
 		"ELEMENT_SORT_ORDER" => "asc",
 		"ELEMENT_SORT_FIELD2" => "id",
 		"ELEMENT_SORT_ORDER2" => "desc",
-		"LIST_PROPERTY_CODE" => array(
+		"LIST_PROPERTY_CODE" => [
 			0 => "NEWPRODUCT",
 			1 => "SALELEADER",
 			2 => "SPECIALOFFER",
 			3 => "MINIMUM_PRICE"
-		),
-		"LIST_PROPERTY_CODE_MOBILE" => array(
-		),
+		],
+		"LIST_PROPERTY_CODE_MOBILE" => [
+		],
 		"INCLUDE_SUBSECTIONS" => "Y",
 		"LIST_META_KEYWORDS" => "-",
 		"LIST_META_DESCRIPTION" => "-",
 		"LIST_BROWSER_TITLE" => "-",
 		"SECTION_BACKGROUND_IMAGE" => "-",
-		"LIST_OFFERS_FIELD_CODE" => array(
+		"LIST_OFFERS_FIELD_CODE" => [
 			0 => "NAME",
 			1 => "",
-		),
-		"LIST_OFFERS_PROPERTY_CODE" => array(
+		],
+		"LIST_OFFERS_PROPERTY_CODE" => [
 			0 => "COLOR_REF",
 			1 => "SIZES_CLOTHES",
 			2 => "",
-		),
+		],
 		"LIST_OFFERS_LIMIT" => "0",
 		"LIST_PRODUCT_BLOCKS_ORDER" => "price,props,sku,quantityLimit,quantity,buttons",
 		"LIST_PRODUCT_ROW_VARIANTS" => "[{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false}]",
@@ -164,10 +164,10 @@ $APPLICATION->IncludeComponent(
 		"LIST_SHOW_SLIDER" => "Y",
 		"LIST_SLIDER_INTERVAL" => "3000",
 		"LIST_SLIDER_PROGRESS" => "N",
-		"DETAIL_PROPERTY_CODE" => array(
+		"DETAIL_PROPERTY_CODE" => [
 			0 => "",
 			1 => "",
-		),
+		],
 		"DETAIL_META_KEYWORDS" => "-",
 		"DETAIL_META_DESCRIPTION" => "-",
 		"DETAIL_BROWSER_TITLE" => "-",
@@ -176,19 +176,19 @@ $APPLICATION->IncludeComponent(
 		"DETAIL_CHECK_SECTION_ID_VARIABLE" => "N",
 		"DETAIL_BACKGROUND_IMAGE" => "-",
 		"SHOW_DEACTIVATED" => "N",
-		"DETAIL_OFFERS_FIELD_CODE" => array(
+		"DETAIL_OFFERS_FIELD_CODE" => [
 			0 => "",
 			1 => "",
-		),
-		"DETAIL_OFFERS_PROPERTY_CODE" => array(
+		],
+		"DETAIL_OFFERS_PROPERTY_CODE" => [
 			0 => "COLOR_REF",
 			1 => "SIZES_CLOTHES",
 			2 => "",
-		),
-		"DETAIL_MAIN_BLOCK_PROPERTY_CODE" => array(
-		),
-		"DETAIL_MAIN_BLOCK_OFFERS_PROPERTY_CODE" => array(
-		),
+		],
+		"DETAIL_MAIN_BLOCK_PROPERTY_CODE" => [
+		],
+		"DETAIL_MAIN_BLOCK_OFFERS_PROPERTY_CODE" => [
+		],
 		"DETAIL_USE_VOTE_RATING" => "N",
 		"DETAIL_USE_COMMENTS" => "N",
 		"DETAIL_BRAND_USE" => "N",
@@ -197,10 +197,10 @@ $APPLICATION->IncludeComponent(
 		"DETAIL_PRODUCT_INFO_BLOCK_ORDER" => "sku,props",
 		"DETAIL_PRODUCT_PAY_BLOCK_ORDER" => "rating,price,priceRanges,quantityLimit,quantity,buttons",
 		"DETAIL_SHOW_SLIDER" => "N",
-		"DETAIL_DETAIL_PICTURE_MODE" => array(
+		"DETAIL_DETAIL_PICTURE_MODE" => [
 			0 => "POPUP",
 			1 => "MAGNIFIER",
-		),
+		],
 		"DETAIL_ADD_DETAIL_TO_SLIDER" => "N",
 		"DETAIL_DISPLAY_PREVIEW_TEXT_MODE" => "E",
 		"MESS_PRICE_RANGES_TITLE" => "Цены",
@@ -259,38 +259,38 @@ $APPLICATION->IncludeComponent(
 		"DISABLE_INIT_JS_IN_COMPONENT" => "N",
 		"DETAIL_SET_VIEWED_IN_COMPONENT" => "Y",
 		"FILTER_NAME" => "arrFilter",
-		"FILTER_FIELD_CODE" => array(
+		"FILTER_FIELD_CODE" => [
 			0 => "",
 			1 => "",
-		),
-		"FILTER_PROPERTY_CODE" => array(
+		],
+		"FILTER_PROPERTY_CODE" => [
 			0 => "",
 			1 => "",
-		),
-		"FILTER_PRICE_CODE" => array(
+		],
+		"FILTER_PRICE_CODE" => [
 			0 => $GLOBALS["PRICE_TYPE"],
-		),
-		"FILTER_OFFERS_FIELD_CODE" => array(
+		],
+		"FILTER_OFFERS_FIELD_CODE" => [
 			0 => "",
 			1 => "",
-		),
-		"FILTER_OFFERS_PROPERTY_CODE" => array(
+		],
+		"FILTER_OFFERS_PROPERTY_CODE" => [
 			0 => "SIZES_CLOTHES",
 			1 => "",
-		),
-		"SEF_URL_TEMPLATES" => array(
+		],
+		"SEF_URL_TEMPLATES" => [
 			"sections" => "",
 			"section" => "#SECTION_CODE#/",
 			"element" => "#SECTION_CODE#/#ELEMENT_CODE#/",
 			"compare" => "compare.php?action=#ACTION_CODE#",
 			"smart_filter" => "#SECTION_CODE#/filter/#SMART_FILTER_PATH#/apply/",
-		),
-		"VARIABLE_ALIASES" => array(
-			"compare" => array(
+		],
+		"VARIABLE_ALIASES" => [
+			"compare" => [
 				"ACTION_CODE" => "action",
-			),
-		)
-	),
+			],
+		]
+	],
 	false
 );
 ?>

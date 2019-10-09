@@ -50,6 +50,15 @@ BX.ready(function () {
                                 window.location.href = '/personal/?register=yes';
                             }
                         }
+                    }),
+                    new BX.PopupWindowButton({
+                        text: "Авторизоваться",
+                        className: "basketNotify__basket",
+                        events: {
+                            click: function () {
+                                window.location.href = '/personal/';
+                            }
+                        }
                     })
                 ]
             });

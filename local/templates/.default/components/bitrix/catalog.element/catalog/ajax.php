@@ -75,7 +75,7 @@ if ($type == 'sizeList') {
             <div class="card-item__elem  is--size-cols  is--catalog-page sizeBlock" data-id="<?= $arOffer['ID'] ?>">
                 <div class="form__size-block<?=CSite::InGroup(GROUP_ID_OPT)?' is--lg':'';?>" title="<?= $arOffer['PROPERTIES']['SIZES_CLOTHES']['VALUE'] ?>">
                     <label class="form__size">
-                        <input type="checkbox" class="form__size-input" <?= $arOffer['CATALOG_AVAILABLE'] != 'Y' ? 'disabled ' : ''; ?>name="size[<?= $arOffer['ID'] ?>]" id="<?= $arOffer['ID'] ?>">
+                        <input type="checkbox" class="form__size-input" <?/*= $arOffer['CATALOG_AVAILABLE'] != 'Y' ? 'disabled ' : ''; */?>name="size[<?= $arOffer['ID'] ?>]" id="<?= $arOffer['ID'] ?>">
                         <div class="form__size-name"><?= $hlSize['UF_NAME'] ?></div>
                         <button type="button" class="form__size-qty-btn  is--plus" data-action="+">
                             <svg width="14" height="14" xmlns="http://www.w3.org/2000/svg">

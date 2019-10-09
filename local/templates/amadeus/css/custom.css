@@ -4,6 +4,9 @@
 .content-block__preview.custom-style {
     margin-top: -6.8vw;
 }
+#bx-soa-order.row, #bx-soa-order .row {
+    display: block;
+}
 [id^="bx_incl_area"] {
     display: flex;
     flex-wrap: wrap;
